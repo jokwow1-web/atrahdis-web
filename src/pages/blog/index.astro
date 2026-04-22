@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+---
+<Base title="Blog SBU Konstruksi" description="Artikel panduan SBU konstruksi Indonesia — tips, regulasi, dan proses sertifikasi dari PT Atrahdis.">
+  <section class="mx-auto max-w-4xl px-4 py-16">
+    <h1 class="text-3xl font-bold">Blog</h1>
+    <p class="mt-2 text-gray-600">Panduan SBU konstruksi — tips, regulasi, proses sertifikasi.</p>
+
+    {posts.length === 0 ? (
+      <p class="mt-8 text-gray-500">Artikel segera hadir.</p>
+    ) : (
+      <div class="mt-8 space-y-6">
+        {posts.map((post) => (
+          <article class="rounded-xl border p-6 hover:border-blue-300">
+            <h2 class="text-lg font-semibold">{post.data.title}</h2>
+            <p class="mt-2 text-gray-600">{post.data.description}</p>
+            <time class="mt-2 block text-sm text-gray-400">
+              {post.data.publishedAt.toLocaleDateString('id-ID')}
+            </time>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

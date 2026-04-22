@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PRICING } from '../../lib/pricing';
+import { WA_CTA_URL } from '../../lib/constants';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return Object.entries(PRICING).map(([slug, data]) => ({
+    params: { slug },
+    props: { slug, data },
+  }));
+}
+
+const { slug, data } = Astro.props;
+---
+<Base title={data.label} description={`${data.label} — ${data.range}. PT Atrahdis Idea Nusantara, konsultasi gratis.`}>
+  <section class="mx-auto max-w-4xl px-4 py-16">
+    <a href="/layanan" class="text-sm text-gray-500 hover:text-blue-600">← Kembali ke Layanan</a>
+    <h1 class="mt-4 text-3xl font-bold">{data.label}</h1>
+    <p class="mt-2 text-2xl font-bold text-blue-600">{data.range}</p>
+
+    <div class="mt-8 rounded-xl bg-gray-50 p-6">
+      <p>Detail pricing per sub-bidang tersedia melalui konsultasi.</p>
+      <a href="/biaya" class="mt-4 inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+        Lihat Detail Biaya
+      </a>
+    </div>
+
+    <div class="mt-8">
+      <a href={WA_CTA_URL} class="inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat WhatsApp untuk Konsultasi
+      </a>
+    </div>
+  </section>
+</Base>

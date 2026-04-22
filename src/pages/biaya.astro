@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { PRICING } from '../lib/pricing';
+import { WA_CTA_URL } from '../lib/constants';
+
+const products = Object.entries(PRICING);
+---
+<Base title="Biaya SBU & SKK Konstruksi" description="Daftar biaya SBU dan SKK konstruksi — mulai dari Rp 4,5 jt (SBU Kecil). Detail per sub-bidang tersedia via konsultasi.">
+  <section class="mx-auto max-w-4xl px-4 py-16">
+    <h1 class="text-3xl font-bold">Biaya</h1>
+    <p class="mt-2 text-gray-600">Range harga publik. Detail per sub-bidang + multi-sub + bundling tersedia via konsultasi.</p>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      {products.map(([slug, data]) => (
+        <div class="rounded-xl border p-6">
+          <h2 class="font-semibold">{data.label}</h2>
+          <p class="mt-2 text-2xl font-bold text-blue-600">{data.range}</p>
+          <p class="mt-1 text-sm text-gray-500">Range publik — detail via konsultasi</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-lg font-semibold">Butuh pricing detail per sub-bidang?</p>
+      <p class="mt-2 text-sm text-gray-600">Detail per sub-bidang, multi-sub, dan KAP/ISO/SKK bundling.</p>
+      <a href={WA_CTA_URL} class="mt-4 inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Konsultasi via WhatsApp
+      </a>
+    </div>
+  </section>
+</Base>

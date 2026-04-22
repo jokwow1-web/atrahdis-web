@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import { IDENTITY, WA_CTA_URL } from '../lib/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical = Astro.url.href } = Astro.props;
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'LocalBusiness'],
+  name: IDENTITY.legalName,
+  founder: IDENTITY.founder,
+  foundingDate: '2017',
+  description: 'Jasa SBU Konstruksi Indonesia — Sertifikasi Badan Usaha K, M, B',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. TB. Simatupang Kav. 41, Beltway Office Park',
+    addressLocality: 'Jakarta Selatan',
+    addressRegion: 'DKI Jakarta',
+    postalCode: '12550',
+    addressCountry: 'ID',
+  },
+  telephone: '+628131092903',
+  url: 'https://atrahdis.id',
+};
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title} — Atrahdis</title>
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 antialiased">
+    <header class="border-b border-gray-100">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <a href="/" class="text-xl font-bold tracking-tight">Atrahdis</a>
+        <div class="hidden gap-6 text-sm font-medium md:flex">
+          <a href="/layanan" class="hover:text-blue-600">Layanan</a>
+          <a href="/biaya" class="hover:text-blue-600">Biaya</a>
+          <a href="/blog" class="hover:text-blue-600">Blog</a>
+          <a href="/tentang" class="hover:text-blue-600">Tentang</a>
+          <a href="/tender" class="hover:text-blue-600">Tender</a>
+        </div>
+        <a href={WA_CTA_URL} class="rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-gray-100 bg-gray-50 py-8 text-sm text-gray-500">
+      <div class="mx-auto max-w-6xl px-4">
+        <p>&copy; {new Date().getFullYear()} {IDENTITY.legalName}. NIB: {IDENTITY.nib}</p>
+        <p class="mt-1">{IDENTITY.address}</p>
+      </div>
+    </footer>
+  </body>
+</html>

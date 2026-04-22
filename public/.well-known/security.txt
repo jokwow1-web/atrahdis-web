@@ -1,0 +1,4 @@
+Contact: mailto:security@atrahdis.id
+Contact: https://wa.me/628131092903
+Preferred-Languages: id, en
+Canonical: https://atrahdis.id/.well-known/security.txt

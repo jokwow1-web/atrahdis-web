@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { IDENTITY, WA_CTA_URL, WA_ARA_URL } from '../lib/constants';
+---
+<Base title="Jasa SBU Konstruksi Indonesia" description="PT Atrahdis Idea Nusantara — urus SBU Kecil, Menengah, Besar sejak 2016. Proses cepat, konsultasi gratis via WhatsApp.">
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+      SBU Konstruksi<br />Tanpa Ribet
+    </h1>
+    <p class="mt-4 max-w-xl text-lg text-gray-600">
+      {IDENTITY.founder} mengurus SBU sejak {IDENTITY.operatingSince}.
+      Kualifikasi <strong>K, M, B</strong> — bukan K1/K2/M1/M2.
+      Konsultasi gratis, proses transparan.
+    </p>
+    <div class="mt-8 flex gap-4">
+      <a href={WA_CTA_URL} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat Langsung
+      </a>
+      <a href={WA_ARA_URL} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening AI (Ara)
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold">Layanan Kami</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <a href="/layanan#sbu-k" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+        <h3 class="text-lg font-semibold">SBU Kecil (K)</h3>
+        <p class="mt-2 text-gray-600">Untuk kontraktor kecil — mulai Rp 4,5 jt</p>
+      </a>
+      <a href="/layanan#sbu-m" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+        <h3 class="text-lg font-semibold">SBU Menengah (M)</h3>
+        <p class="mt-2 text-gray-600">Untuk kontraktor menengah — mulai Rp 18 jt</p>
+      </a>
+      <a href="/layanan#sbu-b" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+        <h3 class="text-lg font-semibold">SBU Besar (B)</h3>
+        <p class="mt-2 text-gray-600">Untuk kontraktor besar — mulai Rp 50 jt</p>
+      </a>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="/layanan" class="text-blue-600 hover:underline">Lihat semua 16 layanan →</a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold">Kenapa Atrahdis?</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl bg-gray-50 p-6">
+        <h3 class="font-semibold">9+ Tahun Pengalaman</h3>
+        <p class="mt-2 text-gray-600">Nicx personally mengurus SBU sejak 2016.</p>
+      </div>
+      <div class="rounded-xl bg-gray-50 p-6">
+        <h3 class="font-semibold">Legal & Terdaftar</h3>
+        <p class="mt-2 text-gray-600">NIB {IDENTITY.nib}. PT berdiri sejak ~2017.</p>
+      </div>
+      <div class="rounded-xl bg-gray-50 p-6">
+        <h3 class="font-semibold">Konsultasi Gratis</h3>
+        <p class="mt-2 text-gray-600">Chat langsung atau screening via Ara (AI).</p>
+      </div>
+    </div>
+  </section>
+</Base>

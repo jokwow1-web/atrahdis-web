@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { WA_CTA_URL } from '../lib/constants';
+---
+<Base title="Info Tender Konstruksi" description="Informasi tender konstruksi Indonesia — cara ikut tender dengan SBU yang tepat. Konsultasi gratis via WhatsApp.">
+  <section class="mx-auto max-w-4xl px-4 py-16">
+    <h1 class="text-3xl font-bold">Info Tender</h1>
+    <p class="mt-4 text-gray-600">
+      Untuk ikut tender konstruksi, SBU adalah syarat utama.
+      Kualifikasi SBU Anda harus sesuai dengan nilai paket tender.
+    </p>
+
+    <div class="mt-8 rounded-xl bg-gray-50 p-6">
+      <h2 class="font-semibold">Syarat Tender Berdasarkan SBU</h2>
+      <ul class="mt-4 space-y-2 text-gray-600">
+        <li><strong>SBU Kecil (K)</strong> — paket tender kecil</li>
+        <li><strong>SBU Menengah (M)</strong> — paket tender menengah</li>
+        <li><strong>SBU Besar (B)</strong> — paket tender besar</li>
+      </ul>
+    </div>
+
+    <div class="mt-8">
+      <a href={WA_CTA_URL} class="inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Konsultasi Tender via WhatsApp
+      </a>
+    </div>
+  </section>
+</Base>

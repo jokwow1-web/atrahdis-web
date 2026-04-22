@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atrahdis.id/sitemap-index.xml

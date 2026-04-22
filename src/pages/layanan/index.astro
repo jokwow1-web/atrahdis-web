@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PRICING } from '../../lib/pricing';
+import { WA_CTA_URL } from '../../lib/constants';
+
+const products = Object.entries(PRICING);
+---
+<Base title="Layanan SBU & SKK Konstruksi" description="Semua layanan SBU dan SKK konstruksi dari PT Atrahdis — Kecil, Menengah, Besar, dan SKK J5-J8.">
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h1 class="text-3xl font-bold">Layanan Kami</h1>
+    <p class="mt-4 text-gray-600">16 layanan sertifikasi konstruksi — dari SBU Kecil sampai SKK J8.</p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {products.map(([slug, data]) => (
+        <a id={slug} href={`/layanan/${slug}`} class="scroll-mt-20 rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+          <h2 class="text-lg font-semibold">{data.label}</h2>
+          <p class="mt-2 text-2xl font-bold text-blue-600">{data.range}</p>
+          <p class="mt-4 text-sm text-gray-600">Detail sub-bidang &rarr;</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-lg font-semibold">Butuh konsultasi pricing detail per sub-bidang?</p>
+      <a href="/biaya" class="mt-4 inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Lihat Biaya
+      </a>
+    </div>
+  </section>
+</Base>
