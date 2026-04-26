@@ -1,0 +1,427 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SKK Konstruksi (Sertifikat Kompetensi Kerja)',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Jasa pengurusan SKK J5-J9 konstruksi — Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Mulai Rp 5,97 juta.',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'SKK J5/J6',
+      price: '5970000',
+      priceCurrency: 'IDR',
+      priceValidUntil: '2026-12-31',
+    },
+    {
+      '@type': 'Offer',
+      name: 'SKK J7',
+      price: '7470000',
+      priceCurrency: 'IDR',
+      priceValidUntil: '2026-12-31',
+    },
+    {
+      '@type': 'Offer',
+      name: 'SKK J8',
+      price: '8970000',
+      priceCurrency: 'IDR',
+      priceValidUntil: '2026-12-31',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Apa itu SKK konstruksi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SKK (Sertifikat Kompetensi Kerja) adalah sertifikat wajib untuk tenaga ahli konstruksi yang ingin didaftarkan dalam pengajuan SBU. Tanpa SKK yang aktif, LPJK otomatis menolak permohonan SBU. SKK diterbitkan berdasarkan kualifikasi pendidikan dan pengalaman tenaga ahli.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya SKK J5/J6 konstruksi 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SKK J5/J6 mulai Rp 5,97 juta. SKK J7 mulai Rp 7,47 juta. SKK J8 mulai Rp 8,97 juta. Angka final bergantung pada sub-bidang dan kualifikasi. Nicx dari Atrahdis bisa menentukan level SKK yang tepat untuk kebutuhan SBU Perusahaan Anda.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SKK J5 vs J6 vs J7 bedanya apa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'J5/J6 untuk tenaga ahli tingkat menengah, cocok untuk SBU Kecil dan beberapa sub-bidang Menengah. J7 untuk tenaga ahli tingkat tinggi, wajib untuk SBU Menengah dan Besar. J8 untuk level tertinggi. Pilihan SKK harus sesuai dengan kualifikasi SBU yang dituju.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses SKK konstruksi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '7-14 hari kerja jika dokumen pendukung lengkap. Proses termasuk verifikasi kualifikasi tenaga ahli dan penerbitan sertifikat oleh lembaga sertifikasi yang terakreditasi.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SKK expired bisa diperpanjang?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ya. SKK bisa diperpanjang sebelum masa berlaku habis. Jika sudah expired, prosesnya sama dengan pengajuan baru. Jangan tunggu sampai expired — SBU yang mengandalkan SKK expired akan auto-reject di LPJK.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa SKK yang dibutuhkan untuk SBU?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tergantung kualifikasi SBU dan jumlah sub-bidang. SBU Kecil minimal 1 SKK, SBU Menengah minimal 2-3 SKK level J7, SBU Besar bisa butuh 3-5 SKK. Nicx bisa audit kebutuhan SKK spesifik untuk Perusahaan Anda.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SKK J9 untuk apa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SKK J9 adalah level tertinggi, diperuntukkan tenaga ahli utama dengan pengalaman dan kualifikasi paling tinggi. Biasanya diperlukan untuk sub-bidang SBU Besar tertentu atau proyek skala nasional.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'SKK Konstruksi', item: 'https://atrahdis.id/layanan/skk' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="SKK Konstruksi J5-J9 — Sertifikat Kompetensi Kerja, Mulai Rp 5,97 Juta"
+  description="Jasa pengurusan SKK J5-J9 konstruksi — mulai Rp 5,97 juta. Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Nicx audit kebutuhan SKK sejak 2016."
+  canonical="https://atrahdis.id/layanan/skk"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-4xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">SKK Konstruksi</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      SKK Konstruksi J5-J9 — Sertifikat Kompetensi Kerja
+    </h1>
+    <p class="mt-3 text-2xl font-bold text-blue-600">
+      Mulai Rp 5,97 juta — wajib untuk SBU
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600">
+      SKK (Sertifikat Kompetensi Kerja) wajib dimiliki tenaga ahli sebelum
+      diajukan dalam permohonan SBU. Tanpa SKK aktif, LPJK otomatis menolak.
+      Nicx menentukan level SKK yang tepat untuk kebutuhan SBU Perusahaan Anda.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.skk} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat WhatsApp — SKK
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        SKK (Sertifikat Kompetensi Kerja) wajib untuk tenaga ahli konstruksi
+        yang didaftarkan dalam pengajuan SBU. Biaya mulai Rp 5,97 juta (J5/J6),
+        proses 7-14 hari kerja. Level SKK harus sesuai kualifikasi SBU yang dituju:
+        J5/J6 untuk Kecil, J7 untuk Menengah, J8-J9 untuk Besar. Nicx dari Atrahdis
+        mengaudit kebutuhan SKK spesifik sebelum Perusahaan Anda mengeluarkan biaya.
+        280+ sertifikat diproses sejak 2016.
+      </p>
+    </div>
+  </section>
+
+  <!-- LEVEL SKK -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Level SKK & Kecocokan dengan SBU</h2>
+    <p class="mt-4 text-gray-600">
+      Pilihan level SKK harus sesuai dengan kualifikasi SBU yang dituju.
+      Jangan ambil level terlalu rendah (SBU ditolak) atau terlalu tinggi (biaya mubazir).
+    </p>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Level SKK</th>
+            <th class="pb-3 pr-4 font-semibold">Biaya</th>
+            <th class="pb-3 pr-4 font-semibold">Cocok untuk SBU</th>
+            <th class="pb-3 font-semibold">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-semibold">J5 / J6</td>
+            <td class="py-3 pr-4">Rp 5,97 juta</td>
+            <td class="py-3 pr-4">SBU Kecil, sebagian Menengah</td>
+            <td class="py-3">Tenaga ahli tingkat menengah</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-semibold">J7</td>
+            <td class="py-3 pr-4">Rp 7,47 juta</td>
+            <td class="py-3 pr-4">SBU Menengah, sebagian Besar</td>
+            <td class="py-3">Tenaga ahli tingkat tinggi</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-semibold">J8</td>
+            <td class="py-3 pr-4">Rp 8,97 juta</td>
+            <td class="py-3 pr-4">SBU Besar</td>
+            <td class="py-3">Tenaga ahli level tertinggi</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-semibold">J9</td>
+            <td class="py-3 pr-4">Hubungi Nicx</td>
+            <td class="py-3 pr-4">SBU Besar (sub-bidang tertentu)</td>
+            <td class="py-3">Tenaga ahli utama, spesialisasi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 rounded-xl border-l-4 border-yellow-500 bg-yellow-50 p-5">
+      <p class="font-semibold">Jangan tebak level SKK sendiri.</p>
+      <p class="mt-2 text-gray-600">
+        Ambil level terlalu rendah → SBU ditolak. Ambil level terlalu tinggi →
+        biaya mubazir. Nicx bisa audit kebutuhan SKK spesifik berdasarkan
+        kualifikasi SBU dan sub-bidang Perusahaan Anda.
+      </p>
+    </div>
+  </section>
+
+  <!-- SYARAT -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Syarat Pengajuan SKK Konstruksi</h2>
+
+    <div class="mt-8 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">1. Kualifikasi pendidikan & pengalaman</h3>
+        <p class="mt-2 text-gray-600">
+          Setiap level SKK mensyaratkan kombinasi pendidikan dan pengalaman tertentu.
+          J7 membutuhkan pengalaman lebih dari J5. J8 membutuhkan level tertinggi.
+          Nicx audit kesesuaian sebelum Anda mengajukan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">2. Dokumen pendukung tenaga ahli</h3>
+        <p class="mt-2 text-gray-600">
+          Ijazah, sertifikat pelatihan, bukti pengalaman proyek, dan identitas
+          tenaga ahli harus lengkap dan terverifikasi. Dokumen tidak lengkap
+          = proses tertahan di lembaga sertifikasi.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">3. Kesesuaian dengan sub-bidang SBU</h3>
+        <p class="mt-2 text-gray-600">
+          Sub-bidang SKK harus sesuai dengan sub-bidang SBU yang diajukan.
+          Ketidakcocokan = LPJK menolak pendaftaran tenaga ahli.
+          Ini penyebab tersering SKK lolos tapi SBU tetap ditolak.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">4. SKK masih berlaku saat SBU diajukan</h3>
+        <p class="mt-2 text-gray-600">
+          SKK yang expired pada saat pengajuan SBU menyebabkan auto-reject.
+          Cek masa berlaku SKK sebelum mengajukan SBU — perpanjang jika kurang
+          dari 3 bulan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Timeline Proses SKK</h2>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Kondisi Dokumen</th>
+            <th class="pb-3 pr-4 font-semibold">Estimasi Waktu</th>
+            <th class="pb-3 font-semibold">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Dokumen lengkap & valid</td>
+            <td class="py-3 pr-4 font-semibold text-green-700">7-14 hari kerja</td>
+            <td class="py-3">Verifikasi dan penerbitan sertifikat</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Dokumen kurang/perlu perbaikan</td>
+            <td class="py-3 pr-4 font-semibold text-yellow-700">+7-14 hari</td>
+            <td class="py-3">Waktu perbaikan atau pengumpulan dokumen</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Kualifikasi tidak sesuai level</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">Perlu konsultasi</td>
+            <td class="py-3">Nicx audit ulang dan tentukan level yang tepat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Sumber: data internal PT Atrahdis Idea Nusantara, pengalaman pengurusan SKK sejak 2016.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum SKK Konstruksi</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Apa itu SKK konstruksi?</h3>
+        <p class="mt-2 text-gray-600">
+          SKK (Sertifikat Kompetensi Kerja) adalah sertifikat wajib untuk tenaga
+          ahli konstruksi yang ingin didaftarkan dalam pengajuan SBU. Tanpa SKK
+          yang aktif, LPJK otomatis menolak permohonan SBU.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa biaya SKK J5/J6?</h3>
+        <p class="mt-2 text-gray-600">
+          SKK J5/J6 mulai Rp 5,97 juta. Angka final bergantung pada sub-bidang
+          dan kualifikasi. Nicx dari Atrahdis bisa menentukan level SKK yang
+          tepat untuk kebutuhan SBU Perusahaan Anda.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SKK J5 vs J6 vs J7 bedanya apa?</h3>
+        <p class="mt-2 text-gray-600">
+          J5/J6 untuk tenaga ahli tingkat menengah, cocok untuk SBU Kecil dan
+          beberapa sub-bidang Menengah. J7 untuk tenaga ahli tingkat tinggi,
+          wajib untuk SBU Menengah dan Besar. J8 untuk level tertinggi.
+          Pilihan SKK harus sesuai dengan kualifikasi SBU yang dituju.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa lama proses SKK?</h3>
+        <p class="mt-2 text-gray-600">
+          7-14 hari kerja jika dokumen pendukung lengkap. Proses termasuk
+          verifikasi kualifikasi tenaga ahli dan penerbitan sertifikat oleh
+          lembaga sertifikasi.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SKK expired bisa diperpanjang?</h3>
+        <p class="mt-2 text-gray-600">
+          Ya. SKK bisa diperpanjang sebelum masa berlaku habis. Jika sudah
+          expired, prosesnya sama dengan pengajuan baru. Jangan tunggu sampai
+          expired — SBU yang mengandalkan SKK expired akan auto-reject di LPJK.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa SKK yang dibutuhkan untuk SBU?</h3>
+        <p class="mt-2 text-gray-600">
+          Tergantung kualifikasi SBU dan jumlah sub-bidang. SBU Kecil minimal
+          1 SKK, SBU Menengah minimal 2-3 SKK level J7, SBU Besar bisa butuh
+          3-5 SKK. Nicx bisa audit kebutuhan SKK spesifik untuk Perusahaan Anda.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SKK J9 untuk apa?</h3>
+        <p class="mt-2 text-gray-600">
+          SKK J9 adalah level tertinggi, diperuntukkan tenaga ahli utama dengan
+          pengalaman dan kualifikasi paling tinggi. Biasanya diperlukan untuk
+          sub-bidang SBU Besar tertentu atau proyek skala nasional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-xl font-bold">Butuh SKK untuk SBU?</p>
+      <p class="mt-2 text-gray-600">
+        Nicx audit kebutuhan SKK spesifik berdasarkan kualifikasi SBU Perusahaan Anda.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.skk} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+          Chat WhatsApp — SKK
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Kecil (K)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — butuh SKK J5/J6</p>
+      </a>
+      <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Menengah (M)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — butuh SKK J7</p>
+      </a>
+      <a href="/layanan/sbu-besar" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Besar (B)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 50 juta — butuh SKK J8</p>
+      </a>
+      <a href="/blog/sbu-k-3-hari-kerja" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU K 3 Hari Kerja</h3>
+        <p class="mt-1 text-sm text-gray-600">Syarat dan timeline realistis</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-4xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 26 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

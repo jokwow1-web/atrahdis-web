@@ -1,4 +1,4 @@
-# Tweet Samples — @nicx (AI-Generated)
+# Tweet Samples — @nickyvaliant (AI-Generated)
 
 **Tanggal:** 2026-04-22
 **Status:** Draft — menunggu review Nicx

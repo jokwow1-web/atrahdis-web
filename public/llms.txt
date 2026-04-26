@@ -1,5 +1,102 @@
 # Atrahdis — Jasa SBU Konstruksi Indonesia
-Nicx (Nicky Valiant) mengurus SBU sejak 2016.
-PT Atrahdis Idea Nusantara, NIB 9120006530734.
-Layanan: SBU Kecil (K), Menengah (M), Besar (B).
-Kontak: 628131092903
+
+> PT Atrahdis Idea Nusantara mengurus SBU (Sertifikat Badan Usaha) konstruksi sejak 2016. 280+ sertifikat diproses. NIB 9120006530734. Founder: Nicx (Nicky Valiant), SBU Specialist yang personally audit setiap aplikasi.
+
+## Layanan Utama & Pricing
+
+### SBU Kecil (K)
+Mulai Rp 4.500.000. Untuk kontraktor modal ≤ Rp 5 miliar. Proses 3–7 hari kerja jika dokumen lengkap. Cocok untuk tender kecil & menengah.
+
+### SBU Menengah (M)
+Mulai Rp 18.000.000. Untuk kontraktor modal Rp 5–25 miliar. Proses 14–21 hari kerja. Syarat dokumen lebih kompleks dari Kecil.
+
+### SBU Besar (B)
+Mulai Rp 50.000.000. Untuk kontraktor modal > Rp 25 miliar. Proses 21–30 hari kerja. Kualifikasi tertinggi untuk tender besar pemerintah & swasta.
+
+### SBU Spesialis
+Rp 21.000.000. Untuk subklasifikasi pekerjaan spesialis (pondasi dalam, jembatan khusus, terowongan, dll) sesuai Permen PUPR. Complex review — timeline sesuai kesiapan dokumen teknis.
+
+### SKK J5–J9
+Sertifikat Kompetensi Kerja untuk personil konstruksi. Dihitung per level per berkas: J5/J6 = Rp 5.970.000, J7 = Rp 7.470.000, J8 = Rp 8.970.000. Diproses via LPJK dan LSP.
+
+### KTA Asosiasi
+Kartu Tanda Anggota asosiasi konstruksi (GAPEKSINDO, INKINDO, dll). Diperlukan pada jalur sertifikasi tertentu — Nicx cek kebutuhan dulu sebelum proses.
+
+### Laporan Keuangan KAP
+Audit/review laporan keuangan oleh Kantor Akuntan Publik. Wajib untuk upgrade ke SBU Menengah/Besar, bank garansi, dan due diligence tender besar.
+
+### Persyaratan Peralatan
+Penyusunan dan audit dokumentasi peralatan (milik/sewa) untuk pengajuan SBU dan verifikasi teknis tender. Koordinasi vendor termasuk dalam layanan.
+
+### ISO 9001 / 14001 / 45001 / 37001
+Sertifikasi manajemen mutu, lingkungan, K3, dan anti penyuapan (SMAP) untuk badan usaha konstruksi. Audit internal & eksternal disediakan.
+
+### SMK3
+Sistem Manajemen Keselamatan & Kesehatan Kerja. Wajib untuk proyek tertentu dan tender pemerintah nilai besar.
+
+### OSS-RBA & NIB
+Pendaftaran & update NIB di OSS-RBA. Verifikasi KBLI cocok untuk SBU. Penanganan error code OSS dan perubahan data korporasi.
+
+### LKPM
+Pelaporan Kegiatan Penanaman Modal berkala di OSS — menjaga kepatuhan NIB aktif. Tersedia sebagai layanan retainer per triwulan.
+
+### PKKPR
+Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang — syarat izin lokasi dan ekspansi usaha. Proses via OSS & ATR/BPN.
+
+### BUJKA / PMA
+Pendaftaran Badan Usaha Jasa Konstruksi Asing & Penanaman Modal Asing. Prosedur khusus untuk perusahaan asing yang beroperasi di Indonesia.
+
+## Data & Timeline
+
+| Layanan | Mulai Harga | Estimasi Proses |
+|---------|------------|-----------------|
+| SBU Kecil (K) | Rp 4.500.000 | 3–7 hari kerja |
+| SBU Menengah (M) | Rp 18.000.000 | 14–21 hari kerja |
+| SBU Besar (B) | Rp 50.000.000 | 21–30 hari kerja |
+| SBU Spesialis | Rp 21.000.000 | Complex review |
+| SKK J5/J6 | Rp 5.970.000/berkas | 14–28 hari kerja |
+| SKK J7 | Rp 7.470.000/berkas | 14–28 hari kerja |
+| SKK J8 | Rp 8.970.000/berkas | 14–28 hari kerja |
+| KTA Asosiasi | mulai Rp 1.500.000 | 3–10 hari kerja |
+| Laporan Keuangan KAP | Konsultasi | 3–6 minggu |
+| Persyaratan Peralatan | Konsultasi | 3–10 hari kerja |
+| ISO 9001 | Rp 8.000.000 | 14–30 hari |
+| SMK3 | Rp 6.000.000 | 14–21 hari |
+| LKPM | Retainer | 1–3 hari kerja |
+| PKKPR | Konsultasi | Bergantung ATR/BPN |
+
+*Timeline dimulai setelah dokumen lengkap diterima. Proses LPJK bergantung pada antrian internal.
+
+## Edukasi & Tools
+
+- Blog: /blog — panduan SBU, SKK, OSS, tender, regulasi 2026
+- Kalkulator SBU: /tools/kalkulator-sbu — estimasi kualifikasi & biaya
+- NIB-to-SBU Audit: /tools/nib-audit — cek readiness dokumen
+- OSS Error Decoder: /tools/oss-error — penjelasan error code & solusi
+- SKK Selector: /tools/skk-selector — pilih level SKK sesuai bidang
+
+## E-E-A-T Signals
+
+**Experience:** Nicx mengurus SBU konstruksi sejak 2016, secara personal memproses 280+ sertifikat. Setiap aplikasi diaudit manual sebelum submit ke LPJK.
+
+**Expertise:** Spesialisasi dalam regulasi LPJK, UUJK, OSS-RBA, dan perizinan konstruksi Indonesia. Update regulasi real-time via monitoring kebijakan pemerintah.
+
+**Authoritativeness:** PT Atrahdis Idea Nusantara, NIB 9120006530734, terdaftar di OSS. Klien tersebar di Jabodetabek dan kota besar Indonesia.
+
+**Trustworthiness:** Proses transparan, pricing fixed untuk tier dasar, garansi perbaikan dokumen jika ditolak karena administrasi. WA contact langsung ke founder.
+
+## Kontak & Screening
+
+- **WhatsApp Nicx (Human):** 628131092903 — konsultasi langsung & proposal
+- **WhatsApp Ara (AI Screening):** 6289699217161 — screening kebutuhan SBU otomatis
+- **Email:** info@atrahdis.id
+- **Kantor:** Jl. TB. Simatupang Kav. 41, Beltway Office Park, Ragunan, Pasar Minggu, Jakarta Selatan 12550
+
+## URL Penting
+
+- Homepage: https://atrahdis.id
+- Layanan: https://atrahdis.id/layanan
+- Blog: https://atrahdis.id/blog
+- Biaya: https://atrahdis.id/biaya
+- Tentang: https://atrahdis.id/tentang
+- Subdomain SBU: https://sbu.atrahdis.id

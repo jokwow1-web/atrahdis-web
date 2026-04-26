@@ -1,0 +1,503 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SBU Kecil (K) Konstruksi',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Jasa pengurusan SBU Kecil (K) konstruksi Indonesia — mulai Rp 4,5 juta, proses 3-7 hari kerja jika dokumen lengkap.',
+  offers: {
+    '@type': 'Offer',
+    price: '4500000',
+    priceCurrency: 'IDR',
+    priceValidUntil: '2026-12-31',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya SBU Kecil 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Kecil mulai Rp 4,5 juta. Angka final bergantung pada sub-bidang, jumlah klasifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses SBU Kecil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mulai 3 hari kerja setelah berkas lengkap dan dikonfirmasi. Timeline ini berlaku jika NIB benar, KBLI cocok, dan SKK tenaga ahli masih aktif. Jika ada dokumen yang perlu diperbaiki, timeline bergantung pada lama perbaikan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa syarat utama SBU Kecil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'NIB berstatus benar di OSS, KBLI cocok dengan sub-bidang, akta pendirian & perubahan terbaru, NPWP perusahaan aktif, SKK tenaga ahli masih berlaku. Laporan keuangan untuk Kecil tidak wajib diaudit KAP.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Kecil bisa ikut tender apa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Kecil memenuhi syarat kualifikasi untuk paket tender konstruksi bernilai sampai Rp 5 miliar (sesuai Perpres 16/2018). Untuk paket lebih besar, Anda memerlukan SBU Menengah atau Besar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Kecil ditolak LPJK, kenapa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Penyebab paling umum: NIB merah di OSS (auto-reject), KBLI tidak cocok dengan sub-klasifikasi yang dipilih, atau SKK tenaga ahli sudah expired. Nicx audit semua titik ini sebelum Anda membayar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa beda SBU Kecil dan SBU Menengah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU K untuk perusahaan modal sampai Rp 5 miliar, proses relatif singkat, dokumen lebih ringan. SBU M untuk modal Rp 5-25 miliar, verifikasi lebih ketat, proses 14-21 hari. Pilih berdasarkan kesiapan dokumen dan target proyek, bukan label.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Bisa perpanjang SBU Kecil yang sudah expired?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ya. Perpanjangan SBU Kecil bisa diajukan ke LPJK sebelum masa berlaku habis. Jika sudah expired, prosesnya sama dengan pengajuan baru — tidak ada jalan pintas. Segera ajukan perpanjangan minimal 30 hari sebelum expired.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Kecil bisa upgrade ke Menengah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ya. Prosesnya bukan perpanjangan, tapi pengajuan baru dengan kualifikasi M. Anda perlu memenuhi syarat tambahan: modal disesuaikan, SKK tenaga ahli yang sesuai, dan dokumen pendukung kualifikasi Menengah. Nicx bisa audit gap dokumen Anda.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'SBU Kecil (K)', item: 'https://atrahdis.id/layanan/sbu-kecil' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="SBU Kecil (K) — Mulai Rp 4,5 Juta, 3 Hari Kerja"
+  description="Jasa pengurusan SBU Kecil konstruksi — mulai Rp 4,5 juta, proses 3-7 hari kerja jika dokumen lengkap. Nicx audit sejak 2016, 280+ sertifikat."
+  canonical="https://atrahdis.id/layanan/sbu-kecil"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-4xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">SBU Kecil (K)</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      SBU Kecil (K) — Mulai Rp 4,5 Juta, 3 Hari Kerja
+    </h1>
+    <p class="mt-3 text-2xl font-bold text-blue-600">
+      Proses 3 hari kerja jika dokumen lengkap
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600">
+      SBU Kecil untuk kontraktor dengan modal sampai Rp 5 miliar. Nicx mengaudit dokumen
+      Perusahaan Anda <strong>sebelum</strong> bayar — kalau ada masalah, Anda tahu di awal.
+      280+ sertifikat diproses sejak 2016.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.sbuK} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat WhatsApp — SBU Kecil
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        SBU Kecil (K) adalah sertifikat badan usaha untuk kontraktor konstruksi modal sampai
+        Rp 5 miliar. Biaya mulai Rp 4,5 juta, proses tercepat 3 hari kerja jika dokumen
+        lengkap (NIB benar, KBLI cocok, SKK aktif). Tanpa SBU, kontraktor tidak bisa ikut
+        tender resmi — denda pelanggaran UUJK Pasal 44 mencapai Rp 50 juta. Nicx dari
+        Atrahdis mengaudit dokumen Anda gratis sebelum quote keluar.
+      </p>
+    </div>
+  </section>
+
+  <!-- SYARAT DOKUMEN -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Syarat Dokumen SBU Kecil 2026</h2>
+    <p class="mt-4 text-gray-600">
+      Sebelum Perusahaan Anda mengeluarkan biaya, cek kelengkapan dokumen ini.
+      Nicx mengaudit setiap item secara personal — bukan checklist otomatis.
+    </p>
+
+    <div class="mt-8 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">1. NIB berstatus benar di OSS</h3>
+        <p class="mt-2 text-gray-600">
+          NIB (Nomor Induk Berusaha) wajib berstatus <strong>benar</strong> (hijau) di sistem OSS.
+          Jika merah, OSS otomatis menolak semua permohonan SBU. Perbaikan NIB bisa makan 1-2 minggu.
+          Nicx cek status ini di langkah pertama.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">2. KBLI cocok dengan sub-bidang SBU</h3>
+        <p class="mt-2 text-gray-600">
+          Kode KBLI di NIB harus sesuai dengan sub-bidang SBU yang diajukan.
+          Ketidakcocokan KBLI menjadi penyebab penolakan terbanyak kedua setelah NIB merah.
+          Jika perlu update, prosesnya melalui OSS sebelum SBU bisa diajukan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">3. Akta Pendirian & Perubahan terbaru</h3>
+        <p class="mt-2 text-gray-600">
+          Akta terakhir harus sesuai dengan data di AHU (Sistem Administrasi Badan Hukum).
+          Nama perusahaan, alamat, dan susunan pengurus harus sinkron antar-sistem.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">4. NPWP Perusahaan aktif</h3>
+        <p class="mt-2 text-gray-600">
+          NPWP badan usaha wajib aktif dan sesuai dengan data NIB. NPWP yang tidak
+          sinkron bisa menahan proses verifikasi di LPJK.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">5. SKK Tenaga Ahli masih berlaku</h3>
+        <p class="mt-2 text-gray-600">
+          Sertifikat Kompetensi Kerja (SKK) tenaga ahli yang didaftarkan harus masih
+          berlaku selama proses SBU berjalan. SKK expired = LPJK auto-reject seluruh permohonan.
+          Lihat detail di <a href="/layanan/skk" class="text-blue-600 hover:underline">layanan SKK</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">6. Laporan Keuangan (tidak wajib KAP untuk Kecil)</h3>
+        <p class="mt-2 text-gray-600">
+          Untuk kualifikasi Kecil, laporan keuangan tidak wajib diaudit oleh Kantor Akuntan Publik (KAP).
+          Ini membedakan SBU K dari M dan B dalam hal beban dokumen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Timeline Proses SBU Kecil</h2>
+    <p class="mt-4 text-gray-600">
+      Timeline di bawah berdasarkan 280+ kasus yang Nicx proses sejak 2016.
+      Angka ini realistis, bukan janji marketing.
+    </p>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Kondisi Dokumen</th>
+            <th class="pb-3 pr-4 font-semibold">Estimasi Waktu</th>
+            <th class="pb-3 font-semibold">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Semua lengkap & benar</td>
+            <td class="py-3 pr-4 font-semibold text-green-700">3-7 hari kerja</td>
+            <td class="py-3">NIB hijau, KBLI cocok, SKK aktif</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">KBLI perlu update</td>
+            <td class="py-3 pr-4 font-semibold text-yellow-700">+7-14 hari</td>
+            <td class="py-3">Waktu tambahan untuk update OSS</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">NIB merah</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">+14-21 hari</td>
+            <td class="py-3">Perlu perbaikan NIB dulu sebelum SBU bisa diproses</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">SKK expired</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">+7-21 hari</td>
+            <td class="py-3">SKK harus diperpanjang/diganti terlebih dahulu</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Sumber: data internal PT Atrahdis Idea Nusantara, 280+ kasus SBU 2016-2026.
+    </p>
+  </section>
+
+  <!-- BIAYA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Biaya SBU Kecil 2026</h2>
+    <p class="mt-4 text-gray-600">
+      Range biaya di bawah adalah angka publik. Detail per sub-bidang tersedia setelah audit dokumen.
+    </p>
+
+    <div class="mt-8 rounded-xl bg-gray-50 p-6">
+      <p class="text-3xl font-bold text-blue-600">Mulai Rp 4,5 juta</p>
+      <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
+    </div>
+
+    <div class="mt-8 space-y-3 text-gray-600">
+      <h3 class="font-semibold text-gray-900">Tiga lapisan biaya yang perlu Anda cek:</h3>
+      <ol class="list-decimal space-y-2 pl-6">
+        <li><strong>Biaya inti pengurusan</strong> — koordinasi submit, review, handling sampai SBU terbit</li>
+        <li><strong>Biaya koreksi dokumen</strong> — jika OSS merah, KBLI belum cocok, atau SKK tidak aktif</li>
+        <li><strong>Biaya keterlambatan</strong> — bukan biaya vendor, tapi biaya bisnis: peluang tender yang hilang</li>
+      </ol>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Baca detail: <a href="/blog/biaya-sbu-konstruksi-2026" class="text-blue-600 hover:underline">Panduan Biaya SBU Konstruksi 2026</a>
+    </p>
+  </section>
+
+  <!-- RISIKO -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Risiko SBU Kecil Ditolak LPJK</h2>
+    <p class="mt-4 text-gray-600">
+      Tiga penyebab penolakan paling sering. Nicx memeriksa semuanya sebelum Anda membayar.
+    </p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl border border-red-200 bg-red-50 p-5">
+        <h3 class="font-semibold text-red-800">NIB merah di OSS</h3>
+        <p class="mt-2 text-sm text-red-700">
+          OSS auto-reject semua permohonan. Bank garansi menolak. Termin proyek bisa macet.
+          Perbaikan NIB bisa memakan 1-2 minggu.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-red-200 bg-red-50 p-5">
+        <h3 class="font-semibold text-red-800">KBLI tidak cocok</h3>
+        <p class="mt-2 text-sm text-red-700">
+          LPJK menolak sub-klasifikasi yang tidak sesuai KBLI di NIB.
+          Solusinya: update KBLI via OSS dulu, baru ajukan SBU.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-red-200 bg-red-50 p-5">
+        <h3 class="font-semibold text-red-800">SKK tenaga ahli expired</h3>
+        <p class="mt-2 text-sm text-red-700">
+          LPJK auto-reject seluruh permohonan. SKK harus diperpanjang
+          atau diganti sebelum SBU bisa diproses.
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Detail: <a href="/blog/kbli-salah-bikin-sbu-ditolak" class="text-blue-600 hover:underline">KBLI Salah Bikin SBU Ditolak</a> ·
+      <a href="/blog/kswp-sbu-ditolak" class="text-blue-600 hover:underline">KSWP Tidak Clear</a>
+    </p>
+  </section>
+
+  <!-- GARANSI -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Garansi Tertulis di Kontrak</h2>
+    <div class="mt-6 rounded-xl border-l-4 border-green-600 bg-green-50 p-6">
+      <p class="text-lg">
+        Jika berkas Perusahaan Anda lengkap, Nicx mengaudit tidak ada masalah,
+        lalu LPJK tetap menolak karena kesalahan tim Nicx — uang kembali 100%.
+        Tertulis di kontrak sebelum bayar.
+      </p>
+      <p class="mt-3 text-sm text-gray-600">
+        Bukan "proses ulang tanpa biaya". Bukan "kami bantu sampai lolos".
+        Uang kembali 100%. Tertulis. Di kontrak.
+      </p>
+    </div>
+  </section>
+
+  <!-- UPGRADE K KE M -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Dari SBU K ke SBU Menengah</h2>
+    <p class="mt-4 text-gray-600">
+      Jika Perusahaan Anda berencana naik kualifikasi, prosesnya bukan perpanjangan —
+      tapi pengajuan baru dengan kualifikasi M.
+    </p>
+
+    <div class="mt-6 rounded-xl bg-gray-50 p-6">
+      <h3 class="font-semibold">Yang perlu disiapkan tambahan:</h3>
+      <ul class="mt-3 space-y-2 text-gray-600">
+        <li>Modal disesuaikan dengan ketentuan Menengah (Rp 5-25 miliar)</li>
+        <li>SKK tenaga ahli yang sesuai kualifikasi Menengah</li>
+        <li>Laporan keuangan diaudit KAP (wajib untuk M, tidak wajib untuk K)</li>
+        <li>Dokumen pendukung kualifikasi Menengah sesuai peraturan LPJK</li>
+      </ul>
+      <p class="mt-4">
+        <a href="/layanan/sbu-menengah" class="font-semibold text-blue-600 hover:underline">
+          Lihat SBU Menengah (M) →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum SBU Kecil</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Berapa biaya SBU Kecil 2026?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Kecil mulai Rp 4,5 juta. Angka final bergantung pada sub-bidang, jumlah
+          klasifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen
+          Perusahaan Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa lama proses SBU Kecil?</h3>
+        <p class="mt-2 text-gray-600">
+          Mulai 3 hari kerja setelah berkas lengkap dan dikonfirmasi. Timeline ini berlaku
+          jika NIB benar, KBLI cocok, dan SKK tenaga ahli masih aktif. Jika ada dokumen
+          yang perlu diperbaiki, timeline bergantung pada lama perbaikan.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa syarat utama SBU Kecil?</h3>
+        <p class="mt-2 text-gray-600">
+          NIB berstatus benar di OSS, KBLI cocok dengan sub-bidang, akta pendirian &
+          perubahan terbaru, NPWP perusahaan aktif, SKK tenaga ahli masih berlaku.
+          Laporan keuangan untuk Kecil tidak wajib diaudit KAP.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SBU Kecil bisa ikut tender apa?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Kecil memenuhi syarat kualifikasi untuk paket tender konstruksi bernilai
+          sampai Rp 5 miliar (sesuai Perpres 16/2018). Untuk paket lebih besar,
+          Perusahaan Anda memerlukan SBU Menengah atau Besar.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SBU Kecil ditolak LPJK, kenapa?</h3>
+        <p class="mt-2 text-gray-600">
+          Penyebab paling umum: NIB merah di OSS (auto-reject), KBLI tidak cocok dengan
+          sub-klasifikasi yang dipilih, atau SKK tenaga ahli sudah expired.
+          Nicx audit semua titik ini sebelum Perusahaan Anda membayar.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa beda SBU Kecil dan SBU Menengah?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU K untuk perusahaan modal sampai Rp 5 miliar, proses relatif singkat,
+          dokumen lebih ringan. SBU M untuk modal Rp 5-25 miliar, verifikasi lebih ketat,
+          proses 14-21 hari. Pilih berdasarkan kesiapan dokumen dan target proyek, bukan label.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Bisa perpanjang SBU Kecil yang sudah expired?</h3>
+        <p class="mt-2 text-gray-600">
+          Ya. Perpanjangan SBU Kecil bisa diajukan ke LPJK sebelum masa berlaku habis.
+          Jika sudah expired, prosesnya sama dengan pengajuan baru — tidak ada jalan pintas.
+          Segera ajukan perpanjangan minimal 30 hari sebelum expired.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SBU Kecil bisa upgrade ke Menengah?</h3>
+        <p class="mt-2 text-gray-600">
+          Ya. Prosesnya bukan perpanjangan, tapi pengajuan baru dengan kualifikasi M.
+          Perusahaan Anda perlu memenuhi syarat tambahan: modal disesuaikan, SKK tenaga
+          ahli yang sesuai, dan dokumen pendukung kualifikasi Menengah. Nicx bisa audit
+          gap dokumen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-xl font-bold">Butuh SBU Kecil cepat?</p>
+      <p class="mt-2 text-gray-600">
+        Nicx audit dokumen Perusahaan Anda gratis. Quote transparan, satu harga final.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.sbuK} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+          Chat WhatsApp — SBU Kecil
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Menengah (M)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — untuk kontraktor menengah</p>
+      </a>
+      <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SKK J5/J6/J7</h3>
+        <p class="mt-1 text-sm text-gray-600">Sertifikat Kompetensi Kerja — wajib untuk SBU</p>
+      </a>
+      <a href="/blog/sbu-k-3-hari-kerja" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU K 3 Hari Kerja</h3>
+        <p class="mt-1 text-sm text-gray-600">Syarat dan timeline realistis</p>
+      </a>
+      <a href="/blog/biaya-sbu-konstruksi-2026" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Panduan Biaya SBU 2026</h3>
+        <p class="mt-1 text-sm text-gray-600">Komponen biaya, titik rawan, cara hindari salah budget</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-4xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 26 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

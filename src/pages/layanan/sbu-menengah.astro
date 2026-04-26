@@ -1,0 +1,446 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SBU Menengah (M) Konstruksi',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Jasa pengurusan SBU Menengah (M) konstruksi Indonesia — mulai Rp 18 juta, proses 14-21 hari kerja jika dokumen lengkap.',
+  offers: {
+    '@type': 'Offer',
+    price: '18000000',
+    priceCurrency: 'IDR',
+    priceValidUntil: '2026-12-31',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya SBU Menengah 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Menengah mulai Rp 18 juta. Angka final bergantung pada sub-bidang, jumlah klasifikasi, volume verifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses SBU Menengah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '14-21 hari kerja jika dokumen lengkap. Proses lebih lama dari Kecil karena LPJK melakukan verifikasi lebih ketat pada konsistensi antar-data, laporan keuangan KAP, dan kualifikasi tenaga ahli.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa perbedaan dokumen SBU M dengan SBU K?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Untuk Menengah, laporan keuangan wajib diaudit KAP. Verifikasi konsistensi antar-data lebih ketat. SKK tenaga ahli harus sesuai level Menengah. Volume dokumen dan koordinasi lebih besar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Menengah bisa ikut tender apa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Menengah memenuhi syarat kualifikasi untuk paket tender konstruksi bernilai Rp 5-25 miliar. Untuk paket di atas Rp 25 miliar, diperlukan SBU Besar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kenapa SBU Menengah biayanya lebih tinggi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Karena volume verifikasi, risiko koreksi dokumen, kebutuhan tenaga ahli, dan koordinasi data biasanya lebih kompleks dibanding Kecil. Satu dokumen pendukung yang tidak sinkron bisa menahan proses lebih lama.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa biaya terbesar yang sering luput dari perhitungan SBU Menengah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Biaya koreksi dokumen pendukung: update OSS, perbaikan KBLI, pembaruan SKK yang expired, atau audit KAP jika laporan keuangan belum siap. Ini bisa menambah signifikan ke total biaya.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Bisa langsung ambil SBU Menengah tanpa pernah punya SBU Kecil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Secara regulasi bisa, jika Perusahaan Anda memenuhi semua syarat Menengah: modal Rp 5-25 miliar, laporan keuangan diaudit KAP, SKK tenaga ahli level Menengah. Nicx bisa audit gap dokumen sebelum pengajuan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Menengah expired bisa diperpanjang atau harus mengajukan baru?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Perpanjangan bisa diajukan sebelum masa berlaku habis. Jika sudah expired, prosesnya sama dengan pengajuan baru. Ajukan minimal 30 hari sebelum expired untuk menghindari gap yang menutup akses tender.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'SBU Menengah (M)', item: 'https://atrahdis.id/layanan/sbu-menengah' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="SBU Menengah (M) — Mulai Rp 18 Juta, 14-21 Hari Kerja"
+  description="Jasa pengurusan SBU Menengah konstruksi — mulai Rp 18 juta, proses 14-21 hari kerja. Verifikasi LPJK lebih ketat. Nicx audit sejak 2016."
+  canonical="https://atrahdis.id/layanan/sbu-menengah"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-4xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">SBU Menengah (M)</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      SBU Menengah (M) — Mulai Rp 18 Juta, 14-21 Hari
+    </h1>
+    <p class="mt-3 text-2xl font-bold text-blue-600">
+      Proses 14-21 hari kerja jika dokumen lengkap
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600">
+      SBU Menengah untuk kontraktor dengan modal Rp 5-25 miliar. Verifikasi LPJK lebih ketat
+      — konsistensi antar-data, laporan keuangan KAP, dan kualifikasi tenaga ahli semuanya diperiksa.
+      Nicx mengaudit dokumen Perusahaan Anda <strong>sebelum</strong> bayar.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.sbuM} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat WhatsApp — SBU Menengah
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        SBU Menengah (M) adalah sertifikat badan usaha untuk kontraktor konstruksi modal
+        Rp 5-25 miliar. Biaya mulai Rp 18 juta, proses 14-21 hari kerja jika dokumen lengkap.
+        Perbedaan utama dari Kecil: laporan keuangan wajib diaudit KAP, verifikasi konsistensi
+        data lebih ketat, dan risiko koreksi dokumen lebih tinggi. Nicx dari Atrahdis mengaudit
+        semua dokumen sebelum quote keluar — 280+ sertifikat diproses sejak 2016.
+      </p>
+    </div>
+  </section>
+
+  <!-- SYARAT DOKUMEN -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Syarat Dokumen SBU Menengah 2026</h2>
+    <p class="mt-4 text-gray-600">
+      Dokumen SBU Menengah lebih berat dari Kecil. Titik kritis: laporan keuangan KAP
+      dan konsistensi data antar-sistem.
+    </p>
+
+    <div class="mt-8 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">1. NIB berstatus benar + KBLI cocok</h3>
+        <p class="mt-2 text-gray-600">
+          Sama seperti Kecil — NIB wajib hijau, KBLI wajib cocok. Tapi untuk Menengah,
+          konsekuensi KBLI tidak cocok lebih besar karena sub-bidang yang dipilih
+          biasanya lebih banyak.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">2. Laporan keuangan diaudit KAP</h3>
+        <p class="mt-2 text-gray-600">
+          Ini perbedaan paling signifikan dari SBU Kecil. Laporan keuangan wajib diaudit
+          oleh Kantor Akuntan Publik. Jika belum diaudit, proses SBU tidak bisa dimulai.
+          Persiapan audit KAP bisa memakan 2-4 minggu tambahan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">3. SKK tenaga ahli level Menengah</h3>
+        <p class="mt-2 text-gray-600">
+          SKK harus sesuai dengan kualifikasi Menengah dan sub-bidang yang diajukan.
+          Tenaga ahli yang berlaku untuk Kecil belum tentu memenuhi syarat Menengah.
+          Cek detail di <a href="/layanan/skk" class="text-blue-600 hover:underline">layanan SKK</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">4. Konsistensi data antar-sistem</h3>
+        <p class="mt-2 text-gray-600">
+          Nama perusahaan, alamat, dan susunan pengurus harus sinkron di: AHU, OSS, NPWP,
+          dan dokumen pendukung lainnya. Untuk Menengah, LPJK melakukan cross-check
+          lebih ketat. Satu inkonsistensi bisa menahan seluruh proses.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">5. Akta pendirian & perubahan terbaru</h3>
+        <p class="mt-2 text-gray-600">
+          Sama seperti Kecil — akta terakhir harus sesuai dengan data di AHU.
+          Untuk Menengah, perubahan susunan pengurus yang belum dilaporkan ke AHU
+          sering menjadi titik tertahan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Timeline Proses SBU Menengah</h2>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Kondisi Dokumen</th>
+            <th class="pb-3 pr-4 font-semibold">Estimasi Waktu</th>
+            <th class="pb-3 font-semibold">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Semua lengkap & benar</td>
+            <td class="py-3 pr-4 font-semibold text-green-700">14-21 hari kerja</td>
+            <td class="py-3">Termasuk laporan KAP siap, data sinkron</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Laporan keuangan belum KAP</td>
+            <td class="py-3 pr-4 font-semibold text-yellow-700">+14-28 hari</td>
+            <td class="py-3">Waktu audit KAP tambahan</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">KBLI perlu update</td>
+            <td class="py-3 pr-4 font-semibold text-yellow-700">+7-14 hari</td>
+            <td class="py-3">Update via OSS sebelum SBU bisa diajukan</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Data tidak sinkron antar-sistem</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">+7-21 hari</td>
+            <td class="py-3">Perlu rapihkan AHU/OSS/NPWP sebelum submit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Sumber: data internal PT Atrahdis Idea Nusantara, 280+ kasus SBU 2016-2026.
+    </p>
+  </section>
+
+  <!-- BIAYA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Biaya SBU Menengah 2026</h2>
+
+    <div class="mt-8 rounded-xl bg-gray-50 p-6">
+      <p class="text-3xl font-bold text-blue-600">Mulai Rp 18 juta</p>
+      <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
+    </div>
+
+    <div class="mt-8 rounded-xl border-l-4 border-yellow-500 bg-yellow-50 p-5">
+      <h3 class="font-semibold">Biaya terbesar yang sering luput dari perhitungan:</h3>
+      <ul class="mt-3 space-y-2 text-gray-600">
+        <li><strong>Audit KAP</strong> — jika laporan keuangan belum diaudit, ini biaya tambahan signifikan</li>
+        <li><strong>Koreksi OSS</strong> — update KBLI atau perbaikan NIB bisa memakan waktu dan biaya</li>
+        <li><strong>Pembaruan SKK</strong> — SKK expired harus diperpanjang dulu</li>
+        <li><strong>Konsistensi data</strong> — rapihkan nama, alamat, susunan pengurus antar-sistem</li>
+      </ul>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Baca detail: <a href="/blog/biaya-sbu-konstruksi-2026" class="text-blue-600 hover:underline">Panduan Biaya SBU Konstruksi 2026</a>
+    </p>
+  </section>
+
+  <!-- PERBANDINGAN K vs M -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">SBU K vs SBU M: Perbandingan Praktis</h2>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Aspek</th>
+            <th class="pb-3 pr-4 font-semibold">SBU Kecil (K)</th>
+            <th class="pb-3 font-semibold">SBU Menengah (M)</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Modal perusahaan</td>
+            <td class="py-3 pr-4">Sampai Rp 5 miliar</td>
+            <td class="py-3">Rp 5-25 miliar</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Laporan keuangan</td>
+            <td class="py-3 pr-4">Tidak wajib KAP</td>
+            <td class="py-3">Wajib diaudit KAP</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Proses tercepat</td>
+            <td class="py-3 pr-4">3 hari kerja</td>
+            <td class="py-3">14 hari kerja</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Biaya mulai</td>
+            <td class="py-3 pr-4">Rp 4,5 juta</td>
+            <td class="py-3">Rp 18 juta</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Risiko koreksi</td>
+            <td class="py-3 pr-4">Lebih terlokalisasi</td>
+            <td class="py-3">Lebih tinggi (cross-check ketat)</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Nilai tender max</td>
+            <td class="py-3 pr-4">Rp 5 miliar</td>
+            <td class="py-3">Rp 25 miliar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Detail: <a href="/blog/perbedaan-sbu-kecil-menengah-besar-2026" class="text-blue-600 hover:underline">Perbedaan SBU K, M, B 2026</a>
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum SBU Menengah</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Berapa biaya SBU Menengah 2026?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Menengah mulai Rp 18 juta. Angka final bergantung pada sub-bidang, jumlah
+          klasifikasi, volume verifikasi, dan kesiapan dokumen. Nicx dari Atrahdis
+          mengaudit dokumen Perusahaan Anda sebelum memberikan quote.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa lama proses SBU Menengah?</h3>
+        <p class="mt-2 text-gray-600">
+          14-21 hari kerja jika dokumen lengkap. Proses lebih lama dari Kecil karena
+          LPJK melakukan verifikasi lebih ketat pada konsistensi antar-data,
+          laporan keuangan KAP, dan kualifikasi tenaga ahli.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa perbedaan dokumen SBU M dengan SBU K?</h3>
+        <p class="mt-2 text-gray-600">
+          Untuk Menengah, laporan keuangan wajib diaudit KAP. Verifikasi konsistensi
+          antar-data lebih ketat. SKK tenaga ahli harus sesuai level Menengah.
+          Volume dokumen dan koordinasi lebih besar.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SBU Menengah bisa ikut tender apa?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Menengah memenuhi syarat kualifikasi untuk paket tender konstruksi
+          bernilai Rp 5-25 miliar. Untuk paket di atas Rp 25 miliar, Perusahaan Anda
+          memerlukan SBU Besar.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Kenapa SBU Menengah biayanya lebih tinggi?</h3>
+        <p class="mt-2 text-gray-600">
+          Karena volume verifikasi, risiko koreksi dokumen, kebutuhan tenaga ahli,
+          dan koordinasi data biasanya lebih kompleks dibanding Kecil. Satu dokumen
+          pendukung yang tidak sinkron bisa menahan proses lebih lama.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa biaya terbesar yang sering luput dari perhitungan?</h3>
+        <p class="mt-2 text-gray-600">
+          Biaya koreksi dokumen pendukung: update OSS, perbaikan KBLI, pembaruan SKK
+          yang expired, atau audit KAP jika laporan keuangan belum siap. Ini bisa
+          menambah signifikan ke total biaya.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-xl font-bold">Butuh SBU Menengah?</p>
+      <p class="mt-2 text-gray-600">
+        Nicx audit dokumen Perusahaan Anda gratis. Quote transparan, satu harga final.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.sbuM} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+          Chat WhatsApp — SBU Menengah
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Kecil (K)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — 3 hari kerja</p>
+      </a>
+      <a href="/layanan/sbu-besar" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Besar (B)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 50 juta — untuk kontraktor besar</p>
+      </a>
+      <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SKK J5/J6/J7</h3>
+        <p class="mt-1 text-sm text-gray-600">Sertifikat Kompetensi Kerja — wajib untuk SBU</p>
+      </a>
+      <a href="/blog/perbedaan-sbu-kecil-menengah-besar-2026" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Perbedaan SBU K, M, B</h3>
+        <p class="mt-1 text-sm text-gray-600">Panduan lengkap 2026</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-4xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 26 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

@@ -1,41 +1,144 @@
 ---
 import Base from '../layouts/Base.astro';
-import { IDENTITY, WA_CTA_URL, WA_ARA_URL } from '../lib/constants';
+import { IDENTITY, WA_LINKS, PERSON_SCHEMA } from '../lib/constants';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya SBU Kecil (K) di Atrahdis?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Kecil (K) mulai Rp 4,5 juta. Biaya mencakup pengurusan dokumen, submit ke LPJK, dan monitoring status hingga terbit. Konsultasi gratis sebelum proses dimulai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses SBU Kecil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Kecil bisa terbit dalam 3–7 hari kerja jika dokumen lengkap. Dari 280+ kasus yang Nicx proses sejak 2016, rata-rata selesai dalam seminggu.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa risiko jika SBU expired saat tender?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Kontraktor dengan SBU expired tidak bisa ikut tender resmi. Berdasarkan UUJK, sanksi administratif bisa mencapai Rp 50 juta. Segera perpanjang sebelum masa berlaku habis.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa perbedaan SBU Kecil, Menengah, dan Besar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Kecil (K) untuk kontraktor modal di bawah Rp 1 miliar, Menengah (M) untuk modal Rp 1–10 miliar, Besar (B) untuk modal di atas Rp 10 miliar. Kualifikasi menentukan nilai tender yang bisa diikuti.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apakah bisa urus SBU sendiri tanpa jasa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Bisa, tapi prosesnya kompleks: KBLI harus cocok, KSWP harus clear, dokumen pengurus harus lengkap. Dari pengalaman Nicx, 60%+ aplikasi mandiri ditolak LPJK di submit pertama karena dokumen tidak sesuai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Syarat dokumen apa saja untuk SBU Kecil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dokumen wajib: NIB aktif, KBLI jasa konstruksi, akta perusahaan, NPWP badan, KTP + NPWP direksi, dan foto kantor. Nicx akan cek semua dokumen sebelum proses untuk menghindari penolakan.',
+      },
+    },
+  ],
+};
 ---
-<Base title="Jasa SBU Konstruksi Indonesia" description="PT Atrahdis Idea Nusantara — urus SBU Kecil, Menengah, Besar sejak 2016. Proses cepat, konsultasi gratis via WhatsApp.">
+<Base
+  title="Jasa SBU Konstruksi Indonesia — Mulai Rp 4,5 Juta"
+  description="PT Atrahdis — urus SBU K, M, B sejak 2016. 280+ sertifikat diproses. Mulai Rp 4,5 juta, konsultasi gratis via WhatsApp."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(PERSON_SCHEMA)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Hero -->
   <section class="mx-auto max-w-6xl px-4 py-20">
-    <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
-      SBU Konstruksi<br />Tanpa Ribet
-    </h1>
-    <p class="mt-4 max-w-xl text-lg text-gray-600">
-      {IDENTITY.founder} mengurus SBU sejak {IDENTITY.operatingSince}.
-      Kualifikasi <strong>K, M, B</strong> — bukan K1/K2/M1/M2.
-      Konsultasi gratis, proses transparan.
-    </p>
-    <div class="mt-8 flex gap-4">
-      <a href={WA_CTA_URL} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
-        Chat Langsung
-      </a>
-      <a href={WA_ARA_URL} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
-        Screening AI (Ara)
-      </a>
+    <div class="flex flex-col gap-8 md:flex-row md:items-center">
+      <div class="flex-1">
+        <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+          SBU Konstruksi<br />Mulai Rp 4,5 Juta
+        </h1>
+        <p class="mt-4 max-w-xl text-lg text-gray-600">
+          {IDENTITY.founder} mengurus SBU K, M, B sejak {IDENTITY.operatingSince}.
+          <strong>280+ sertifikat</strong> diproses secara personal.
+          Konsultasi gratis, proses transparan.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={WA_LINKS.general} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+            Chat Langsung →
+          </a>
+          <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+            Screening AI (Ara)
+          </a>
+        </div>
+      </div>
+      <div class="flex-shrink-0">
+        <img
+          src="/nicx.webp"
+          alt="Nicx, SBU Specialist Atrahdis"
+          width="120"
+          height="120"
+          class="rounded-full border-4 border-green-100 object-cover"
+          onerror="this.src='https://placehold.co/120x120/16a34a/ffffff?text=N'"
+        />
+      </div>
     </div>
   </section>
 
+  <!-- Pain section -->
+  <section class="bg-red-50 py-12">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-2xl font-bold text-gray-900">Risiko Tanpa SBU yang Benar</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-xl border-l-4 border-red-400 bg-white p-6 shadow-sm">
+          <p class="font-semibold text-red-700">SBU Expired saat Tender</p>
+          <p class="mt-2 text-gray-600">Denda hingga <strong>Rp 50 juta</strong> (UUJK) + diskualifikasi dari tender berjalan.</p>
+        </div>
+        <div class="rounded-xl border-l-4 border-orange-400 bg-white p-6 shadow-sm">
+          <p class="font-semibold text-orange-700">NIB Ditolak Berulang</p>
+          <p class="mt-2 text-gray-600">KBLI tidak cocok = submit 3x tetap ditolak. Habiskan waktu <strong>2–4 minggu</strong> percuma.</p>
+        </div>
+        <div class="rounded-xl border-l-4 border-yellow-500 bg-white p-6 shadow-sm">
+          <p class="font-semibold text-yellow-700">Tidak Bisa Ikut Tender</p>
+          <p class="mt-2 text-gray-600">Tanpa SBU aktif, kontraktor <strong>tidak bisa</strong> ikut tender resmi pemerintah dan BUMN.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
   <section class="mx-auto max-w-6xl px-4 py-16">
     <h2 class="text-2xl font-bold">Layanan Kami</h2>
     <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <a href="/layanan#sbu-k" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+      <a href={WA_LINKS.sbuK} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
         <h3 class="text-lg font-semibold">SBU Kecil (K)</h3>
-        <p class="mt-2 text-gray-600">Untuk kontraktor kecil — mulai Rp 4,5 jt</p>
+        <p class="mt-1 font-medium text-green-600">Mulai Rp 4,5 juta</p>
+        <p class="mt-2 text-gray-600">Untuk kontraktor kecil — 3–7 hari kerja</p>
       </a>
-      <a href="/layanan#sbu-m" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+      <a href={WA_LINKS.sbuM} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
         <h3 class="text-lg font-semibold">SBU Menengah (M)</h3>
-        <p class="mt-2 text-gray-600">Untuk kontraktor menengah — mulai Rp 18 jt</p>
+        <p class="mt-1 font-medium text-green-600">Mulai Rp 18 juta</p>
+        <p class="mt-2 text-gray-600">Untuk kontraktor menengah — 14–21 hari</p>
       </a>
-      <a href="/layanan#sbu-b" class="rounded-xl border p-6 hover:border-blue-300 hover:shadow">
+      <a href={WA_LINKS.sbuB} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
         <h3 class="text-lg font-semibold">SBU Besar (B)</h3>
-        <p class="mt-2 text-gray-600">Untuk kontraktor besar — mulai Rp 50 jt</p>
+        <p class="mt-1 font-medium text-green-600">Mulai Rp 50 juta</p>
+        <p class="mt-2 text-gray-600">Untuk kontraktor besar — hubungi untuk detail</p>
       </a>
     </div>
     <div class="mt-8 text-center">
@@ -43,21 +146,92 @@ import { IDENTITY, WA_CTA_URL, WA_ARA_URL } from '../lib/constants';
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-2xl font-bold">Kenapa Atrahdis?</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <div class="rounded-xl bg-gray-50 p-6">
-        <h3 class="font-semibold">9+ Tahun Pengalaman</h3>
-        <p class="mt-2 text-gray-600">Nicx personally mengurus SBU sejak 2016.</p>
-      </div>
-      <div class="rounded-xl bg-gray-50 p-6">
-        <h3 class="font-semibold">Legal & Terdaftar</h3>
-        <p class="mt-2 text-gray-600">NIB {IDENTITY.nib}. PT berdiri sejak ~2017.</p>
-      </div>
-      <div class="rounded-xl bg-gray-50 p-6">
-        <h3 class="font-semibold">Konsultasi Gratis</h3>
-        <p class="mt-2 text-gray-600">Chat langsung atau screening via Ara (AI).</p>
+  <!-- Social proof -->
+  <section class="bg-gray-50 py-12">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="mb-8 text-center text-2xl font-bold">Kenapa Atrahdis?</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
+          <p class="text-4xl font-bold text-green-600">280+</p>
+          <p class="mt-2 font-semibold">Sertifikat Diproses</p>
+          <p class="mt-1 text-sm text-gray-500">Sejak 2016, diurus Nicx secara personal</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
+          <p class="text-4xl font-bold text-green-600">9+</p>
+          <p class="mt-2 font-semibold">Tahun Pengalaman</p>
+          <p class="mt-1 text-sm text-gray-500">Spesialis SBU K, M, B sejak 2016</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
+          <p class="text-2xl font-bold text-green-600">{IDENTITY.nib}</p>
+          <p class="mt-2 font-semibold">NIB Terdaftar</p>
+          <p class="mt-1 text-sm text-gray-500">PT legal & resmi di Indonesia</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold">FAQ — Pertanyaan Umum SBU</h2>
+    <div class="mt-8 space-y-4">
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Berapa biaya SBU Kecil (K) di Atrahdis?</summary>
+        <p class="mt-3 text-gray-600">SBU Kecil (K) mulai <strong>Rp 4,5 juta</strong>. Biaya mencakup pengurusan dokumen, submit ke LPJK, dan monitoring status hingga terbit. Konsultasi gratis sebelum proses dimulai.</p>
+      </details>
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Berapa lama proses SBU Kecil?</summary>
+        <p class="mt-3 text-gray-600">SBU Kecil bisa terbit dalam <strong>3–7 hari kerja</strong> jika dokumen lengkap. Dari 280+ kasus yang Nicx proses sejak 2016, rata-rata selesai dalam seminggu.</p>
+      </details>
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Apa risiko jika SBU expired saat tender?</summary>
+        <p class="mt-3 text-gray-600">Kontraktor dengan SBU expired tidak bisa ikut tender resmi. Berdasarkan UUJK, sanksi administratif bisa mencapai <strong>Rp 50 juta</strong>. Segera perpanjang sebelum masa berlaku habis.</p>
+      </details>
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Apa perbedaan SBU Kecil, Menengah, dan Besar?</summary>
+        <p class="mt-3 text-gray-600">SBU Kecil (K) untuk kontraktor modal &lt; Rp 1 miliar, Menengah (M) Rp 1–10 miliar, Besar (B) &gt; Rp 10 miliar. Kualifikasi menentukan nilai tender yang bisa diikuti.</p>
+      </details>
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Apakah bisa urus SBU sendiri tanpa jasa?</summary>
+        <p class="mt-3 text-gray-600">Bisa, tapi prosesnya kompleks: KBLI harus cocok, KSWP harus clear, dokumen pengurus harus lengkap. Dari pengalaman Nicx, <strong>60%+</strong> aplikasi mandiri ditolak LPJK di submit pertama.</p>
+      </details>
+      <details class="rounded-xl border p-5 open:border-green-300">
+        <summary class="cursor-pointer font-semibold">Syarat dokumen apa saja untuk SBU Kecil?</summary>
+        <p class="mt-3 text-gray-600">Dokumen wajib: NIB aktif, KBLI jasa konstruksi, akta perusahaan, NPWP badan, KTP + NPWP direksi, dan foto kantor. Nicx akan cek semua dokumen sebelum proses untuk menghindari penolakan.</p>
+      </details>
+    </div>
+  </section>
 </Base>
+
+<!-- Exit intent popup -->
+<div id="exit-popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
+  <div class="mx-4 max-w-md rounded-2xl bg-white p-8 shadow-2xl">
+    <h3 class="text-xl font-bold">Dapatkan Checklist Dokumen SBU Gratis</h3>
+    <p class="mt-2 text-gray-600">Checklist lengkap dokumen yang wajib disiapkan sebelum proses SBU — langsung dari Nicx.</p>
+    <div class="mt-6 flex gap-3">
+      <a
+        href={WA_LINKS.checklist}
+        class="flex-1 rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white hover:bg-green-700"
+      >
+        Chat WhatsApp →
+      </a>
+      <button id="close-popup" class="rounded-lg border px-4 py-3 text-gray-600 hover:bg-gray-50">
+        Tutup
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let shown = false;
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0 && !shown) {
+      shown = true;
+      const popup = document.getElementById('exit-popup');
+      if (popup) popup.classList.replace('hidden', 'flex');
+    }
+  });
+  document.getElementById('close-popup')?.addEventListener('click', () => {
+    const popup = document.getElementById('exit-popup');
+    if (popup) popup.classList.replace('flex', 'hidden');
+  });
+</script>

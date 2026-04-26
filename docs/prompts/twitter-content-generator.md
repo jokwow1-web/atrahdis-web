@@ -1,8 +1,8 @@
-# Twitter Content Generator — @nicx
+# Twitter Content Generator — @nickyvaliant
 
 **Versi:** 1.0
 **Tanggal:** 2026-04-22
-**Channel:** Twitter/X @nicx (personal, full Nicx mode)
+**Channel:** Twitter/X @nickyvaliant (personal, full Nicx mode)
 **Prompt untuk:** Claude (setiap Sabtu, setelah voice note ditranskripsi)
 
 ---
@@ -34,7 +34,7 @@ Pillar yang sudah dipakai 2 minggu terakhir: [list dari Drafts/]
 ## Voice Rules (Wajib)
 
 ### Pronouns
-- GUE/LO/ELO — approved untuk @nicx
+- GUE/LO/ELO — approved untuk @nickyvaliant
 - JANGAN pakai: Anda, Bapak, Ibu (itu untuk @atrahdis)
 
 ### Banned Words (OTOMATIS REJECT)
@@ -113,7 +113,7 @@ Untuk thread outline:
 Sebelum approve setiap draft, cek:
 
 - [ ] Tidak ada banned words?
-- [ ] Pronouns benar? (gue/lo untuk @nicx)
+- [ ] Pronouns benar? (gue/lo untuk @nickyvaliant)
 - [ ] Tidak ada unverifiable claims?
 - [ ] Feels like Nicx wrote it? (kalau terasa generic/corporate → reject, revise)
 - [ ] Tidak ada corporate voice leakage?

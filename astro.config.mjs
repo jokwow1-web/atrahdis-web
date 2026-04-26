@@ -2,20 +2,29 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
+import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://atrahdis.id',
+  // output: 'hybrid' removed in Astro 6; 'server' + per-page prerender achieves same goal
   output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      cssMinify: true,
+    },
   },
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/sbu'),
+      i18n: { defaultLocale: 'id', locales: { id: 'id-ID' } },
+    }),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
     }),
   ],
 });

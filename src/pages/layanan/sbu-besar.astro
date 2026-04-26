@@ -1,0 +1,459 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SBU Besar (B) Konstruksi',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Jasa pengurusan SBU Besar (B) konstruksi Indonesia — mulai Rp 50 juta, proses 21-30 hari kerja jika dokumen lengkap.',
+  offers: {
+    '@type': 'Offer',
+    price: '50000000',
+    priceCurrency: 'IDR',
+    priceValidUntil: '2026-12-31',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya SBU Besar 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Besar mulai Rp 50 juta. Angka final bergantung pada sub-bidang, kompleksitas dokumen, jumlah tenaga ahli, dan volume koordinasi. Nicx dari Atrahdis mengaudit semua dokumen sebelum memberikan quote.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses SBU Besar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '21-30 hari kerja jika dokumen lengkap dan verifikasi berjalan lancar. Proses paling panjang di antara K, M, B karena LPJK menuntut akurasi dan konsistensi data di level tertinggi.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'SBU Besar bisa ikut tender apa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SBU Besar memenuhi syarat kualifikasi untuk semua paket tender konstruksi, termasuk proyek di atas Rp 25 miliar. Ini kualifikasi tertinggi untuk kontraktor konstruksi Indonesia.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa risiko terbesar SBU Besar ditolak?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Inkonsistensi data antar-sistem (AHU, OSS, NPWP) dan ketidaksesuaian kualifikasi tenaga ahli. Di level Besar, LPJK melakukan cross-check paling ketat. Satu data yang tidak sinkron bisa menahan seluruh proses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Bisa langsung ambil SBU Besar tanpa pernah punya SBU?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Secara regulasi bisa, jika Perusahaan Anda memenuhi semua syarat: modal di atas Rp 25 miliar, laporan keuangan diaudit KAP, SKK tenaga ahli level Besar, dan seluruh dokumen pendukung siap. Tapi tanpa pengalaman SBU sebelumnya, risiko koreksi dokumen lebih tinggi.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa denda jika SBU Besar expired saat tender?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Denda pelanggaran UUJK Pasal 44 mencapai Rp 50 juta. Selain itu, perusahaan tidak memenuhi syarat kualifikasi tender dan bisa dikenakan sanksi administratif oleh LPJK.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa perbedaan dokumen SBU Besar dengan SBU Menengah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Di level Besar, LPJK memeriksa rasio keuangan lebih mendalam, jumlah SKK tenaga ahli lebih banyak, dan sub-bidang yang diajukan biasanya lebih banyak. Setiap KBLI harus cocok — satu tidak sinkron bisa menahan seluruh permohonan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama untuk upgrade dari SBU Menengah ke SBU Besar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Upgrade bukan perpanjangan — Anda mengajukan SBU baru dengan kualifikasi Besar. Timeline 21-30 hari kerja jika dokumen lengkap. Siapkan laporan keuangan KAP terbaru, SKK level Besar, dan konsistensi data semua sistem.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'SBU Besar (B)', item: 'https://atrahdis.id/layanan/sbu-besar' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="SBU Besar (B) — Mulai Rp 50 Juta, 21-30 Hari Kerja"
+  description="Jasa pengurusan SBU Besar konstruksi — mulai Rp 50 juta, proses 21-30 hari kerja. Verifikasi LPJK paling ketat. Nicx audit sejak 2016."
+  canonical="https://atrahdis.id/layanan/sbu-besar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-4xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">SBU Besar (B)</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      SBU Besar (B) — Mulai Rp 50 Juta
+    </h1>
+    <p class="mt-3 text-2xl font-bold text-blue-600">
+      Proses 21-30 hari kerja jika dokumen lengkap
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600">
+      SBU Besar untuk kontraktor dengan modal di atas Rp 25 miliar. Verifikasi LPJK
+      paling ketat — akurasi dan konsistensi data di level tertinggi.
+      Nicx mengaudit semua titik risiko <strong>sebelum</strong> Perusahaan Anda membayar.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.sbuB} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+        Chat WhatsApp — SBU Besar
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        SBU Besar (B) adalah sertifikat badan usaha untuk kontraktor konstruksi modal
+        di atas Rp 25 miliar — kualifikasi tertinggi. Biaya mulai Rp 50 juta, proses
+        21-30 hari kerja jika dokumen lengkap. LPJK melakukan cross-check paling ketat
+        pada konsistensi data, laporan keuangan KAP, dan kualifikasi tenaga ahli.
+        Inkonsistensi satu data bisa menahan seluruh proses. Nicx dari Atrahdis mengaudit
+        semua titik risiko sebelum quote keluar.
+      </p>
+    </div>
+  </section>
+
+  <!-- SYARAT DOKUMEN -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Syarat Dokumen SBU Besar 2026</h2>
+    <p class="mt-4 text-gray-600">
+      Di level Besar, setiap detail dokumen diperiksa. Nicx mengaudit semua titik
+      berikut sebelum proses dimulai.
+    </p>
+
+    <div class="mt-8 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">1. NIB berstatus benar + KBLI lengkap</h3>
+        <p class="mt-2 text-gray-600">
+          Untuk Besar, sub-bidang yang diajukan biasanya lebih banyak.
+          Setiap KBLI harus cocok — satu tidak sinkron, LPJK bisa menahan seluruh permohonan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">2. Laporan keuangan diaudit KAP</h3>
+        <p class="mt-2 text-gray-600">
+          Wajib diaudit Kantor Akuntan Publik, sama seperti Menengah. Tapi untuk Besar,
+          LPJK memeriksa keuangan lebih mendalam — termasuk rasio keuangan
+          dan konsistensi dengan data yang dilaporkan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">3. SKK tenaga ahli level Besar</h3>
+        <p class="mt-2 text-gray-600">
+          SKK harus sesuai kualifikasi Besar dan sub-bidang yang diajukan.
+          Jumlah dan kualifikasi tenaga ahli lebih banyak.
+          Cek detail di <a href="/layanan/skk" class="text-blue-600 hover:underline">layanan SKK</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">4. Konsistensi data multi-sistem</h3>
+        <p class="mt-2 text-gray-600">
+          Di level Besar, LPJK melakukan cross-check paling ketat.
+          Nama, alamat, susunan pengurus, dan data keuangan harus sinkron di:
+          AHU, OSS, NPWP, dan semua dokumen pendukung.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">5. Pengalaman perusahaan</h3>
+        <p class="mt-2 text-gray-600">
+          Untuk kualifikasi Besar, LPJK memeriksa pengalaman perusahaan
+          lebih mendalam. Bukti pengalaman proyek sebelumnya bisa menjadi
+          syarat tambahan tergantung sub-bidang.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">6. Akta pendirian & perubahan terbaru</h3>
+        <p class="mt-2 text-gray-600">
+          Akta terakhir harus sesuai dengan data di AHU. Perubahan susunan pengurus
+          yang belum dilaporkan ke AHU adalah titik tersering yang menahan proses
+          di level Besar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Timeline Proses SBU Besar</h2>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Kondisi Dokumen</th>
+            <th class="pb-3 pr-4 font-semibold">Estimasi Waktu</th>
+            <th class="pb-3 font-semibold">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Semua lengkap & sinkron</td>
+            <td class="py-3 pr-4 font-semibold text-green-700">21-30 hari kerja</td>
+            <td class="py-3">Verifikasi ketat tapi berjalan lancar</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Data tidak sinkron antar-sistem</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">+14-30 hari</td>
+            <td class="py-3">Cross-check LPJK gagal, perlu rapihkan semua</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">Laporan KAP belum siap</td>
+            <td class="py-3 pr-4 font-semibold text-yellow-700">+14-28 hari</td>
+            <td class="py-3">Proses audit KAP tambahan</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4">SKK tidak sesuai level Besar</td>
+            <td class="py-3 pr-4 font-semibold text-red-700">+7-21 hari</td>
+            <td class="py-3">Perlu upgrade atau tambah tenaga ahli</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Sumber: data internal PT Atrahdis Idea Nusantara, 280+ kasus SBU 2016-2026.
+    </p>
+  </section>
+
+  <!-- BIAYA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Biaya SBU Besar 2026</h2>
+
+    <div class="mt-8 rounded-xl bg-gray-50 p-6">
+      <p class="text-3xl font-bold text-blue-600">Mulai Rp 50 juta</p>
+      <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
+    </div>
+
+    <div class="mt-8 text-gray-600">
+      <h3 class="font-semibold">Kenapa SBU Besar biayanya lebih tinggi?</h3>
+      <ul class="mt-3 space-y-2">
+        <li>Beban koordinasi lebih besar — sub-bidang lebih banyak, pihak lebih banyak</li>
+        <li>Ekspektasi akurasi lebih tinggi — LPJK menuntut konsistensi sempurna</li>
+        <li>Risiko koreksi lebih besar — satu inkonsistensi bisa menahan seluruh proses</li>
+        <li>Volume tenaga ahli lebih banyak — SKK level Besar untuk setiap sub-bidang</li>
+      </ul>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      Baca detail: <a href="/blog/biaya-sbu-konstruksi-2026" class="text-blue-600 hover:underline">Panduan Biaya SBU Konstruksi 2026</a>
+    </p>
+  </section>
+
+  <!-- PERBANDINGAN K/M/B -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Perbandingan SBU K, M, B</h2>
+
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b-2 border-gray-200">
+            <th class="pb-3 pr-4 font-semibold">Aspek</th>
+            <th class="pb-3 pr-4 font-semibold">SBU Kecil</th>
+            <th class="pb-3 pr-4 font-semibold">SBU Menengah</th>
+            <th class="pb-3 font-semibold">SBU Besar</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Modal</td>
+            <td class="py-3 pr-4">≤Rp 5 miliar</td>
+            <td class="py-3 pr-4">Rp 5-25 miliar</td>
+            <td class="py-3">&gt;Rp 25 miliar</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Laporan KAP</td>
+            <td class="py-3 pr-4">Tidak wajib</td>
+            <td class="py-3 pr-4">Wajib</td>
+            <td class="py-3">Wajib + rasio dicek</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Proses tercepat</td>
+            <td class="py-3 pr-4">3 hari</td>
+            <td class="py-3 pr-4">14 hari</td>
+            <td class="py-3">21 hari</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Biaya mulai</td>
+            <td class="py-3 pr-4">Rp 4,5 jt</td>
+            <td class="py-3 pr-4">Rp 18 jt</td>
+            <td class="py-3">Rp 50 jt</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Nilai tender</td>
+            <td class="py-3 pr-4">≤Rp 5 miliar</td>
+            <td class="py-3 pr-4">Rp 5-25 miliar</td>
+            <td class="py-3">Tanpa batas</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-4 font-medium text-gray-900">Verifikasi LPJK</td>
+            <td class="py-3 pr-4">Standar</td>
+            <td class="py-3 pr-4">Ketat</td>
+            <td class="py-3">Paling ketat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum SBU Besar</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Berapa biaya SBU Besar 2026?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Besar mulai Rp 50 juta. Angka final bergantung pada sub-bidang,
+          kompleksitas dokumen, jumlah tenaga ahli, dan volume koordinasi.
+          Nicx dari Atrahdis mengaudit semua dokumen sebelum memberikan quote.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa lama proses SBU Besar?</h3>
+        <p class="mt-2 text-gray-600">
+          21-30 hari kerja jika dokumen lengkap dan verifikasi berjalan lancar.
+          Proses paling panjang di antara K, M, B karena LPJK menuntut akurasi
+          dan konsistensi data di level tertinggi.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">SBU Besar bisa ikut tender apa?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Besar memenuhi syarat kualifikasi untuk semua paket tender konstruksi,
+          termasuk proyek di atas Rp 25 miliar. Ini kualifikasi tertinggi untuk
+          kontraktor konstruksi Indonesia.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa risiko terbesar SBU Besar ditolak?</h3>
+        <p class="mt-2 text-gray-600">
+          Inkonsistensi data antar-sistem (AHU, OSS, NPWP) dan ketidaksesuaian
+          kualifikasi tenaga ahli. Di level Besar, LPJK melakukan cross-check paling
+          ketat. Satu data yang tidak sinkron bisa menahan seluruh proses.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Bisa langsung ambil SBU Besar tanpa SBU sebelumnya?</h3>
+        <p class="mt-2 text-gray-600">
+          Secara regulasi bisa, jika Perusahaan Anda memenuhi semua syarat: modal
+          di atas Rp 25 miliar, laporan keuangan diaudit KAP, SKK tenaga ahli
+          level Besar, dan seluruh dokumen pendukung siap. Tapi tanpa pengalaman
+          SBU sebelumnya, risiko koreksi dokumen lebih tinggi.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa denda jika SBU Besar expired saat tender?</h3>
+        <p class="mt-2 text-gray-600">
+          Denda pelanggaran UUJK Pasal 44 mencapai Rp 50 juta. Selain itu,
+          perusahaan tidak memenuhi syarat kualifikasi tender dan bisa dikenakan
+          sanksi administratif oleh LPJK.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <div class="rounded-xl bg-green-50 p-8 text-center">
+      <p class="text-xl font-bold">Butuh SBU Besar?</p>
+      <p class="mt-2 text-gray-600">
+        Nicx audit semua titik risiko dokumen Perusahaan Anda gratis.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.sbuB} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
+          Chat WhatsApp — SBU Besar
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Kecil (K)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — 3 hari kerja</p>
+      </a>
+      <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SBU Menengah (M)</h3>
+        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — 14-21 hari</p>
+      </a>
+      <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">SKK J5-J8</h3>
+        <p class="mt-1 text-sm text-gray-600">Sertifikat Kompetensi Kerja</p>
+      </a>
+      <a href="/tender" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Info Tender</h3>
+        <p class="mt-1 text-sm text-gray-600">Syarat tender & kualifikasi SBU</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-4xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 26 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

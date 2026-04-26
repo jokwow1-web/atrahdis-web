@@ -3,7 +3,7 @@
 **Versi:** 1.0
 **Tanggal:** 2026-04-22
 **Owner:** Nicx
-**Channel:** Twitter/X @nicx, LinkedIn personal (Phase 2+)
+**Channel:** Twitter/X @nickyvaliant, LinkedIn personal (Phase 2+)
 **Status:** Draft — waiting for 10 manual tweets from Nicx to complete validation set
 
 > Referensi utama: Brand Voice + Personal Brand Addendum v1.0, KB Marketing 01 & 02
@@ -15,10 +15,10 @@
 
 | Context | Pronouns | Catatan |
 |---------|----------|---------|
-| Personal (@nicx, LinkedIn personal) | `gue` / `lo` / `elo` | Full Nicx mode |
+| Personal (@nickyvaliant, LinkedIn personal) | `gue` / `lo` / `elo` | Full Nicx mode |
 | Corporate (@atrahdis, website, LP, ads, email) | `Anda` / `Bapak` / `Ibu` | Banned: gue/lo/elo/gw/loe |
 
-**Hard boundary:** Jangan campur. Kalau tweet dari @nicx menyebut Atrahdis, tetap pakai personal voice — bukan corporate copy.
+**Hard boundary:** Jangan campur. Kalau tweet dari @nickyvaliant menyebut Atrahdis, tetap pakai personal voice — bukan corporate copy.
 
 ---
 
@@ -119,9 +119,9 @@ Topik yang DILARANG:
 
 ---
 
-## 8. Hard Boundary: @atrahdis vs @nicx
+## 8. Hard Boundary: @atrahdis vs @nickyvaliant
 
-| | @atrahdis (brand) | @nicx (personal) |
+| | @atrahdis (brand) | @nickyvaliant (personal) |
 |---|---|---|
 | Pronouns | Anda, Bapak, Ibu | gue, lo, elo |
 | Tone | Formal-ish, professional | Brutal, Joker Principle direct |
@@ -129,7 +129,7 @@ Topik yang DILARANG:
 | Joker Principle | Yes — applies strict | Yes — still applies |
 | Regulatory accuracy | Yes — applies strict | Yes — still applies |
 
-**Rule:** Kalau tweet dari @nicx menyebut Atrahdis, tetap pakai personal voice. Jangan jadi corporate spokesperson.
+**Rule:** Kalau tweet dari @nickyvaliant menyebut Atrahdis, tetap pakai personal voice. Jangan jadi corporate spokesperson.
 
 ---
 
