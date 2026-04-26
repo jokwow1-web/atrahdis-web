@@ -1,0 +1,49 @@
+---
+import AppLayout from "../../layouts/App.astro";
+---
+<AppLayout title="Login">
+  <div class="flex min-h-screen items-center justify-center bg-slate-100 px-4">
+    <div class="text-center">
+      <div class="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-slate-300 border-t-blue-600"></div>
+      <p class="text-slate-600">Memverifikasi login...</p>
+    </div>
+  </div>
+
+  <script>
+    import { createClient } from '@supabase/supabase-js';
+
+    const SUPABASE_URL = import.meta.env.PUBLIC_SUPABASE_URL;
+    const SUPABASE_ANON_KEY = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function handleCallback() {
+      const url = new URL(window.location.href);
+      const code = url.searchParams.get('code');
+      const hashParams = new URLSearchParams(window.location.hash.slice(1));
+      const access_token = hashParams.get('access_token');
+      const refresh_token = hashParams.get('refresh_token');
+      const type = hashParams.get('type');
+
+      try {
+        if (code) {
+          const { error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error) throw error;
+        } else if (access_token && refresh_token) {
+          const { error } = await supabase.auth.setSession({
+            access_token,
+            refresh_token,
+          });
+          if (error) throw error;
+        } else {
+          throw new Error('Tidak ada token atau kode autentikasi');
+        }
+        window.location.href = '/app/deals';
+      } catch (err) {
+        const msg = err?.message || 'Gagal verifikasi login';
+        window.location.href = `/app/login?error=${encodeURIComponent(msg)}`;
+      }
+    }
+
+    handleCallback();
+  </script>
+</AppLayout>

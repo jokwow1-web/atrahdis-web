@@ -1,0 +1,132 @@
+---
+import AppLayout from "../../../layouts/App.astro";
+import { createSupabaseServerClient } from "../../../lib/supabase";
+
+const supabase = createSupabaseServerClient(Astro.cookies, Astro.request.headers);
+
+const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+if (userError || !user) {
+  return Astro.redirect("/app/login");
+}
+
+const tiers = ["SBU_KECIL", "SBU_MENENGAH", "SBU_BESAR"];
+const classifications = ["K", "M", "B"];
+
+let error = "";
+
+if (Astro.request.method === "POST") {
+  const formData = await Astro.request.formData();
+  const tier = formData.get("tier") as string;
+  const classification = formData.get("classification") as string;
+  const subclassification = formData.get("subclassification") as string;
+  const package_code = formData.get("package_code") as string;
+  const price_idr = parseInt(formData.get("price_idr") as string) || 0;
+
+  const { data: deal, error: insertError } = await supabase
+    .from("deals")
+    .insert({
+      tier,
+      classification,
+      subclassification,
+      package_code,
+      price_idr,
+      status: "draft",
+    })
+    .select("id")
+    .single();
+
+  if (insertError) {
+    error = insertError.message;
+  } else if (deal) {
+    return Astro.redirect(`/app/deals/${deal.id}`);
+  }
+}
+---
+<AppLayout title="Deal Baru">
+  <div class="min-h-screen bg-slate-50">
+    <header class="border-b bg-white">
+      <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4">
+        <a href="/app/deals" class="text-sm text-slate-600 hover:text-slate-900">← Kembali ke Deals</a>
+        <span class="text-sm text-slate-600">{user.email}</span>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-2xl px-4 py-8">
+      <h1 class="text-2xl font-bold text-slate-900">Deal Baru</h1>
+
+      {error && (
+        <div class="mt-4 rounded-lg bg-red-50 p-4 text-sm text-red-700">{error}</div>
+      )}
+
+      <form method="POST" class="mt-6 space-y-4 rounded-xl border bg-white p-6 shadow-sm">
+        <div>
+          <label class="mb-1 block text-sm font-medium text-slate-700">Tier</label>
+          <select
+            name="tier"
+            required
+            class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          >
+            <option value="">Pilih tier...</option>
+            {tiers.map((t) => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="mb-1 block text-sm font-medium text-slate-700">Klasifikasi</label>
+            <select
+              name="classification"
+              required
+              class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            >
+              <option value="">Pilih...</option>
+              {classifications.map((c) => <option value={c}>{c}</option>)}
+            </select>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-slate-700">Sub-klasifikasi</label>
+            <input
+              type="text"
+              name="subclassification"
+              required
+              placeholder="Contoh: Jasa Konstruksi"
+              class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="mb-1 block text-sm font-medium text-slate-700">Kode Paket</label>
+          <input
+            type="text"
+            name="package_code"
+            required
+            placeholder="Contoh: SBU-K-001"
+            class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          />
+        </div>
+
+        <div>
+          <label class="mb-1 block text-sm font-medium text-slate-700">Harga (IDR)</label>
+          <input
+            type="number"
+            name="price_idr"
+            required
+            min="0"
+            step="1"
+            placeholder="4500000"
+            class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+        >
+          Simpan Deal
+        </button>
+      </form>
+    </main>
+  </div>
+</AppLayout>
