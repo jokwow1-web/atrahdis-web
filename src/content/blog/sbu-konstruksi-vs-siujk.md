@@ -3,6 +3,7 @@ title: "SBU Konstruksi vs SIUJK: Perbedaan Regulasi dan Dampaknya"
 description: "SIUJK sudah tidak berlaku sejak 2017. SBU menggantikannya. Perbedaan regulasi, kenapa SIUJK ditiadakan, dan langkah yang harus diambil perusahaan."
 channel: blog
 product: SBU-K
+image: /blog/sbu-konstruksi-vs-siujk.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Apa bedanya SBU dan SIUJK?"

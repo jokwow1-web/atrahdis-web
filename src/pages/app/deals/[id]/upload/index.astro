@@ -1,0 +1,38 @@
+---
+import AppLayout from '../../../../../layouts/AppLayout.astro';
+import DocUpload from '../../../../../components/app/DocUpload.tsx';
+import { fetchDealDetail } from '../../../../../lib/orchestrator';
+
+const { id } = Astro.params;
+const sessionCookie = Astro.cookies.get('sb-session')?.json();
+const token = sessionCookie?.access_token;
+
+let deal: Awaited<ReturnType<typeof fetchDealDetail>>['deal'];
+let error = '';
+
+if (token && id) {
+  const result = await fetchDealDetail(token, id);
+  deal = result.deal;
+  error = result.error || '';
+}
+---
+
+<AppLayout title={`Upload Dokumen — ${deal?.client_company || 'Deal'}`}>
+  <div class="space-y-6">
+    <div>
+      <a href={`/app/deals/${id}`} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">← Kembali ke Deal</a>
+      <h1 class="mt-1 font-heading text-2xl font-bold text-white">Upload Dokumen</h1>
+      <p class="text-sm text-gray-400">{deal?.client_company} — {deal?.package_name}</p>
+    </div>
+
+    {error && (
+      <div class="rounded-lg border border-red-700/50 bg-red-900/20 p-4 text-sm text-red-300">
+        Gagal memuat deal: {error}
+      </div>
+    )}
+
+    {deal && (
+      <DocUpload dealId={id!} documents={deal.documents} client:load />
+    )}
+  </div>
+</AppLayout>

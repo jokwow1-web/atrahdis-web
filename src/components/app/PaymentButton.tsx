@@ -1,124 +1,84 @@
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 
-interface Payment {
-  id: string;
-  payment_type: string;
-  amount_idr: number;
-  status: string;
-  due_date?: string;
-  paid_at?: string;
-  snap_token?: string;
-  snap_redirect_url?: string;
-}
-
-interface Deal {
-  id: string;
-  price_idr?: number;
-  total_price_idr?: number;
-  dp_amount_idr?: number;
-  final_amount_idr?: number;
-  status?: string;
-}
-
-export default function PaymentButton({
-  deal,
-  payments,
-}: {
-  deal: Deal;
-  payments: Payment[];
-}) {
-  const [loading, setLoading] = useState(false);
-  const [localPayments, setLocalPayments] = useState<Payment[]>(payments);
-
-  const totalPaid = localPayments
-    .filter((p) => p.status === "paid")
-    .reduce((sum, p) => sum + (p.amount_idr || 0), 0);
-
-  const totalDue = deal.total_price_idr || deal.price_idr || 0;
-  const remaining = Math.max(0, totalDue - totalPaid);
-
-  const createPayment = async () => {
-    setLoading(true);
-    const ORCHESTRATOR_URL = (import.meta as any).env.PUBLIC_ORCHESTRATOR_URL;
-
-    try {
-      const res = await fetch(`${ORCHESTRATOR_URL}/api/v1/payments/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          deal_id: deal.id,
-          amount_idr: remaining,
-          payment_type: "full_payment",
-        }),
-      });
-
-      if (!res.ok) throw new Error("Gagal membuat pembayaran");
-
-      const data = await res.json();
-
-      if (data.snap_token) {
-        // Open Midtrans Snap popup
-        if (typeof window !== "undefined" && (window as any).snap) {
-          (window as any).snap.pay(data.snap_token, {
-            onSuccess: () => {
-              window.location.reload();
-            },
-            onPending: () => {
-              alert("Pembayaran pending. Silakan selesaikan pembayaran Anda.");
-            },
-            onError: () => {
-              alert("Pembayaran gagal. Coba lagi.");
-            },
-          });
-        } else if (data.snap_redirect_url) {
-          window.location.href = data.snap_redirect_url;
+declare global {
+  interface Window {
+    snap?: {
+      pay: (
+        token: string,
+        options: {
+          onSuccess?: (result: unknown) => void;
+          onPending?: (result: unknown) => void;
+          onError?: (result: unknown) => void;
+          onClose?: () => void;
         }
-      } else if (data.snap_redirect_url) {
-        window.location.href = data.snap_redirect_url;
-      }
-    } catch (err) {
-      alert(err instanceof Error ? err.message : "Gagal memproses pembayaran");
-    } finally {
-      setLoading(false);
+      ) => void;
+    };
+  }
+}
+
+interface Props {
+  snapToken: string;
+  amount: number;
+}
+
+export default function PaymentButton({ snapToken, amount }: Props) {
+  const [loaded, setLoaded] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.snap) {
+      setLoaded(true);
+      return;
     }
+    const script = document.createElement('script');
+    script.src = 'https://app.sandbox.midtrans.com/snap/snap.js';
+    script.setAttribute('data-client-key', 'YOUR_CLIENT_KEY');
+    script.onload = () => setLoaded(true);
+    script.onerror = () => setLoaded(false);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const handlePay = () => {
+    if (!window.snap) return;
+    setLoading(true);
+    window.snap.pay(snapToken, {
+      onSuccess: (result) => {
+        setLoading(false);
+        console.log('Payment success:', result);
+        window.location.reload();
+      },
+      onPending: (result) => {
+        setLoading(false);
+        console.log('Payment pending:', result);
+      },
+      onError: (result) => {
+        setLoading(false);
+        console.error('Payment error:', result);
+        alert('Pembayaran gagal. Silakan coba lagi.');
+      },
+      onClose: () => {
+        setLoading(false);
+      },
+    });
   };
 
+  const formatted = new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+  }).format(amount);
+
   return (
-    <div className="rounded-xl border bg-white p-5 shadow-sm">
-      <h3 className="font-semibold text-slate-900">Pembayaran</h3>
-
-      <div className="mt-3 space-y-2 text-sm">
-        <div className="flex justify-between">
-          <span className="text-slate-500">Total</span>
-          <span className="font-semibold text-slate-900">Rp {totalDue.toLocaleString("id-ID")}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-slate-500">Sudah Dibayar</span>
-          <span className="font-semibold text-green-700">Rp {totalPaid.toLocaleString("id-ID")}</span>
-        </div>
-        <div className="flex justify-between border-t pt-2">
-          <span className="text-slate-500">Sisa</span>
-          <span className="font-bold text-slate-900">Rp {remaining.toLocaleString("id-ID")}</span>
-        </div>
-      </div>
-
-      {remaining > 0 && (
-        <button
-          onClick={createPayment}
-          disabled={loading}
-          className="mt-4 w-full rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-700 disabled:opacity-50"
-        >
-          {loading ? "Memproses..." : "Bayar Sekarang"}
-        </button>
-      )}
-
-      {remaining === 0 && totalDue > 0 && (
-        <div className="mt-4 rounded-lg bg-green-50 p-3 text-center text-sm text-green-700">
-          Lunas
-        </div>
-      )}
-
-      <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-epIMqVpndyiSnrFB"></script>
-    </div>
+    <button
+      onClick={handlePay}
+      disabled={!loaded || loading}
+      className="inline-flex items-center rounded-lg bg-gold-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+    >
+      {loading ? 'Memuat…' : `Bayar ${formatted}`}
+    </button>
   );
 }

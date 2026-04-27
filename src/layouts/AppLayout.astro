@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Dashboard — Atrahdis' } = Astro.props;
+
+const menu = [
+  { label: 'Dashboard', href: '/app' },
+  { label: 'Deals', href: '/app/deals' },
+  { label: 'Dokumen', href: '/app/dokumen' },
+  { label: 'Pembayaran', href: '/app/pembayaran' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-screen bg-navy-900 font-sans text-gray-100 antialiased">
+    <aside class="fixed flex h-full w-64 flex-col border-r border-navy-700/50 bg-navy-800">
+      <div class="border-b border-navy-700/50 p-6">
+        <a href="/" class="text-xl font-bold tracking-tight text-white">Atrahdis</a>
+      </div>
+      <nav class="flex-1 space-y-1 p-4">
+        {menu.map(item => (
+          <a
+            href={item.href}
+            class={`block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+              currentPath === item.href || currentPath.startsWith(item.href + '/')
+                ? 'bg-navy-700 text-gold-400'
+                : 'text-gray-300 hover:bg-navy-700 hover:text-white'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <div class="border-t border-navy-700/50 p-4">
+        <a href="/app/logout" class="block rounded-lg px-4 py-2 text-left text-sm font-medium text-gray-300 hover:bg-navy-700 hover:text-white">
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8">
+      <slot />
+    </main>
+  </body>
+</html>

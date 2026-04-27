@@ -3,6 +3,7 @@ title: "Jenis SBU Konstruksi: Perbedaan Kecil, Menengah, Besar (K/M/B)"
 description: "SBU Kecil, Menengah, dan Besar punya batas modal, timeline, dan dokumen berbeda. Lihat tabel perbandingan lengkap untuk pilih kualifikasi yang tepat."
 channel: blog
 product: SBU-K
+image: /blog/jenis-sbu-konstruksi-k-m-b.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Apa saja jenis SBU konstruksi?"

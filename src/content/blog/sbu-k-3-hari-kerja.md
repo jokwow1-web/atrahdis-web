@@ -3,6 +3,7 @@ title: "SBU Kecil Bisa Terbit 3 Hari Kerja — Ini Syaratnya"
 description: "SBU K (Kecil) bisa terbit mulai 3 hari kerja jika berkas lengkap. Nicx audit sendiri sejak 2016. Cek checklist dokumen dan timeline realistis."
 channel: blog
 product: SBU-K
+image: /blog/sbu-k-3-hari-kerja.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26

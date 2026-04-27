@@ -3,6 +3,7 @@ title: "SBU untuk Proyek Pemerintah: Syarat e-Procurement 2026"
 description: "Syarat SBU untuk proyek pemerintah via LPSE dan e-procurement 2026. Verifikasi otomatis, sub-bidang, dan tahapan yang sering bikin kontraktor gugur."
 channel: blog
 product: SBU-M
+image: /blog/sbu-untuk-proyek-pemerintah.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

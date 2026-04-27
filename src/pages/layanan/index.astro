@@ -1,30 +1,162 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { PRICING } from '../../lib/pricing';
-import { WA_CTA_URL } from '../../lib/constants';
-
-const products = Object.entries(PRICING);
+import { WA_LINKS } from '../../lib/constants';
 ---
-<Base title="Layanan SBU & SKK Konstruksi" description="Semua layanan SBU dan SKK konstruksi dari PT Atrahdis — Kecil, Menengah, Besar, dan SKK J5-J8.">
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <h1 class="text-3xl font-bold">Layanan Kami</h1>
-    <p class="mt-4 text-gray-600">16 layanan sertifikasi konstruksi — dari SBU Kecil sampai SKK J8.</p>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {products.map(([slug, data]) => (
-        <a id={slug} href={`/layanan/${slug}`} class="scroll-mt-20 rounded-xl border p-6 hover:border-blue-300 hover:shadow">
-          <h2 class="text-lg font-semibold">{data.label}</h2>
-          <p class="mt-2 text-2xl font-bold text-blue-600">{data.range}</p>
-          <p class="mt-4 text-sm text-gray-600">Detail sub-bidang &rarr;</p>
-        </a>
-      ))}
+<Base
+  title="Layanan SBU & SKK Konstruksi"
+  description="Semua compliance kontraktor, satu pintu. 4 cluster, 17 layanan. Dari sertifikasi utama sampai tender document support."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <h1 class="font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          Semua compliance kontraktor, satu pintu.
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          4 cluster. 17 layanan. Dari sertifikasi utama sampai tender document support — semua ditangani satu tim.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="mt-12 rounded-xl bg-green-50 p-8 text-center">
-      <p class="text-lg font-semibold">Butuh konsultasi pricing detail per sub-bidang?</p>
-      <a href="/biaya" class="mt-4 inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
-        Lihat Biaya
-      </a>
+  <!-- 4 Cluster Cards -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- Sertifikasi Utama -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-8">
+        <h2 class="font-heading text-xl font-semibold text-white">Sertifikasi Utama</h2>
+        <p class="mt-2 text-sm text-gray-400">SBU, SKK, Serkom, KTA — semua kualifikasi K, M, B dengan audit awal dan garansi output.</p>
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>SBU Jasa Konstruksi (baru, perpanjangan, perubahan, tambah subklasifikasi)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>SBU Kelistrikan (baru, perpanjangan, perubahan, tambah subklasifikasi)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>SKK — semua jenjang (J5, J6, J7, J8, J9)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Serkom (Sertifikat Kompetensi) untuk SBU Kelistrikan</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>KTA (Keanggotaan Asosiasi Profesi)</span>
+          </li>
+        </ul>
+        <a href="/layanan/sbu-kecil" class="mt-6 inline-block text-gold-400 hover:underline">Lihat Detail →</a>
+      </div>
+
+      <!-- Pendukung Pemenuhan SBU -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-8">
+        <h2 class="font-heading text-xl font-semibold text-white">Pendukung Pemenuhan SBU</h2>
+        <p class="mt-2 text-sm text-gray-400">KAP, ISO, peralatan teknik, dan dokumen legal yang sering jadi stumbling block.</p>
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Laporan Keuangan KAP (Kantor Akuntan Publik)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>ISO 37001 Akreditasi KAN</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Persyaratan Peralatan Teknis</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Dokumen Pengalaman / Kontrak Referensi</span>
+          </li>
+        </ul>
+        <a href="/layanan" class="mt-6 inline-block text-gold-400 hover:underline">Lihat Detail →</a>
+      </div>
+
+      <!-- Maintenance Compliance -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-8">
+        <h2 class="font-heading text-xl font-semibold text-white">Maintenance Compliance</h2>
+        <p class="mt-2 text-sm text-gray-400">Compliance periodik — jangan sampai lewat deadline.</p>
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>LKPM (Laporan Kegiatan Penanaman Modal)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Surveilans / Monitoring LSBU</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>SBU Monitoring & Perubahan Data</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>OSS Compliance Maintenance</span>
+          </li>
+        </ul>
+        <a href="/layanan" class="mt-6 inline-block text-gold-400 hover:underline">Lihat Detail →</a>
+      </div>
+
+      <!-- Tender & Compliance Tambahan -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-8">
+        <h2 class="font-heading text-xl font-semibold text-white">Tender & Compliance Tambahan</h2>
+        <p class="mt-2 text-sm text-gray-400">Sering muncul sebagai syarat tender atau compliance proyek.</p>
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>SMK3 Kemenaker</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>ISO 9001 / 14001 / 45001</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>BPJS Ketenagakerjaan</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>KSWP / Kepatuhan Pajak</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>PKKPR, PBG / SLF</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>NIB / KBLI / Sinkronisasi OSS</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Bank Garansi & Tender Document Support</span>
+          </li>
+        </ul>
+        <a href="/layanan" class="mt-6 inline-block text-gold-400 hover:underline">Lihat Detail →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Butuh konsultasi layanan yang tepat untuk proyek Anda?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">Tim kami akan bantu identifikasi layanan yang paling relevan — tanpa biaya, tanpa komitmen.</p>
+      <div class="mt-8">
+        <a
+          href={WA_LINKS.general}
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Konsultasi Gratis via WhatsApp →
+        </a>
+      </div>
     </div>
   </section>
 </Base>

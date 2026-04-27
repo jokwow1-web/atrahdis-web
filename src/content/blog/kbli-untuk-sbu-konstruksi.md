@@ -3,6 +3,7 @@ title: "Panduan Pilih KBLI yang Benar untuk SBU Konstruksi 2026"
 description: "Cara memilih KBLI yang tepat sebelum submit SBU ke LPJK. Panduan praktis agar KBLI Anda cocok dengan sub-bidang dan tidak ditolak di awal."
 channel: blog
 product: SBU-M
+image: /blog/kbli-untuk-sbu-konstruksi.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

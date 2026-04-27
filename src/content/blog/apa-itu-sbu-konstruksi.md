@@ -3,6 +3,7 @@ title: "Apa Itu SBU Konstruksi? Panduan Lengkap 2026"
 description: "SBU konstruksi adalah sertifikat wajib LPJK untuk kontraktor Indonesia. Cek definisi, jenis K/M/B, dan kenapa tanpa SBU tender pemerintah tidak bisa diikuti."
 channel: blog
 product: SBU-K
+image: /blog/apa-itu-sbu-konstruksi.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Apa itu SBU konstruksi?"

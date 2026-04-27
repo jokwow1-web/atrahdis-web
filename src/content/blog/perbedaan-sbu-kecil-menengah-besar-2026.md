@@ -3,6 +3,7 @@ title: "Perbedaan SBU Kecil, Menengah, Besar: Panduan 2026"
 description: "SBU K, M, dan B punya konsekuensi berbeda untuk dokumen, timeline, dan strategi tender. Pahami bedanya sebelum Perusahaan Anda salah ambil jalur."
 channel: blog
 product: SBU-K
+image: /blog/perbedaan-sbu-kecil-menengah-besar-2026.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26

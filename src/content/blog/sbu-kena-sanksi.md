@@ -3,6 +3,7 @@ title: "SBU Kena Sanksi Berapa? Denda UUJK dan Konsekuensi 2026"
 description: "Sanksi SBU konstruksi berdasarkan UUJK Pasal 44 mencapai Rp 50 juta. Cek jenis pelanggaran, denda per kasus, dan cara menghindari sanksi administratif."
 channel: blog
 product: SBU-K
+image: /blog/sbu-kena-sanksi.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "SBU kena sanksi berapa?"

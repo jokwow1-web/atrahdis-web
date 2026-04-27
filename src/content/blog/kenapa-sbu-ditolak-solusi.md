@@ -3,6 +3,7 @@ title: "8 Alasan SBU Ditolak LPJK dan Cara Mengatasinya"
 description: "Penyebab paling umum SBU konstruksi ditolak LPJK beserta solusi praktisnya. Hindari pengulangan dokumen yang membuang waktu 1-4 minggu."
 channel: blog
 product: SBU-M
+image: /blog/kenapa-sbu-ditolak-solusi.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

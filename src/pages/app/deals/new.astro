@@ -10,8 +10,9 @@ if (userError || !user) {
   return Astro.redirect("/app/login");
 }
 
-const tiers = ["SBU_KECIL", "SBU_MENENGAH", "SBU_BESAR"];
+const tiers = ["self_service", "assisted", "express", "assisted_express"];
 const classifications = ["K", "M", "B"];
+const packageCodes = ["SBU_KECIL", "SBU_MENENGAH", "SBU_BESAR", "SBU_KONVERSI"];
 
 let error = "";
 
@@ -98,13 +99,14 @@ if (Astro.request.method === "POST") {
 
         <div>
           <label class="mb-1 block text-sm font-medium text-slate-700">Kode Paket</label>
-          <input
-            type="text"
+          <select
             name="package_code"
             required
-            placeholder="Contoh: SBU-K-001"
             class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-          />
+          >
+            <option value="">Pilih paket...</option>
+            {packageCodes.map((p) => <option value={p}>{p}</option>)}
+          </select>
         </div>
 
         <div>

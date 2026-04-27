@@ -3,6 +3,7 @@ title: "Syarat SBU Konstruksi 2026: Checklist Dokumen Lengkap per Jenis"
 description: "Syarat SBU konstruksi 2026 berbeda untuk K, M, dan B. Cek checklist dokumen lengkap, SKK yang dibutuhkan, dan titik rawan yang sering ditolak LPJK."
 channel: blog
 product: SBU-M
+image: /blog/syarat-sbu-konstruksi-2026.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Apa saja syarat SBU konstruksi 2026?"

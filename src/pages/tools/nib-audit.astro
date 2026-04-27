@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'NIB Readiness Audit',
+  applicationCategory: 'BusinessApplication',
+  description: 'Audit kesiapan NIB untuk proses SBU konstruksi.',
+  url: 'https://atrahdis.id/tools/nib-audit',
+};
+---
+<Base title="NIB Readiness Audit — Cek Kesiapan NIB" description="Masukkan NIB 13 digit — audit kesiapan dokumen untuk proses SBU konstruksi.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <nav class="text-sm text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>NIB Audit</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-900">NIB Readiness Audit</h1>
+    <p class="mt-2 text-gray-600">Masukkan NIB 13 digit — audit kesiapan dokumen untuk proses SBU.</p>
+
+    <form id="nib-form" class="mt-8 space-y-5 rounded-xl border bg-white p-6 shadow-sm">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nomor NIB (13 digit)</label>
+        <input id="nib-input" type="text" maxlength="13" placeholder="9120001234567" class="mt-1 w-full rounded-lg border px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none" />
+        <p id="nib-error" class="mt-1 hidden text-sm text-red-600">NIB harus 13 digit angka.</p>
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-gold-500 px-4 py-3 font-semibold text-white hover:bg-gold-400">
+        Audit Sekarang
+      </button>
+    </form>
+
+    <div id="result" class="mt-8 hidden rounded-xl border bg-gray-50 p-6">
+      <div class="flex items-center gap-3">
+        <div id="score-stars" class="text-2xl text-yellow-500"></div>
+        <div>
+          <p class="text-sm text-gray-500">Readiness Score</p>
+          <p id="score-text" class="text-lg font-bold text-gray-900"></p>
+        </div>
+      </div>
+
+      <p id="result-decode" class="mt-3 text-sm text-gray-600"></p>
+
+      <div class="mt-5">
+        <p class="font-semibold text-gray-900">Checklist Dokumen:</p>
+        <ul id="result-checklist" class="mt-2 space-y-2"></ul>
+      </div>
+
+      <a href={WA_LINKS.general} class="mt-6 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Konsultasi Hasil Audit →
+      </a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('nib-form');
+  const result = document.getElementById('result');
+  const nibInput = document.getElementById('nib-input') as HTMLInputElement;
+  const nibError = document.getElementById('nib-error');
+  const scoreStars = document.getElementById('score-stars');
+  const scoreText = document.getElementById('score-text');
+  const resultDecode = document.getElementById('result-decode');
+  const resultChecklist = document.getElementById('result-checklist');
+
+  const checkItems = [
+    'NIB 13 digit valid',
+    'KBLI jasa konstruksi terdaftar',
+    'NPWP badan usaha aktif',
+    'SK Kemenkumham tersedia',
+    'Dokumen pengurus lengkap',
+  ];
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = nibInput.value.trim();
+
+    if (!/^\d{13}$/.test(val)) {
+      nibError.classList.remove('hidden');
+      result.classList.add('hidden');
+      return;
+    }
+    nibError.classList.add('hidden');
+
+    // Simulasi decode prefix
+    const prefix = val.slice(0, 2);
+    let decode = 'NIB terdaftar di sistem OSS Indonesia.';
+    if (prefix === '91') decode = 'NIB terdaftar sebagai badan usaha Indonesia (91).';
+    if (prefix === '81') decode = 'NIB terdaftar sebagai koperasi (81).';
+
+    // Simulasi readiness score (pseudo-random berdasarkan checksum sederhana)
+    let sum = 0;
+    for (let i = 0; i < val.length; i++) sum += parseInt(val[i], 10);
+    const score = (sum % 3) + 3; // 3, 4, atau 5
+    const stars = '★'.repeat(score) + '☆'.repeat(5 - score);
+
+    scoreStars.textContent = stars;
+    scoreText.textContent = `${score} / 5`;
+    resultDecode.textContent = decode;
+
+    // checklist dengan random pass/fail berdasarkan digit NIB
+    resultChecklist.innerHTML = checkItems.map((item, idx) => {
+      const pass = (parseInt(val[idx % 13], 10) % 2 === 0);
+      return `
+        <li class="flex items-center gap-2">
+          <svg class="h-5 w-5 ${pass ? 'text-gold-500' : 'text-red-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="${pass ? 'M5 13l4 4L19 7' : 'M6 18L18 6M6 6l12 12'}" />
+          </svg>
+          <span class="${pass ? 'text-gray-700' : 'text-gray-500'}">${item}${pass ? '' : ' — perlu dicek'}</span>
+        </li>
+      `;
+    }).join('');
+
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

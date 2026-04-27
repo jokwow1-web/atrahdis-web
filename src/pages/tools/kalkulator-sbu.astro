@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Kalkulator Biaya SBU',
+  applicationCategory: 'BusinessApplication',
+  description: 'Estimasi biaya SBU K, M, B + SKK dalam 30 detik.',
+  url: 'https://atrahdis.id/tools/kalkulator-sbu',
+};
+---
+<Base title="Kalkulator Biaya SBU — Estimasi 30 Detik" description="Hitung estimasi biaya SBU K, M, B + SKK. Dari kekayaan bersih & jenis entitas.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <nav class="text-sm text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>Kalkulator SBU</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-900">Kalkulator Biaya SBU</h1>
+    <p class="mt-2 text-gray-600">Isi 3 data — dapat estimasi total & timeline.</p>
+
+    <form id="calc-form" class="mt-8 space-y-5 rounded-xl border bg-white p-6 shadow-sm">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Jenis Entitas</label>
+        <select id="entity" class="mt-1 w-full rounded-lg border px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none">
+          <option value="pt" selected>PT (Perseroan Terbatas)</option>
+          <option value="cv">CV (Commanditaire Vennootschap)</option>
+          <option value="koperasi">Koperasi</option>
+          <option value="bujka">BUJKA (Badan Usaha Jasa Konstruksi Asing)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Kekayaan Bersih / Modal</label>
+        <select id="modal" class="mt-1 w-full rounded-lg border px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none">
+          <option value="" disabled selected>Pilih rentang...</option>
+          <option value="k">&lt; Rp 1 miliar (SBU Kecil)</option>
+          <option value="m">Rp 1 – 10 miliar (SBU Menengah)</option>
+          <option value="b">Rp 10 – 50 miliar (SBU Besar)</option>
+          <option value="bplus">&gt; Rp 50 miliar (SBU Besar — Custom)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Butuh SKK?</label>
+        <div class="mt-2 flex gap-4">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="skk" value="yes" class="h-4 w-4" />
+            <span class="text-gray-700">Ya</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="skk" value="no" checked class="h-4 w-4" />
+            <span class="text-gray-700">Tidak</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-gold-500 px-4 py-3 font-semibold text-white hover:bg-gold-400">
+        Hitung Estimasi
+      </button>
+    </form>
+
+    <div id="result" class="mt-8 hidden rounded-xl border bg-gray-50 p-6">
+      <div id="result-badge" class="inline-block rounded-full px-3 py-1 text-sm font-semibold"></div>
+      <p class="mt-4 text-2xl font-bold text-gray-900">Estimasi Total: <span id="result-total"></span></p>
+      <p class="mt-1 text-gray-600">Timeline: <span id="result-timeline"></span></p>
+
+      <div class="mt-5">
+        <p class="font-semibold text-gray-900">Dokumen Wajib:</p>
+        <ul id="result-docs" class="mt-2 list-disc space-y-1 pl-5 text-gray-600"></ul>
+      </div>
+
+      <a id="result-wa" href={WA_LINKS.general} class="mt-6 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Konsultasi Detail via WhatsApp →
+      </a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('calc-form');
+  const result = document.getElementById('result');
+  const resultBadge = document.getElementById('result-badge');
+  const resultTotal = document.getElementById('result-total');
+  const resultTimeline = document.getElementById('result-timeline');
+  const resultDocs = document.getElementById('result-docs');
+  const resultWa = document.getElementById('result-wa');
+
+  const sbuData = {
+    k: { label: 'SBU Kecil (K)', price: 4500000, timeline: '3–7 hari kerja' },
+    m: { label: 'SBU Menengah (M)', price: 18000000, timeline: '14–21 hari kerja' },
+    b: { label: 'SBU Besar (B)', price: 50000000, timeline: '21–45 hari kerja' },
+    bplus: { label: 'SBU Besar (B) — Custom', price: 50000000, timeline: 'Custom, hubungi kami' },
+  };
+
+  const skkPrices = {
+    j5: 5970000,
+    j6: 5970000,
+    j7: 7470000,
+    j8: 8970000,
+  };
+
+  const docs = [
+    'NIB aktif dengan KBLI jasa konstruksi',
+    'Akta perusahaan & SK Kemenkumham',
+    'NPWP badan usaha',
+    'KTP + NPWP direksi',
+    'Foto kantor / virtual office',
+    'Kekayaan bersih / laporan keuangan',
+  ];
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const modal = (document.getElementById('modal') as HTMLSelectElement)?.value;
+    const skk = (document.querySelector('input[name="skk"]:checked') as HTMLInputElement)?.value;
+
+    if (!modal || !sbuData[modal]) {
+      alert('Pilih rentang kekayaan bersih terlebih dahulu.');
+      return;
+    }
+
+    const sbu = sbuData[modal];
+    let total = sbu.price;
+    let skkText = '';
+
+    if (skk === 'yes') {
+      total += skkPrices.j5; // default J5/J6
+      skkText = ' + SKK J5/J6';
+    }
+
+    resultBadge.textContent = sbu.label + skkText;
+    resultBadge.className = 'inline-block rounded-full px-3 py-1 text-sm font-semibold ' + (modal === 'k' ? 'bg-gold-500/20 text-gold-500' : modal === 'm' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700');
+    resultTotal.textContent = 'Rp ' + total.toLocaleString('id-ID');
+    resultTimeline.textContent = sbu.timeline;
+
+    resultDocs.innerHTML = docs.map(d => `<li>${d}</li>`).join('');
+
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

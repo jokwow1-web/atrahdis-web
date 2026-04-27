@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-navy-950: #0d0d28;
+  --color-navy-900: #131232;
+  --color-navy-800: #272740;
+  --color-navy-700: #3a3a58;
+  --color-navy-600: #4a4a6a;
+  --color-gold-600: #9a8b60;
+  --color-gold-500: #b2a275;
+  --color-gold-400: #c4b68a;
+  --color-gold-300: #d6c9a0;
+  --color-red-accent: #c41e3a;
+
+  --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+}

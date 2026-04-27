@@ -3,6 +3,7 @@ title: "Sanksi BUJK Tidak Punya SBU: Denda, Blacklist, dan Pencabutan Izin"
 description: "Sanksi hukum badan usaha jasa konstruksi yang tidak memiliki SBU atau menggunakan SBU expired berdasarkan UUJK. Denda Rp 50 juta hingga blacklist 2 tahun."
 channel: blog
 product: SBU-M
+image: /blog/sanksi-bujk-tidak-punya-sbu.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

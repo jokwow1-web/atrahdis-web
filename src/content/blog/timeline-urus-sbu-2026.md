@@ -3,6 +3,7 @@ title: "Timeline Realistis Urus SBU: K vs M vs B (2026)"
 description: "Timeline urus SBU berbeda untuk K, M, dan B. Cek estimasi realistis, faktor yang memperlambat, dan cara menjaga tenggat tender Anda."
 channel: blog
 product: SBU-B
+image: /blog/timeline-urus-sbu-2026.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26

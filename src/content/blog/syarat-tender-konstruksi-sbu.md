@@ -3,6 +3,7 @@ title: "Syarat Tender Konstruksi 2026: Kualifikasi SBU K, M, dan B"
 description: "Ketentuan kualifikasi SBU untuk ikut tender konstruksi 2026. Mana paket yang bisa diikuti kualifikasi Kecil, Menengah, dan Besar berdasarkan regulasi."
 channel: blog
 product: SBU-M
+image: /blog/syarat-tender-konstruksi-sbu.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

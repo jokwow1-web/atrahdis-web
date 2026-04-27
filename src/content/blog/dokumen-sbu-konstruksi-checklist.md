@@ -3,6 +3,7 @@ title: "Checklist Dokumen SBU Konstruksi 2026: K, M, dan B"
 description: "Daftar dokumen wajib SBU Kecil, Menengah, dan Besar. Lengkapi sebelum submit ke LPJK agar tidak ada yang tertinggal dan proses tidak molor."
 channel: blog
 product: SBU-K
+image: /blog/dokumen-sbu-konstruksi-checklist.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

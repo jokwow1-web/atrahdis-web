@@ -1,4 +1,4 @@
-export const WA_HUMAN = '628131092903';
+export const WA_HUMAN = '6289699217161';
 export const WA_ARA = '6289699217161';
 
 export const IDENTITY = {

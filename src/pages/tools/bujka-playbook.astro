@@ -1,0 +1,159 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const phases = [
+  {
+    title: 'Persyaratan Awal',
+    items: [
+      'NIB aktif (13 digit)',
+      'KBLI jasa konstruksi tercantum',
+      'NPWP badan usaha valid',
+      'Akta perusahaan + SK Kemenkumham',
+      'KTP + NPWP direksi',
+      'Foto kantor / virtual office',
+    ],
+  },
+  {
+    title: 'OSS-RBA',
+    items: [
+      'Login oss.go.id dengan akun perusahaan',
+      'Lengkapi profil badan usaha',
+      'Unggah dokumen legalitas',
+      'Verifikasi email & nomor telepon',
+      'Cek status KSWP (hijau)',
+    ],
+  },
+  {
+    title: 'LPJK & Asosiasi',
+    items: [
+      'Daftar ke asosiasi konstruksi (GAPENSI / AKI / IKADIN)',
+      'Upload SKK tenaga ahli',
+      'Upload sertifikat kompetensi (Serkom)',
+      'Upload KTA aktif',
+      'Upload laporan keuangan (auditan KAP)',
+      'Upload peralatan konstruksi',
+    ],
+  },
+  {
+    title: 'Final & Monitoring',
+    items: [
+      'Submit SBU ke LPJK via OSS',
+      'Bayar biaya sertifikasi',
+      'Monitoring approval LPJK',
+      'Download SBU elektronik',
+      'Cetak sertifikat fisik (opsional)',
+      'Set reminder expired SBU',
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'BUJKA Playbook',
+  applicationCategory: 'BusinessApplication',
+  description: 'Checklist 4 tahap pengurusan SBU konstruksi dengan progress tracker.',
+  url: 'https://atrahdis.id/tools/bujka-playbook',
+};
+---
+<Base title="BUJKA Playbook — Checklist 4 Tahap SBU" description="Checklist lengkap pengurusan SBU konstruksi dari persyaratan awal sampai sertifikat terbit.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <nav class="text-sm text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>BUJKA Playbook</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-900">BUJKA Playbook</h1>
+    <p class="mt-2 text-gray-600">Checklist 4 tahap pengurusan SBU — progress tersimpan otomatis di browser Anda.</p>
+
+    <div class="mt-8 space-y-6">
+      {phases.map((phase, pIdx) => (
+        <div class="rounded-xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-gray-900">{pIdx + 1}. {phase.title}</h2>
+            <span class="text-sm text-gray-500">
+              <span id={`progress-${pIdx}`}>0</span>/{phase.items.length}
+            </span>
+          </div>
+          <div class="mt-3 h-2 w-full rounded-full bg-gray-100">
+            <div id={`bar-${pIdx}`} class="h-2 rounded-full bg-gold-500 transition-all" style="width: 0%"></div>
+          </div>
+          <ul class="mt-4 space-y-2">
+            {phase.items.map((item, iIdx) => (
+              <li class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id={`chk-${pIdx}-${iIdx}`}
+                  class="mt-1 h-4 w-4 cursor-pointer"
+                  data-phase={pIdx}
+                  data-item={iIdx}
+                />
+                <label for={`chk-${pIdx}-${iIdx}`} class="cursor-pointer text-gray-700">{item}</label>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <a href={WA_LINKS.general} class="mt-8 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+      Butuh bantuan? Chat Nicx →
+    </a>
+  </section>
+</Base>
+
+<script>
+  const phases = [
+    ['persyaratan-awal-0', 'persyaratan-awal-1', 'persyaratan-awal-2', 'persyaratan-awal-3', 'persyaratan-awal-4', 'persyaratan-awal-5'],
+    ['oss-rba-0', 'oss-rba-1', 'oss-rba-2', 'oss-rba-3', 'oss-rba-4'],
+    ['lpjk-asosiasi-0', 'lpjk-asosiasi-1', 'lpjk-asosiasi-2', 'lpjk-asosiasi-3', 'lpjk-asosiasi-4', 'lpjk-asosiasi-5'],
+    ['final-monitoring-0', 'final-monitoring-1', 'final-monitoring-2', 'final-monitoring-3', 'final-monitoring-4', 'final-monitoring-5'],
+  ];
+
+  function loadProgress() {
+    phases.forEach((keys, pIdx) => {
+      let done = 0;
+      keys.forEach((key, iIdx) => {
+        const el = document.getElementById(`chk-${pIdx}-${iIdx}`) as HTMLInputElement;
+        if (!el) return;
+        const checked = localStorage.getItem('bujka_' + key) === 'done';
+        el.checked = checked;
+        if (checked) done++;
+      });
+      updateBar(pIdx, done, keys.length);
+    });
+  }
+
+  function updateBar(pIdx: number, done: number, total: number) {
+    const progress = document.getElementById(`progress-${pIdx}`);
+    const bar = document.getElementById(`bar-${pIdx}`);
+    if (progress) progress.textContent = String(done);
+    if (bar) bar.style.width = `${(done / total) * 100}%`;
+  }
+
+  document.querySelectorAll('input[type="checkbox"][data-phase]').forEach((el) => {
+    el.addEventListener('change', (e) => {
+      const target = e.target as HTMLInputElement;
+      const pIdx = parseInt(target.dataset.phase || '0', 10);
+      const iIdx = parseInt(target.dataset.item || '0', 10);
+      const key = phases[pIdx][iIdx];
+      localStorage.setItem('bujka_' + key, target.checked ? 'done' : '');
+
+      const total = phases[pIdx].length;
+      let done = 0;
+      phases[pIdx].forEach((k, i) => {
+        const cb = document.getElementById(`chk-${pIdx}-${i}`) as HTMLInputElement;
+        if (cb?.checked) done++;
+      });
+      updateBar(pIdx, done, total);
+    });
+  });
+
+  loadProgress();
+</script>

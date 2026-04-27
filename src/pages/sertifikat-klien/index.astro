@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const certs = [
+  { src: '/portfolio/cert-01.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Kecil' },
+  { src: '/portfolio/cert-02.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Menengah' },
+  { src: '/portfolio/cert-03.webp', alt: 'Sertifikat SBU Klien Atrahdis — SKK J5' },
+  { src: '/portfolio/cert-04.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Besar' },
+  { src: '/portfolio/cert-05.webp', alt: 'Sertifikat SBU Klien Atrahdis — KTA Asosiasi' },
+  { src: '/portfolio/cert-06.webp', alt: 'Sertifikat SBU Klien Atrahdis — SKK J6' },
+  { src: '/portfolio/cert-07.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Kecil' },
+  { src: '/portfolio/cert-08.webp', alt: 'Sertifikat SBU Klien Atrahdis — Serkom' },
+  { src: '/portfolio/cert-09.webp', alt: 'Sertifikat SBU Klien Atrahdis — SKK J7' },
+  { src: '/portfolio/cert-10.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Menengah' },
+  { src: '/portfolio/cert-11.webp', alt: 'Sertifikat SBU Klien Atrahdis — ISO 9001' },
+  { src: '/portfolio/cert-12.webp', alt: 'Sertifikat SBU Klien Atrahdis — SBU Besar' },
+];
+---
+<Base title="Sertifikat Klien Atrahdis — Portfolio SBU & SKK" description="280+ sertifikat SBU konstruksi telah diproses sejak 2016. Lihat portfolio real case Atrahdis.">
+  <!-- Hero -->
+  <section class="bg-navy-900 py-16 text-white">
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <h1 class="text-3xl font-bold text-white md:text-4xl">Sertifikat Klien Atrahdis</h1>
+      <p class="mt-4 text-gray-400">
+        280+ sertifikat diproses sejak 2016. Berikut beberapa real case yang telah kami selesaikan.
+      </p>
+      <a href={WA_LINKS.general} class="mt-6 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Konsultasi Gratis →
+      </a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+      {certs.map((cert) => (
+        <div class="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:border-gold-500/30 hover:shadow-md">
+          <img
+            src={cert.src}
+            alt={cert.alt}
+            width="300"
+            height="400"
+            class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-56"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 rounded-xl bg-navy-900 border border-gold-500/20 p-8 text-center">
+      <p class="text-lg font-semibold text-gray-900">Ingin sertifikat Anda jadi bagian dari galeri ini?</p>
+      <p class="mt-2 text-gray-600">Hubungi Nicx via WhatsApp — konsultasi gratis, proses transparan.</p>
+      <a href={WA_LINKS.general} class="mt-4 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Chat WhatsApp →
+      </a>
+    </div>
+  </section>
+</Base>

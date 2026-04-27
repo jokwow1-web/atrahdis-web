@@ -11,6 +11,7 @@ const blog = defineCollection({
     voice_mode: z.enum(['corporate', 'personal']).default('corporate'),
     publishedAt: z.date(),
     faqSchema: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    image: z.string().optional(),
   }),
 });
 

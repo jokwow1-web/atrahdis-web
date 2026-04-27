@@ -23,16 +23,12 @@ const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '';
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <title>{title} — Atrahdis</title>
-    <style>
-      @font-face {
-        font-family: 'Inter';
-        src: url('/fonts/inter-variable.woff2') format('woff2');
-        font-weight: 100 900;
-        font-display: swap;
-      }
-    </style>
     <script type="application/ld+json" set:html={JSON.stringify(ORG_SCHEMA)} />
     <slot name="head" />
 
@@ -47,24 +43,26 @@ const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '';
       <script is:inline>{`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}</script>
     )}
   </head>
-  <body class="min-h-screen bg-white text-gray-900 antialiased">
+  <body class="min-h-screen bg-white font-body text-gray-900 antialiased">
     {GTM_ID && (
       <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     )}
     {META_PIXEL_ID && (
       <noscript><img height="1" width="1" style="display:none" src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} alt="" /></noscript>
     )}
-    <header class="border-b border-gray-100">
+    <header class="sticky top-0 z-50 border-b border-navy-700/50 bg-navy-950/80 backdrop-blur">
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <a href="/" class="text-xl font-bold tracking-tight">Atrahdis</a>
+        <a href="/" class="font-heading text-xl font-bold tracking-tight text-white">Atrahdis</a>
         <div class="hidden gap-6 text-sm font-medium md:flex">
-          <a href="/layanan" class="hover:text-blue-600">Layanan</a>
-          <a href="/biaya" class="hover:text-blue-600">Biaya</a>
-          <a href="/blog" class="hover:text-blue-600">Blog</a>
-          <a href="/tentang" class="hover:text-blue-600">Tentang</a>
-          <a href="/tender" class="hover:text-blue-600">Tender</a>
+          <a href="/layanan" class="text-gray-300 hover:text-gold-400">Layanan</a>
+          <a href="/#cara-kerja" class="text-gray-300 hover:text-gold-400">Cara Kerja</a>
+          <a href="/tentang" class="text-gray-300 hover:text-gold-400">Tentang Kami</a>
+          <a href="/blog" class="text-gray-300 hover:text-gold-400">Blog</a>
+          <a href="/tools/kalkulator-sbu" class="text-gray-300 hover:text-gold-400">Tools</a>
         </div>
-        <a href={WA_LINKS.general} class="rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700">WhatsApp</a>
+        <a href={WA_LINKS.general} class="rounded-lg bg-gold-500 px-4 py-2 text-sm font-semibold text-navy-900 hover:bg-gold-400">
+          Konsultasi Gratis
+        </a>
       </nav>
     </header>
 
@@ -72,10 +70,33 @@ const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '';
       <slot />
     </main>
 
-    <footer class="border-t border-gray-100 bg-gray-50 pb-20 pt-8 text-sm text-gray-500 md:pb-8">
+    <footer class="border-t border-navy-700/50 bg-navy-950 pb-20 pt-12 text-sm text-gray-400 md:pb-8">
       <div class="mx-auto max-w-6xl px-4">
-        <p>&copy; {new Date().getFullYear()} {IDENTITY.legalName}. NIB: {IDENTITY.nib}</p>
-        <p class="mt-1">{IDENTITY.address}</p>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div>
+            <p class="font-heading font-semibold text-white">{IDENTITY.legalName}</p>
+            <p class="mt-1">NIB: {IDENTITY.nib}</p>
+            <p class="mt-1">{IDENTITY.address}</p>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-white">Quick Links</p>
+            <ul class="mt-2 space-y-1">
+              <li><a href="/layanan" class="hover:text-gold-400">Layanan</a></li>
+              <li><a href="/biaya" class="hover:text-gold-400">Biaya</a></li>
+              <li><a href="/blog" class="hover:text-gold-400">Blog</a></li>
+              <li><a href="/tentang" class="hover:text-gold-400">Tentang Kami</a></li>
+              <li><a href="/tools/kalkulator-sbu" class="hover:text-gold-400">Tools</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-white">Brand Sister</p>
+            <ul class="mt-2 space-y-1">
+              <li><a href="https://sbu.atrahdis.id" class="hover:text-gold-400">sbu.atrahdis.id</a></li>
+              <li><a href="https://verityx.id" class="hover:text-gold-400">VerityX — KITAS &amp; IMTA</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 border-t border-navy-700/50 pt-6 text-center">&copy; {new Date().getFullYear()} {IDENTITY.legalName}. All rights reserved.</p>
       </div>
     </footer>
 

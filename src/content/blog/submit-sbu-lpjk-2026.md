@@ -3,6 +3,7 @@ title: "Proses Submit SBU ke LPJK 2026: Panduan Lengkap"
 description: "Step-by-step proses pengajuan SBU ke LPJK 2026 — dari persiapan akun hingga terbit sertifikat. Hindari error umum yang bikin proses molor berhari-hari."
 channel: blog
 product: SBU-M
+image: /blog/submit-sbu-lpjk-2026.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

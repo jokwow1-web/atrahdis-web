@@ -1,6 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import { IDENTITY, WA_LINKS, PERSON_SCHEMA } from '../lib/constants';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 3);
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -57,9 +62,10 @@ const faqSchema = {
   ],
 };
 ---
+
 <Base
-  title="Jasa SBU Konstruksi Indonesia — Mulai Rp 4,5 Juta"
-  description="PT Atrahdis — urus SBU K, M, B sejak 2016. 280+ sertifikat diproses. Mulai Rp 4,5 juta, konsultasi gratis via WhatsApp."
+  title="Tender Anda Tidak Gagal karena Dokumen"
+  description="PT Atrahdis — urus SBU K, M, B sejak 2016. 280+ sertifikat diproses. Audit awal, konsultasi gratis, garansi tertulis."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(PERSON_SCHEMA)} />
@@ -67,154 +73,409 @@ const faqSchema = {
   </Fragment>
 
   <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-4 py-20">
-    <div class="flex flex-col gap-8 md:flex-row md:items-center">
-      <div class="flex-1">
-        <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
-          SBU Konstruksi<br />Mulai Rp 4,5 Juta
-        </h1>
-        <p class="mt-4 max-w-xl text-lg text-gray-600">
-          {IDENTITY.founder} mengurus SBU K, M, B sejak {IDENTITY.operatingSince}.
-          <strong>280+ sertifikat</strong> diproses secara personal.
-          Konsultasi gratis, proses transparan.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href={WA_LINKS.general} class="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">
-            Chat Langsung →
-          </a>
-          <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
-            Screening AI (Ara)
-          </a>
+  <section class="relative bg-navy-900 text-white overflow-hidden">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="max-w-3xl flex-1">
+          <h1 class="font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            Tender Anda Tidak Gagal karena Dokumen.
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+            Bukan karena harga. Bukan karena relasi. Tapi karena <strong class="text-gold-400">OSS belum sync, KBLI tidak cocok, SKK expired, atau KSWP merah</strong> — hal-hal yang tidak terlihat sampai terlambat.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href={WA_LINKS.general}
+              class="rounded-lg bg-gold-500 px-8 py-4 font-heading font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+            >
+              WhatsApp Sekarang →
+            </a>
+            <a
+              href="/#cara-kerja"
+              class="rounded-lg border border-gold-500/40 px-8 py-4 font-heading font-semibold text-gold-400 transition hover:border-gold-400 hover:text-gold-300"
+            >
+              Lihat Cara Kerja
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-500">
+            Audit awal sebelum proses · Konsultasi gratis · Garansi tertulis · Timeline realistis
+          </p>
         </div>
-      </div>
-      <div class="flex-shrink-0">
-        <img
-          src="/nicx.webp"
-          alt="Nicx, SBU Specialist Atrahdis"
-          width="120"
-          height="120"
-          class="rounded-full border-4 border-green-100 object-cover"
-          onerror="this.src='https://placehold.co/120x120/16a34a/ffffff?text=N'"
-        />
+        <div class="hidden md:block flex-shrink-0">
+          <img
+            src="/hero-sbu-atrahdis.webp"
+            alt="SBU Konstruksi Atrahdis"
+            class="w-[400px] rounded-xl shadow-2xl shadow-black/30 object-cover"
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Pain section -->
-  <section class="bg-red-50 py-12">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-2xl font-bold text-gray-900">Risiko Tanpa SBU yang Benar</h2>
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <div class="rounded-xl border-l-4 border-red-400 bg-white p-6 shadow-sm">
-          <p class="font-semibold text-red-700">SBU Expired saat Tender</p>
-          <p class="mt-2 text-gray-600">Denda hingga <strong>Rp 50 juta</strong> (UUJK) + diskualifikasi dari tender berjalan.</p>
+  <!-- Stats Bar -->
+  <section class="border-y border-gray-200 bg-gray-50">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-center sm:grid-cols-2 md:grid-cols-4">
+      <div>
+        <p class="font-heading text-3xl font-bold text-gold-400">280+</p>
+        <p class="mt-1 text-sm text-gray-500">Sertifikat Diproses</p>
+      </div>
+      <div>
+        <p class="font-heading text-3xl font-bold text-gold-400">0</p>
+        <p class="mt-1 text-sm text-gray-500">Klaim Garansi Dicairkan</p>
+      </div>
+      <div>
+        <p class="font-heading text-3xl font-bold text-gold-400">3 Hari</p>
+        <p class="mt-1 text-sm text-gray-500">Timeline Tercepat SBU-K</p>
+      </div>
+      <div>
+        <p class="font-heading text-3xl font-bold text-gold-400">3 dari 5</p>
+        <p class="mt-1 text-sm text-gray-500">Klien Kembali Tahun Berikutnya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="max-w-2xl">
+      <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">
+        Kerugian paling mahal biasanya tidak kelihatan sampai terlambat
+      </h2>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30">
+        <p class="font-heading font-semibold text-red-accent">NIK Hijacking</p>
+        <p class="mt-2 text-sm text-gray-600">SIKI Double-User — NIK direktur sudah terdaftar di perusahaan lain. Proses berhenti total sampai sertifikat lama dicabut.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30">
+        <p class="font-heading font-semibold text-red-accent">Invoice Lockout</p>
+        <p class="mt-2 text-sm text-gray-600">SBU expired di tengah proyek = tidak bisa tarik invoice. Cashflow macet, supplier menagih, proyek terancam stop.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30">
+        <p class="font-heading font-semibold text-red-accent">Bank Garansi Ditolak</p>
+        <p class="mt-2 text-sm text-gray-600">Bank menolak jaminan karena SBU tidak aktif di LPJK. Tender jatuh meskipun harga paling kompetitif.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30">
+        <p class="font-heading font-semibold text-red-accent">Tax Penalty Hidden</p>
+        <p class="mt-2 text-sm text-gray-600">KSWP merah = pemotongan PPh 21/23 naik 100%. Biaya tiba-tiba muncul saat lapor SPT.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30 md:col-span-2 lg:col-span-1">
+        <p class="font-heading font-semibold text-red-accent">Equipment Freeze</p>
+        <p class="mt-2 text-sm text-gray-600">SIMPK tertahan 30 hari karena sertifikat tidak valid. Alat tidak bisa dikirim ke proyek. Denda LD menumpuk.</p>
+      </div>
+    </div>
+
+    <!-- Consequence Chain -->
+    <div class="mt-12 overflow-x-auto">
+      <div class="flex min-w-max items-center gap-3 text-sm text-gray-500">
+        <span class="rounded-full bg-gray-100 px-3 py-1">SBU expired</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">ERP auto-reject</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">Invoice frozen</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">Cashflow stuck</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">Supplier stop</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">Proyek mangkrak</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-gray-100 px-3 py-1">Denda tender</span>
+        <span class="text-gray-500">→</span>
+        <span class="rounded-full bg-red-accent/20 px-3 py-1 text-red-accent">Rugi total</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof / Authority -->
+  <section class="bg-gray-50 mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">280+ SBU Diurus Sejak 2016 — Semua Bisa Diverifikasi</h2>
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-sm font-semibold uppercase tracking-wider text-gold-400">Portfolio</p>
+        <p class="mt-3 text-gray-700">280+ sertifikat SBU K, M, B, SKK J5–J9, dan KTA telah diproses sejak 2016. Setiap dokumen diurus personal oleh Nicx.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-sm font-semibold uppercase tracking-wider text-gold-400">Timeline Operasi</p>
+        <div class="mt-3 space-y-2 text-sm text-gray-700">
+          <p><span class="text-gold-400">2016</span> — Mulai proses SBU manual</p>
+          <p><span class="text-gold-400">2017</span> — PT Atrahdis Idea Nusantara resmi berdiri</p>
+          <p><span class="text-gold-400">2020</span> — 100+ sertifikat terselesaikan</p>
+          <p><span class="text-gold-400">2024–2026</span> — Full compliance + AI screening (Ara)</p>
         </div>
-        <div class="rounded-xl border-l-4 border-orange-400 bg-white p-6 shadow-sm">
-          <p class="font-semibold text-orange-700">NIB Ditolak Berulang</p>
-          <p class="mt-2 text-gray-600">KBLI tidak cocok = submit 3x tetap ditolak. Habiskan waktu <strong>2–4 minggu</strong> percuma.</p>
-        </div>
-        <div class="rounded-xl border-l-4 border-yellow-500 bg-white p-6 shadow-sm">
-          <p class="font-semibold text-yellow-700">Tidak Bisa Ikut Tender</p>
-          <p class="mt-2 text-gray-600">Tanpa SBU aktif, kontraktor <strong>tidak bisa</strong> ikut tender resmi pemerintah dan BUMN.</p>
-        </div>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-sm font-semibold uppercase tracking-wider text-gold-400">Panduan Teknis</p>
+        <p class="mt-3 text-gray-700">Konten teknis tentang regulasi SBU, KBLI, dan compliance — bukan jualan. <a href="/blog" class="text-gold-400 hover:underline">Baca blog →</a></p>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-2xl font-bold">Layanan Kami</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <a href={WA_LINKS.sbuK} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
-        <h3 class="text-lg font-semibold">SBU Kecil (K)</h3>
-        <p class="mt-1 font-medium text-green-600">Mulai Rp 4,5 juta</p>
-        <p class="mt-2 text-gray-600">Untuk kontraktor kecil — 3–7 hari kerja</p>
-      </a>
-      <a href={WA_LINKS.sbuM} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
-        <h3 class="text-lg font-semibold">SBU Menengah (M)</h3>
-        <p class="mt-1 font-medium text-green-600">Mulai Rp 18 juta</p>
-        <p class="mt-2 text-gray-600">Untuk kontraktor menengah — 14–21 hari</p>
-      </a>
-      <a href={WA_LINKS.sbuB} class="rounded-xl border p-6 hover:border-green-300 hover:shadow">
-        <h3 class="text-lg font-semibold">SBU Besar (B)</h3>
-        <p class="mt-1 font-medium text-green-600">Mulai Rp 50 juta</p>
-        <p class="mt-2 text-gray-600">Untuk kontraktor besar — hubungi untuk detail</p>
-      </a>
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/layanan" class="text-blue-600 hover:underline">Lihat semua 16 layanan →</a>
-    </div>
-  </section>
-
-  <!-- Social proof -->
-  <section class="bg-gray-50 py-12">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="mb-8 text-center text-2xl font-bold">Kenapa Atrahdis?</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
-          <p class="text-4xl font-bold text-green-600">280+</p>
-          <p class="mt-2 font-semibold">Sertifikat Diproses</p>
-          <p class="mt-1 text-sm text-gray-500">Sejak 2016, diurus Nicx secara personal</p>
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">Semua compliance kontraktor, satu pintu</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-8 transition hover:border-gold-500/30">
+        <h3 class="font-heading text-xl font-semibold text-gray-900">Sertifikasi Utama</h3>
+        <p class="mt-3 text-gray-600">SBU, SKK, Serkom, KTA — semua kualifikasi K, M, B dengan audit awal dan garansi output.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/layanan" class="text-gold-400 hover:underline">Lihat Detail →</a>
+          <a href={WA_LINKS.general} class="text-gold-400 hover:underline">WhatsApp →</a>
         </div>
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
-          <p class="text-4xl font-bold text-green-600">9+</p>
-          <p class="mt-2 font-semibold">Tahun Pengalaman</p>
-          <p class="mt-1 text-sm text-gray-500">Spesialis SBU K, M, B sejak 2016</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-8 transition hover:border-gold-500/30">
+        <h3 class="font-heading text-xl font-semibold text-gray-900">Pendukung Pemenuhan SBU</h3>
+        <p class="mt-3 text-gray-600">KAP, ISO 37001, peralatan teknik, dan dokumen legal yang sering jadi stumbling block.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/layanan" class="text-gold-400 hover:underline">Lihat Detail →</a>
+          <a href={WA_LINKS.general} class="text-gold-400 hover:underline">WhatsApp →</a>
         </div>
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm">
-          <p class="text-2xl font-bold text-green-600">{IDENTITY.nib}</p>
-          <p class="mt-2 font-semibold">NIB Terdaftar</p>
-          <p class="mt-1 text-sm text-gray-500">PT legal & resmi di Indonesia</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-8 transition hover:border-gold-500/30">
+        <h3 class="font-heading text-xl font-semibold text-gray-900">Maintenance Compliance</h3>
+        <p class="mt-3 text-gray-600">LKPM, surveilans berkala, update OSS, dan monitoring masa berlaku sertifikat.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/layanan" class="text-gold-400 hover:underline">Lihat Detail →</a>
+          <a href={WA_LINKS.general} class="text-gold-400 hover:underline">WhatsApp →</a>
+        </div>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-8 transition hover:border-gold-500/30">
+        <h3 class="font-heading text-xl font-semibold text-gray-900">Tender &amp; Compliance Tambahan</h3>
+        <p class="mt-3 text-gray-600">SMK3, ISO, BPJS, KSWP, PKKPR, PBG, NIB, Bank Garansi — semua yang dibutuhkan untuk ikut tender resmi.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/layanan" class="text-gold-400 hover:underline">Lihat Detail →</a>
+          <a href={WA_LINKS.general} class="text-gold-400 hover:underline">WhatsApp →</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Value Reframe -->
+  <section class="bg-gray-50 mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">Berapa yang sebenarnya Anda protect?</h2>
+    <p class="mt-4 max-w-2xl text-gray-500">Anda tidak membeli pengurusan dokumen. Anda membeli proteksi untuk proyek miliaran.</p>
+    <div class="mt-10 overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b border-gray-200 text-gray-500">
+            <th class="py-3 pr-6 font-medium">Nilai Tender</th>
+            <th class="py-3 pr-6 font-medium">Risiko Jika SBU Gagal</th>
+            <th class="py-3 font-medium">Biaya Prevention</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-b border-gray-100">
+            <td class="py-4 pr-6">Rp 500 juta</td>
+            <td class="py-4 pr-6 text-red-accent">Diskualifikasi + denda administrasi</td>
+            <td class="py-4">Rp 4,5 juta (SBU-K)</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-4 pr-6">Rp 2–5 miliar</td>
+            <td class="py-4 pr-6 text-red-accent">Kehilangan kontrak + biaya tender hangus</td>
+            <td class="py-4">Rp 18 juta (SBU-M)</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-4 pr-6">Rp 10–50 miliar</td>
+            <td class="py-4 pr-6 text-red-accent">Blacklist vendor + kerugian operasional</td>
+            <td class="py-4">Rp 50 juta+ (SBU-B)</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-6">Rp 50 miliar+</td>
+            <td class="py-4 pr-6 text-red-accent">Gugatan + reputasi rusak permanen</td>
+            <td class="py-4">Custom (hubungi)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="cara-kerja" class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">Cara Kerja — Kontrak Jelas, Milestone Tertulis</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-4xl font-bold text-gold-400">01</p>
+        <p class="mt-3 font-heading font-semibold text-gray-900">Konsultasi Gratis</p>
+        <p class="mt-1 text-sm text-gray-600">Hari 1 — Audit dokumen via WhatsApp. Nicx langsung cek gap dan risiko.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-4xl font-bold text-gold-400">02</p>
+        <p class="mt-3 font-heading font-semibold text-gray-900">Proposal + Kontrak</p>
+        <p class="mt-1 text-sm text-gray-600">Hari 2–3 — Timeline, biaya, dan garansi tertulis. Transparan, tidak ada biaya tersembunyi.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-4xl font-bold text-gold-400">03</p>
+        <p class="mt-3 font-heading font-semibold text-gray-900">Kami Eksekusi Penuh</p>
+        <p class="mt-1 text-sm text-gray-600">Hari 4+ — Submit, monitor, eskalasi ke LPJK. Update milestone rutin.</p>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="font-heading text-4xl font-bold text-gold-400">04</p>
+        <p class="mt-3 font-heading font-semibold text-gray-900">Sertifikat di Tangan</p>
+        <p class="mt-1 text-sm text-gray-600">Sesuai kontrak — tidak lebih lambat. Jika terlambat karena kelalaian kami, garansi berlaku.</p>
+      </div>
+    </div>
+    <div class="mt-8 rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+      <p class="font-heading font-semibold text-gold-400">Operational Rules</p>
+      <ul class="mt-3 grid gap-2 text-sm text-gray-400 sm:grid-cols-2">
+        <li>• SLA respons: 15 menit jam kerja</li>
+        <li>• Proposal: 1 hari setelah audit</li>
+        <li>• Milestone update: setiap 3 hari</li>
+        <li>• Eskalasi ke Nicx langsung: kapan saja</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">Mereka Sudah Beres</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="text-sm text-gray-600">Renewal SBU B + KTA untuk proyek infrastruktur pemerintah. Proses 28 hari, tanpa revisi dokumen.</p>
+        <div class="mt-4 border-t border-gray-200 pt-4">
+          <p class="font-heading font-semibold text-gray-900">PT Waskita Karya</p>
+          <p class="text-xs text-gray-500">Renewal SBU B — 28 hari</p>
+        </div>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="text-sm text-gray-600">Upgrade dari K ke M untuk tender BUMN. Audit awal menemukan 4 gap KBLI, diselesaikan sebelum submit.</p>
+        <div class="mt-4 border-t border-gray-200 pt-4">
+          <p class="font-heading font-semibold text-gray-900">PT Korindo Group</p>
+          <p class="text-xs text-gray-500">Upgrade K→M — 15 hari</p>
+        </div>
+      </div>
+      <div class="rounded-xl shadow-sm border border-gray-200 bg-white p-6">
+        <p class="text-sm text-gray-600">SBU + Serkom J7 untuk tender plant expansion. Timeline ketat, deliver on time dengan 2 hari buffer.</p>
+        <div class="mt-4 border-t border-gray-200 pt-4">
+          <p class="font-heading font-semibold text-gray-900">PT Sumitomo Electric</p>
+          <p class="text-xs text-gray-500">SBU + Serkom — 18 hari</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="bg-gray-50 py-16">
+    <div class="mx-auto max-w-4xl px-4">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <img src="/nicx.webp" alt="Nicx — Founder Atrahdis"
+             class="w-40 h-40 rounded-full object-cover object-top
+                    border-4 border-gold-500 shadow-lg flex-shrink-0" />
+        <div>
+          <p class="text-gold-600 font-semibold text-sm uppercase tracking-wider">
+            Founder & Principal Consultant — sejak 2016
+          </p>
+          <h2 class="text-3xl font-bold text-gray-900 mt-1">Nicx</h2>
+          <p class="text-gray-500 italic mt-1">
+            "Regulasi punya aturan main yang jelas — kalau dokumennya benar, hasilnya pasti."
+          </p>
+          <p class="text-gray-600 mt-4 leading-relaxed max-w-xl">
+            Nicx melihat regulasi seperti kode: ada logika, ada aturan,
+            kalau strukturnya benar hasilnya pasti. Sejak 2016, 280+ sertifikat
+            SBU diurus langsung — tidak ada dokumen masuk ke LPJK sebelum
+            dia audit sendiri.
+          </p>
+          <a href={WA_LINKS.general}
+             class="inline-block mt-5 rounded-lg bg-gold-500 px-5 py-2.5
+                    text-sm font-semibold text-navy-900 hover:bg-gold-400">
+            Konsultasi dengan Nicx →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Teaser -->
+  <section class="bg-gray-50 mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-gray-900 md:text-4xl">Baca Ini Sebelum Urus SBU Sendiri</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {posts.map((post) => (
+        <a
+          href={`/blog/${post.id}`}
+          class="group rounded-xl shadow-sm border border-gray-200 bg-white p-6 transition hover:border-gold-500/30"
+        >
+          <p class="text-xs font-medium uppercase tracking-wider text-gold-400">{post.data.product}</p>
+          <p class="mt-2 font-heading text-lg font-semibold text-gray-900 group-hover:text-gold-400">{post.data.title}</p>
+          <p class="mt-2 text-sm text-gray-600">{post.data.description}</p>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 text-center">
+      <a href="/blog" class="text-gold-400 hover:underline">Lihat semua artikel →</a>
+    </div>
+  </section>
+
+  <!-- PMA Cross-sell -->
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-8 text-center">
+      <p class="font-heading text-xl font-semibold text-white">KITAS, IMTA &amp; Compliance PMA?</p>
+      <p class="mt-2 text-gray-300">Kami punya sister brand khusus untuk expat dan perusahaan asing.</p>
+      <a href="https://verityx.id" target="_blank" rel="noopener" class="mt-4 inline-block text-gold-400 hover:underline">Kunjungi VerityX →</a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+    <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Deadline tender tidak menunggu.</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-gray-300">Mulai konsultasi hari ini — gratis, tanpa komitmen.</p>
+    <div class="mt-8">
+      <a
+        href={WA_LINKS.general}
+        class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+      >
+        WhatsApp Sekarang →
+      </a>
+    </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-2xl font-bold">FAQ — Pertanyaan Umum SBU</h2>
-    <div class="mt-8 space-y-4">
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Berapa biaya SBU Kecil (K) di Atrahdis?</summary>
-        <p class="mt-3 text-gray-600">SBU Kecil (K) mulai <strong>Rp 4,5 juta</strong>. Biaya mencakup pengurusan dokumen, submit ke LPJK, dan monitoring status hingga terbit. Konsultasi gratis sebelum proses dimulai.</p>
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">FAQ — Pertanyaan Umum SBU</h2>
+    <div class="mt-10 space-y-4">
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Berapa biaya SBU Kecil (K) di Atrahdis?</summary>
+        <p class="mt-3 text-gray-400">SBU Kecil (K) mulai <strong class="text-gold-400">Rp 4,5 juta</strong>. Biaya mencakup pengurusan dokumen, submit ke LPJK, dan monitoring status hingga terbit. Konsultasi gratis sebelum proses dimulai.</p>
       </details>
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Berapa lama proses SBU Kecil?</summary>
-        <p class="mt-3 text-gray-600">SBU Kecil bisa terbit dalam <strong>3–7 hari kerja</strong> jika dokumen lengkap. Dari 280+ kasus yang Nicx proses sejak 2016, rata-rata selesai dalam seminggu.</p>
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Berapa lama proses SBU Kecil?</summary>
+        <p class="mt-3 text-gray-400">SBU Kecil bisa terbit dalam <strong class="text-gold-400">3–7 hari kerja</strong> jika dokumen lengkap. Dari 280+ kasus yang Nicx proses sejak 2016, rata-rata selesai dalam seminggu.</p>
       </details>
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Apa risiko jika SBU expired saat tender?</summary>
-        <p class="mt-3 text-gray-600">Kontraktor dengan SBU expired tidak bisa ikut tender resmi. Berdasarkan UUJK, sanksi administratif bisa mencapai <strong>Rp 50 juta</strong>. Segera perpanjang sebelum masa berlaku habis.</p>
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Apa risiko jika SBU expired saat tender?</summary>
+        <p class="mt-3 text-gray-400">Kontraktor dengan SBU expired tidak bisa ikut tender resmi. Berdasarkan UUJK, sanksi administratif bisa mencapai <strong class="text-gold-400">Rp 50 juta</strong>. Segera perpanjang sebelum masa berlaku habis.</p>
       </details>
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Apa perbedaan SBU Kecil, Menengah, dan Besar?</summary>
-        <p class="mt-3 text-gray-600">SBU Kecil (K) untuk kontraktor modal &lt; Rp 1 miliar, Menengah (M) Rp 1–10 miliar, Besar (B) &gt; Rp 10 miliar. Kualifikasi menentukan nilai tender yang bisa diikuti.</p>
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Apa perbedaan SBU Kecil, Menengah, dan Besar?</summary>
+        <p class="mt-3 text-gray-400">SBU Kecil (K) untuk kontraktor modal &lt; Rp 1 miliar, Menengah (M) Rp 1–10 miliar, Besar (B) &gt; Rp 10 miliar. Kualifikasi menentukan nilai tender yang bisa diikuti.</p>
       </details>
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Apakah bisa urus SBU sendiri tanpa jasa?</summary>
-        <p class="mt-3 text-gray-600">Bisa, tapi prosesnya kompleks: KBLI harus cocok, KSWP harus clear, dokumen pengurus harus lengkap. Dari pengalaman Nicx, <strong>60%+</strong> aplikasi mandiri ditolak LPJK di submit pertama.</p>
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Apakah bisa urus SBU sendiri tanpa jasa?</summary>
+        <p class="mt-3 text-gray-400">Bisa, tapi prosesnya kompleks: KBLI harus cocok, KSWP harus clear, dokumen pengurus harus lengkap. Dari pengalaman Nicx, <strong class="text-gold-400">60%+</strong> aplikasi mandiri ditolak LPJK di submit pertama.</p>
       </details>
-      <details class="rounded-xl border p-5 open:border-green-300">
-        <summary class="cursor-pointer font-semibold">Syarat dokumen apa saja untuk SBU Kecil?</summary>
-        <p class="mt-3 text-gray-600">Dokumen wajib: NIB aktif, KBLI jasa konstruksi, akta perusahaan, NPWP badan, KTP + NPWP direksi, dan foto kantor. Nicx akan cek semua dokumen sebelum proses untuk menghindari penolakan.</p>
+      <details class="rounded-xl border border-navy-700/50 bg-navy-800 p-5 open:border-gold-500/40">
+        <summary class="cursor-pointer font-semibold text-white">Syarat dokumen apa saja untuk SBU Kecil?</summary>
+        <p class="mt-3 text-gray-400">Dokumen wajib: NIB aktif, KBLI jasa konstruksi, akta perusahaan, NPWP badan, KTP + NPWP direksi, dan foto kantor. Nicx akan cek semua dokumen sebelum proses untuk menghindari penolakan.</p>
       </details>
+    </div>
     </div>
   </section>
 </Base>
 
 <!-- Exit intent popup -->
-<div id="exit-popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
-  <div class="mx-4 max-w-md rounded-2xl bg-white p-8 shadow-2xl">
-    <h3 class="text-xl font-bold">Dapatkan Checklist Dokumen SBU Gratis</h3>
-    <p class="mt-2 text-gray-600">Checklist lengkap dokumen yang wajib disiapkan sebelum proses SBU — langsung dari Nicx.</p>
+<div id="exit-popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60">
+  <div class="mx-4 max-w-md rounded-2xl border border-navy-700/50 bg-navy-800 p-8 shadow-2xl">
+    <h3 class="font-heading text-xl font-bold text-white">Dapatkan Checklist Dokumen SBU Gratis</h3>
+    <p class="mt-2 text-gray-400">Checklist lengkap dokumen yang wajib disiapkan sebelum proses SBU — langsung dari Nicx.</p>
     <div class="mt-6 flex gap-3">
       <a
         href={WA_LINKS.checklist}
-        class="flex-1 rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white hover:bg-green-700"
+        class="flex-1 rounded-lg bg-gold-500 px-4 py-3 text-center font-heading font-semibold text-navy-900 hover:bg-gold-400"
       >
         Chat WhatsApp →
       </a>
-      <button id="close-popup" class="rounded-lg border px-4 py-3 text-gray-600 hover:bg-gray-50">
+      <button id="close-popup" class="rounded-lg border border-navy-700/50 px-4 py-3 text-gray-400 hover:bg-navy-700">
         Tutup
       </button>
     </div>

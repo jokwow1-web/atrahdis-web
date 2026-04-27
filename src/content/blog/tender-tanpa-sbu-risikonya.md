@@ -3,6 +3,7 @@ title: "Tender Konstruksi Tanpa SBU: Risiko dan Konsekuensi Hukumnya"
 description: "Apa yang terjadi kalau kontraktor ikut tender tanpa SBU atau dengan SBU expired? Denda, sanksi, dan konsekuensi hukum berdasarkan UUJK Pasal 44."
 channel: blog
 product: SBU-M
+image: /blog/tender-tanpa-sbu-risikonya.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

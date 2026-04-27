@@ -3,6 +3,7 @@ title: "Cara Cek KSWP untuk SBU Konstruksi: Panduan Step-by-Step"
 description: "Langkah-langkah praktis cek dan bersihkan KSWP sebelum submit SBU ke LPJK. Hindari penundaan 3-21 hari karena status pajak tidak clear."
 channel: blog
 product: SBU-M
+image: /blog/cara-cek-kswp-untuk-sbu.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

@@ -1,0 +1,8 @@
+---
+if (Astro.request.method !== 'POST') {
+  return Astro.redirect('/app/login');
+}
+
+Astro.cookies.delete('sb-session', { path: '/' });
+return Astro.redirect('/app/login');
+---

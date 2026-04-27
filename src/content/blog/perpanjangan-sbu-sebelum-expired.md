@@ -3,6 +3,7 @@ title: "Perpanjangan SBU Konstruksi Sebelum Expired: Kapan dan Caranya"
 description: "Panduan perpanjangan SBU konstruksi sebelum masa berlaku habis. Kapan harus mulai proses, dokumen apa yang dibutuhkan, dan berapa lama prosesnya."
 channel: blog
 product: SBU-K
+image: /blog/perpanjangan-sbu-sebelum-expired.webp
 voice_mode: corporate
 publishedAt: 2026-04-26
 dateModified: 2026-04-26

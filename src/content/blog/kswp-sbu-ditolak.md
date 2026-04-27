@@ -3,6 +3,7 @@ title: "KSWP Tidak Clear: Kenapa SBU Anda Bisa Ditolak"
 description: "KSWP tidak clear bisa menghentikan proses SBU sebelum jauh berjalan. Pahami penyebab utama, dampaknya, dan urutan perbaikannya."
 channel: blog
 product: SBU-M
+image: /blog/kswp-sbu-ditolak.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26

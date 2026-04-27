@@ -3,6 +3,7 @@ title: "SBU Ditolak LPJK: Kenapa, Solusi, dan Cara Mencegahnya"
 description: "85% SBU ditolak karena 5 masalah dokumen ini. Cek penyebab penolakan LPJK, solusi per kasus, dan cara submit ulang agar langsung lolos."
 channel: blog
 product: SBU-K
+image: /blog/sbu-ditolak-lpjk-solusi.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Kenapa SBU ditolak LPJK?"

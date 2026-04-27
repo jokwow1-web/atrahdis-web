@@ -3,6 +3,7 @@ title: "Berapa Biaya SBU Konstruksi 2026? Panduan Lengkap"
 description: "Biaya SBU konstruksi 2026 berbeda untuk K, M, dan B. Cek komponen biaya, titik rawan, dan cara menghindari salah budget sebelum submit."
 channel: blog
 product: SBU-M
+image: /blog/biaya-sbu-konstruksi-2026.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26

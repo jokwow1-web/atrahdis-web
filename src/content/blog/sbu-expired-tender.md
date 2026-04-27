@@ -3,6 +3,7 @@ title: "SBU Expired Bisa Ikut Tender? Ini Risiko dan Solusinya"
 description: "SBU expired otomatis membuat perusahaan gugur kualifikasi tender. Denda UUJK Pasal 44 mencapai Rp 50 juta. Cek timeline perpanjangan dan solusi darurat."
 channel: blog
 product: SBU-K
+image: /blog/sbu-expired-tender.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "SBU expired bisa ikut tender?"

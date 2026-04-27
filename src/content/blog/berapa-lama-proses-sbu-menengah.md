@@ -3,6 +3,7 @@ title: "Berapa Lama Proses SBU Menengah? Timeline Detail 2026"
 description: "SBU Menengah (M) bisa terbit 14-21 hari kerja jika dokumen lengkap. Cek timeline per tahapan, titik rawan koreksi, dan cara mempercepat proses."
 channel: blog
 product: SBU-M
+image: /blog/berapa-lama-proses-sbu-menengah.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Berapa lama proses SBU Menengah?"

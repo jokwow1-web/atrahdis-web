@@ -1,0 +1,183 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const bidangs = [
+  { code: 'jalan', name: 'Pekerjaan Jalan', levels: [
+    { level: 'J5', req: 'S1 Teknik Sipil / D4, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 Teknik Sipil / D4, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2 Teknik Sipil, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2 Teknik Sipil, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'gedung', name: 'Pekerjaan Gedung', levels: [
+    { level: 'J5', req: 'S1 Arsitektur / Teknik Sipil, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 Arsitektur / Teknik Sipil, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'air', name: 'Pekerjaan Sumber Daya Air', levels: [
+    { level: 'J5', req: 'S1 Teknik Sipil / Teknik Pengairan, 3 tahun', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'listrik', name: 'Pekerjaan Ketenagalistrikan', levels: [
+    { level: 'J5', req: 'S1 Teknik Elektro, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 Teknik Elektro, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2 Teknik Elektro, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2 Teknik Elektro, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'mekanikal', name: 'Pekerjaan Mekanikal', levels: [
+    { level: 'J5', req: 'S1 Teknik Mesin, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 Teknik Mesin, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2 Teknik Mesin, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2 Teknik Mesin, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'elektronika', name: 'Pekerjaan Elektronika', levels: [
+    { level: 'J5', req: 'S1 Teknik Elektro / Elektronika, 3 tahun', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'lingkungan', name: 'Pekerjaan Lingkungan', levels: [
+    { level: 'J5', req: 'S1 Teknik Lingkungan, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 Teknik Lingkungan, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+  { code: 'lainnya', name: 'Bidang Lainnya', levels: [
+    { level: 'J5', req: 'S1 relevan, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J6', req: 'S1 relevan, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+    { level: 'J7', req: 'S2 relevan, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+    { level: 'J8', req: 'S2 relevan, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+  ]},
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'SKK Level Selector',
+  applicationCategory: 'BusinessApplication',
+  description: 'Pilih bidang konstruksi — dapatkan level SKK dan biayanya.',
+  url: 'https://atrahdis.id/tools/skk-selector',
+};
+---
+<Base title="SKK Level Selector — Pilih Bidang & Level" description="Pilih bidang pekerjaan konstruksi — dapatkan level SKK J5–J8, persyaratan, dan estimasi biaya.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <nav class="text-sm text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>SKK Level Selector</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-900">SKK Level Selector</h1>
+    <p class="mt-2 text-gray-600">Pilih bidang pekerjaan konstruksi — dapatkan level SKK dan biayanya.</p>
+
+    <form id="skk-form" class="mt-8 space-y-5 rounded-xl border bg-white p-6 shadow-sm">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Bidang Pekerjaan</label>
+        <select id="bidang" class="mt-1 w-full rounded-lg border px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none">
+          <option value="" disabled selected>Pilih bidang...</option>
+          {bidangs.map((b) => (
+            <option value={b.code}>{b.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-gold-500 px-4 py-3 font-semibold text-white hover:bg-gold-400">
+        Lihat Level & Biaya
+      </button>
+    </form>
+
+    <div id="result" class="mt-8 hidden rounded-xl border bg-gray-50 p-6">
+      <h2 id="result-title" class="text-xl font-bold text-gray-900"></h2>
+      <div id="result-levels" class="mt-4 space-y-3"></div>
+      <a href={WA_LINKS.general} class="mt-6 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Konsultasi SKK via WhatsApp →
+      </a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('skk-form');
+  const result = document.getElementById('result');
+  const resultTitle = document.getElementById('result-title');
+  const resultLevels = document.getElementById('result-levels');
+
+  const bidangData = [
+    { code: 'jalan', name: 'Pekerjaan Jalan', levels: [
+      { level: 'J5', req: 'S1 Teknik Sipil / D4, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 Teknik Sipil / D4, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2 Teknik Sipil, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2 Teknik Sipil, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'gedung', name: 'Pekerjaan Gedung', levels: [
+      { level: 'J5', req: 'S1 Arsitektur / Teknik Sipil, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 Arsitektur / Teknik Sipil, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'air', name: 'Pekerjaan Sumber Daya Air', levels: [
+      { level: 'J5', req: 'S1 Teknik Sipil / Teknik Pengairan, 3 tahun', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'listrik', name: 'Pekerjaan Ketenagalistrikan', levels: [
+      { level: 'J5', req: 'S1 Teknik Elektro, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 Teknik Elektro, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2 Teknik Elektro, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2 Teknik Elektro, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'mekanikal', name: 'Pekerjaan Mekanikal', levels: [
+      { level: 'J5', req: 'S1 Teknik Mesin, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 Teknik Mesin, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2 Teknik Mesin, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2 Teknik Mesin, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'elektronika', name: 'Pekerjaan Elektronika', levels: [
+      { level: 'J5', req: 'S1 Teknik Elektro / Elektronika, 3 tahun', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'lingkungan', name: 'Pekerjaan Lingkungan', levels: [
+      { level: 'J5', req: 'S1 Teknik Lingkungan, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 Teknik Lingkungan, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+    { code: 'lainnya', name: 'Bidang Lainnya', levels: [
+      { level: 'J5', req: 'S1 relevan, 3 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J6', req: 'S1 relevan, 5 tahun pengalaman', price: 'Rp 5,97 juta' },
+      { level: 'J7', req: 'S2 relevan, 7 tahun pengalaman', price: 'Rp 7,47 juta' },
+      { level: 'J8', req: 'S2 relevan, 10 tahun pengalaman', price: 'Rp 8,97 juta' },
+    ]},
+  ];
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = (document.getElementById('bidang') as HTMLSelectElement)?.value;
+    const data = bidangData.find((b) => b.code === code);
+    if (!data) return;
+
+    resultTitle.textContent = data.name;
+    resultLevels.innerHTML = data.levels.map((l) => `
+      <div class="rounded-lg border bg-white p-4">
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">${l.level}</span>
+          <span class="text-gold-500 font-semibold">${l.price}</span>
+        </div>
+        <p class="mt-1 text-sm text-gray-600">${l.req}</p>
+      </div>
+    `).join('');
+
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

@@ -1,0 +1,134 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS } from '../../lib/constants';
+
+const errors = [
+  { code: 'E001', name: 'NIB Tidak Ditemukan', desc: 'Sistem OSS tidak menemukan NIB yang Anda input.', steps: ['Pastikan NIB 13 digit sudah benar.', 'Cek status NIB di oss.go.id — pastikan aktif.', 'Jika baru daftar, tunggu sinkronisasi 1x24 jam.', 'Hubungi PTSP DPMPTSP jika NIB hilang.'] },
+  { code: 'E002', name: 'KBLI Tidak Sesuai', desc: 'KBLI yang terdaftar di NIB tidak mencakup jasa konstruksi.', steps: ['Cek KBLI di NIB — harus ada kode F (konstruksi).', 'Jika tidak ada, ajukan perubahan KBLI di OSS.', 'Pastikan KBLI sesuai dengan bidang SBU yang diajukan.', 'Verifikasi ulang setelah perubahan disetujui.'] },
+  { code: 'E003', name: 'KSWP Tidak Valid', desc: 'Kesediaan Wajib Pajak tidak ditemukan atau tidak valid.', steps: ['Login ke djponline.pajak.go.id — cek KSWP.', 'Pastikan NPWP badan usaha aktif dan tidak dalam proses perubahan.', 'Jika KSWP merah, selesaikan tunggakan pajak terlebih dahulu.', 'Cetak ulang KSWP setelah status hijau.'] },
+  { code: 'E004', name: 'Dokumen Pengurus Tidak Lengkap', desc: 'KTP, NPWP, atau akta pengurus kurang atau tidak jelas.', steps: ['Siapkan KTP + NPWP seluruh direksi dan komisaris.', 'Pastikan akta perusahaan terbaru sudah disahkan Kemenkumham.', 'Scan dokumen dalam format PDF dengan kualitas jelas.', 'Cek masa berlaku KTP — tidak boleh expired.'] },
+  { code: 'E005', name: 'SK Kemenkumham Tidak Ditemukan', desc: 'Nomor SK Kemenkumham tidak valid atau belum sinkron.', steps: ['Cek SK terbaru di ahli.go.id.', 'Pastikan nomor SK sesuai dengan akta perusahaan terakhir.', 'Jika belum terbit, tunggu proses approval Kemenkumham.', 'Hubungi notaris jika SK terlambat.'] },
+  { code: 'E006', name: 'Laporan Keuangan Tidak Memenuhi', desc: 'Kekayaan bersih atau modal tidak sesuai kualifikasi.', steps: ['Siapkan laporan keuangan auditan oleh KAP.', 'Pastikan nominal kekayaan bersih sesuai kualifikasi SBU.', 'Jika modal kurang, lakukan penyertaan modal terlebih dahulu.', 'Pastikan laporan keuangan tidak lebih dari 1 tahun.'] },
+  { code: 'E007', name: 'SKK Tidak Ditemukan', desc: 'Nomor SKK tidak terdaftar di LPJK atau sudah expired.', steps: ['Cek SKK di sistem LPJK — pastikan aktif.', 'Jika SKK expired, ajukan perpanjangan ke asosiasi.', 'Pastikan jenjang SKK sesuai dengan kualifikasi SBU.', 'Daftarkan SKK baru jika belum memiliki.'] },
+  { code: 'E008', name: 'KTA Tidak Ditemukan', desc: 'Kartu Tanda Anggota asosiasi tidak valid.', steps: ['Cek status keanggotaan di asosiasi terkait.', 'Pastikan KTA masih berlaku dan belum expired.', 'Lakukan perpanjangan keanggotaan jika diperlukan.', 'Upload ulang KTA yang valid ke sistem LPJK.'] },
+  { code: 'E009', name: 'Serkom Tidak Sesuai', desc: 'Sertifikat kompetensi tidak sesuai bidang atau level.', steps: ['Cek bidang serkom — harus sesuai dengan KBLI.', 'Pastikan level serkom memenuhi syarat SKK.', 'Jika tidak sesuai, ikuti pelatihan dan uji kompetensi.', 'Upload ulang serkom yang valid.'] },
+  { code: 'E010', name: 'Sertifikat ISO Tidak Valid', desc: 'ISO 9001/14001/45001 tidak ditemukan atau expired.', steps: ['Cek masa berlaku sertifikat ISO di badan sertifikasi.', 'Jika expired, ajukan surveilans atau sertifikasi ulang.', 'Pastikan scope ISO mencakup kegiatan konstruksi.', 'Upload sertifikat ISO terbaru ke sistem.'] },
+  { code: 'E011', name: 'Foto Kantor Tidak Jelas', desc: 'Foto kantor tidak memenuhi persyaratan LPJK.', steps: ['Foto kantor dengan papan nama perusahaan terlihat jelas.', 'Sertakan foto ruang kerja dan peralatan.', 'Pastikan foto tidak diedit berlebihan.', 'Upload ulang dengan resolusi minimal 1024x768.'] },
+  { code: 'E012', name: 'NPWP Badan Tidak Aktif', desc: 'NPWP perusahaan tidak terdaftar atau tidak aktif.', steps: ['Cek NPWP di ereg.pajak.go.id.', 'Pastikan NPWP badan usaha sudah disahkan.', 'Jika tidak aktif, aktivasi ke KPP terdekat.', 'Pastikan nama NPWP sesuai dengan akta.'] },
+  { code: 'E013', name: 'Akta Perusahaan Expired', desc: 'Akta perusahaan tidak valid atau belum disahkan.', steps: ['Siapkan akta pendirian dan perubahan terakhir.', 'Pastikan akta disahkan oleh Kemenkumham.', 'Jika ada perubahan, lampirkan SK perubahan.', 'Perbaharui akta jika masa berlaku habis.'] },
+  { code: 'E014', name: 'NIB Non-Aktif', desc: 'NIB dalam status non-aktif atau dibekukan.', steps: ['Cek status NIB di oss.go.id.', 'Jika non-aktif, ajukan aktivasi ke DPMPTSP.', 'Selesaikan kewajiban pelaporan yang tertunggak.', 'Tunggu approval re-aktivasi.'] },
+  { code: 'E015', name: 'Data Pengurus Ganda', desc: 'Satu orang terdaftar sebagai pengurus di multiple badan usaha.', steps: ['Cek data pengurus di sistem LPJK.', 'Jika ganda, pastikan izin dari perusahaan terkait.', 'Lampirkan surat pernyataan tidak bermasalah.', 'Hubungi LPJK jika butuh klarifikasi.'] },
+  { code: 'E016', name: 'Peralatan Tidak Memenuhi', desc: 'Daftar peralatan konstruksi tidak sesuai sub-bidang.', steps: ['Siapkan daftar peralatan sesuai sub-bidang yang diajukan.', 'Lampirkan bukti kepemilikan atau sewa peralatan.', 'Pastikan peralatan masih layak pakai.', 'Upload dokumen pendukung peralatan.'] },
+  { code: 'E017', name: 'Tenaga Ahli Tidak Sesuai', desc: 'Data tenaga ahli tidak lengkap atau tidak sesuai.', steps: ['Lampirkan CV, ijazah, dan sertifikat tenaga ahli.', 'Pastikan pengalaman kerja minimal 3 tahun.', 'Cek kesesuaian bidang tenaga ahli dengan sub-bidang SBU.', 'Upload data tenaga ahli lengkap.'] },
+  { code: 'E018', name: 'OSS Integration Failed', desc: 'Gagal sinkronisasi data antara OSS dan LPJK.', steps: ['Cek koneksi internet dan coba submit ulang.', 'Pastikan semua data di OSS sudah lengkap.', 'Hubungi helpdesk OSS jika masalah berlanjut.', 'Submit manual ke LPJK jika OSS bermasalah.'] },
+  { code: 'E019', name: 'BUJKA / PMA Restriction', desc: 'Badan usaha asing atau PMA memiliki pembatasan kualifikasi.', steps: ['Cek regulasi terbaru BUJKA di LPJK.', 'Pastikan kerja sama operasi dengan badan usaha lokal.', 'Lampirkan dokumen pendukung kerja sama.', 'Konsultasikan ke LPJK untuk detail lebih lanjut.'] },
+  { code: 'E020', name: 'Lainnya / Belum Terdefinisi', desc: 'Error yang belum terdaftar atau kombinasi multi-error.', steps: ['Screenshot error yang muncul.', 'Catat kode error dan timestamp.', 'Hubungi LPJK atau konsultan SBU.', 'Kirimkan screenshot dan penjelasan lengkap.'] },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'OSS Error Decoder',
+  applicationCategory: 'BusinessApplication',
+  description: 'Cari kode error OSS dan solusinya dalam 5 langkah.',
+  url: 'https://atrahdis.id/tools/oss-error',
+};
+---
+<Base title="OSS Error Decoder — Solusi Kode Error OSS" description="Cari kode error OSS LPJK Anda (E001–E020) dan dapatkan solusi langkah demi langkah."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <nav class="text-sm text-gray-500">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>OSS Error Decoder</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-900">OSS Error Decoder</h1>
+    <p class="mt-2 text-gray-600">Pilih kode error — dapatkan penjelasan dan solusi langkah demi langkah.</p>
+
+    <form id="oss-form" class="mt-8 space-y-5 rounded-xl border bg-white p-6 shadow-sm">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Kode Error</label>
+        <select id="error-code" class="mt-1 w-full rounded-lg border px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none">
+          <option value="" disabled selected>Pilih kode error...</option>
+          {errors.map((e) => (
+            <option value={e.code}>{e.code} — {e.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-gold-500 px-4 py-3 font-semibold text-white hover:bg-gold-400">
+        Lihat Solusi
+      </button>
+    </form>
+
+    <div id="result" class="mt-8 hidden rounded-xl border bg-gray-50 p-6">
+      <p id="result-code" class="text-sm font-semibold text-gray-500"></p>
+      <h2 id="result-name" class="mt-1 text-xl font-bold text-gray-900"></h2>
+      <p id="result-desc" class="mt-2 text-gray-600"></p>
+
+      <div class="mt-5">
+        <p class="font-semibold text-gray-900">Langkah Penyelesaian:</p>
+        <ol id="result-steps" class="mt-2 list-decimal space-y-2 pl-5 text-gray-600"></ol>
+      </div>
+
+      <a href={WA_LINKS.general} class="mt-6 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Butuh bantuan? Chat Nicx →
+      </a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('oss-form');
+  const result = document.getElementById('result');
+  const resultCode = document.getElementById('result-code');
+  const resultName = document.getElementById('result-name');
+  const resultDesc = document.getElementById('result-desc');
+  const resultSteps = document.getElementById('result-steps');
+
+  const errors = JSON.parse(document.getElementById('oss-error-data')?.textContent || '[]');
+
+  // Inline data untuk client side (tidak ada server data injection Astro di script vanilla)
+  const errorData = [
+    { code: 'E001', name: 'NIB Tidak Ditemukan', desc: 'Sistem OSS tidak menemukan NIB yang Anda input.', steps: ['Pastikan NIB 13 digit sudah benar.', 'Cek status NIB di oss.go.id — pastikan aktif.', 'Jika baru daftar, tunggu sinkronisasi 1x24 jam.', 'Hubungi PTSP DPMPTSP jika NIB hilang.'] },
+    { code: 'E002', name: 'KBLI Tidak Sesuai', desc: 'KBLI yang terdaftar di NIB tidak mencakup jasa konstruksi.', steps: ['Cek KBLI di NIB — harus ada kode F (konstruksi).', 'Jika tidak ada, ajukan perubahan KBLI di OSS.', 'Pastikan KBLI sesuai dengan bidang SBU yang diajukan.', 'Verifikasi ulang setelah perubahan disetujui.'] },
+    { code: 'E003', name: 'KSWP Tidak Valid', desc: 'Kesediaan Wajib Pajak tidak ditemukan atau tidak valid.', steps: ['Login ke djponline.pajak.go.id — cek KSWP.', 'Pastikan NPWP badan usaha aktif dan tidak dalam proses perubahan.', 'Jika KSWP merah, selesaikan tunggakan pajak terlebih dahulu.', 'Cetak ulang KSWP setelah status hijau.'] },
+    { code: 'E004', name: 'Dokumen Pengurus Tidak Lengkap', desc: 'KTP, NPWP, atau akta pengurus kurang atau tidak jelas.', steps: ['Siapkan KTP + NPWP seluruh direksi dan komisaris.', 'Pastikan akta perusahaan terbaru sudah disahkan Kemenkumham.', 'Scan dokumen dalam format PDF dengan kualitas jelas.', 'Cek masa berlaku KTP — tidak boleh expired.'] },
+    { code: 'E005', name: 'SK Kemenkumham Tidak Ditemukan', desc: 'Nomor SK Kemenkumham tidak valid atau belum sinkron.', steps: ['Cek SK terbaru di ahli.go.id.', 'Pastikan nomor SK sesuai dengan akta perusahaan terakhir.', 'Jika belum terbit, tunggu proses approval Kemenkumham.', 'Hubungi notaris jika SK terlambat.'] },
+    { code: 'E006', name: 'Laporan Keuangan Tidak Memenuhi', desc: 'Kekayaan bersih atau modal tidak sesuai kualifikasi.', steps: ['Siapkan laporan keuangan auditan oleh KAP.', 'Pastikan nominal kekayaan bersih sesuai kualifikasi SBU.', 'Jika modal kurang, lakukan penyertaan modal terlebih dahulu.', 'Pastikan laporan keuangan tidak lebih dari 1 tahun.'] },
+    { code: 'E007', name: 'SKK Tidak Ditemukan', desc: 'Nomor SKK tidak terdaftar di LPJK atau sudah expired.', steps: ['Cek SKK di sistem LPJK — pastikan aktif.', 'Jika SKK expired, ajukan perpanjangan ke asosiasi.', 'Pastikan jenjang SKK sesuai dengan kualifikasi SBU.', 'Daftarkan SKK baru jika belum memiliki.'] },
+    { code: 'E008', name: 'KTA Tidak Ditemukan', desc: 'Kartu Tanda Anggota asosiasi tidak valid.', steps: ['Cek status keanggotaan di asosiasi terkait.', 'Pastikan KTA masih berlaku dan belum expired.', 'Lakukan perpanjangan keanggotaan jika diperlukan.', 'Upload ulang KTA yang valid ke sistem LPJK.'] },
+    { code: 'E009', name: 'Serkom Tidak Sesuai', desc: 'Sertifikat kompetensi tidak sesuai bidang atau level.', steps: ['Cek bidang serkom — harus sesuai dengan KBLI.', 'Pastikan level serkom memenuhi syarat SKK.', 'Jika tidak sesuai, ikuti pelatihan dan uji kompetensi.', 'Upload ulang serkom yang valid.'] },
+    { code: 'E010', name: 'Sertifikat ISO Tidak Valid', desc: 'ISO 9001/14001/45001 tidak ditemukan atau expired.', steps: ['Cek masa berlaku sertifikat ISO di badan sertifikasi.', 'Jika expired, ajukan surveilans atau sertifikasi ulang.', 'Pastikan scope ISO mencakup kegiatan konstruksi.', 'Upload sertifikat ISO terbaru ke sistem.'] },
+    { code: 'E011', name: 'Foto Kantor Tidak Jelas', desc: 'Foto kantor tidak memenuhi persyaratan LPJK.', steps: ['Foto kantor dengan papan nama perusahaan terlihat jelas.', 'Sertakan foto ruang kerja dan peralatan.', 'Pastikan foto tidak diedit berlebihan.', 'Upload ulang dengan resolusi minimal 1024x768.'] },
+    { code: 'E012', name: 'NPWP Badan Tidak Aktif', desc: 'NPWP perusahaan tidak terdaftar atau tidak aktif.', steps: ['Cek NPWP di ereg.pajak.go.id.', 'Pastikan NPWP badan usaha sudah disahkan.', 'Jika tidak aktif, aktivasi ke KPP terdekat.', 'Pastikan nama NPWP sesuai dengan akta.'] },
+    { code: 'E013', name: 'Akta Perusahaan Expired', desc: 'Akta perusahaan tidak valid atau belum disahkan.', steps: ['Siapkan akta pendirian dan perubahan terakhir.', 'Pastikan akta disahkan oleh Kemenkumham.', 'Jika ada perubahan, lampirkan SK perubahan.', 'Perbaharui akta jika masa berlaku habis.'] },
+    { code: 'E014', name: 'NIB Non-Aktif', desc: 'NIB dalam status non-aktif atau dibekukan.', steps: ['Cek status NIB di oss.go.id.', 'Jika non-aktif, ajukan aktivasi ke DPMPTSP.', 'Selesaikan kewajiban pelaporan yang tertunggak.', 'Tunggu approval re-aktivasi.'] },
+    { code: 'E015', name: 'Data Pengurus Ganda', desc: 'Satu orang terdaftar sebagai pengurus di multiple badan usaha.', steps: ['Cek data pengurus di sistem LPJK.', 'Jika ganda, pastikan izin dari perusahaan terkait.', 'Lampirkan surat pernyataan tidak bermasalah.', 'Hubungi LPJK jika butuh klarifikasi.'] },
+    { code: 'E016', name: 'Peralatan Tidak Memenuhi', desc: 'Daftar peralatan konstruksi tidak sesuai sub-bidang.', steps: ['Siapkan daftar peralatan sesuai sub-bidang yang diajukan.', 'Lampirkan bukti kepemilikan atau sewa peralatan.', 'Pastikan peralatan masih layak pakai.', 'Upload dokumen pendukung peralatan.'] },
+    { code: 'E017', name: 'Tenaga Ahli Tidak Sesuai', desc: 'Data tenaga ahli tidak lengkap atau tidak sesuai.', steps: ['Lampirkan CV, ijazah, dan sertifikat tenaga ahli.', 'Pastikan pengalaman kerja minimal 3 tahun.', 'Cek kesesuaian bidang tenaga ahli dengan sub-bidang SBU.', 'Upload data tenaga ahli lengkap.'] },
+    { code: 'E018', name: 'OSS Integration Failed', desc: 'Gagal sinkronisasi data antara OSS dan LPJK.', steps: ['Cek koneksi internet dan coba submit ulang.', 'Pastikan semua data di OSS sudah lengkap.', 'Hubungi helpdesk OSS jika masalah berlanjut.', 'Submit manual ke LPJK jika OSS bermasalah.'] },
+    { code: 'E019', name: 'BUJKA / PMA Restriction', desc: 'Badan usaha asing atau PMA memiliki pembatasan kualifikasi.', steps: ['Cek regulasi terbaru BUJKA di LPJK.', 'Pastikan kerja sama operasi dengan badan usaha lokal.', 'Lampirkan dokumen pendukung kerja sama.', 'Konsultasikan ke LPJK untuk detail lebih lanjut.'] },
+    { code: 'E020', name: 'Lainnya / Belum Terdefinisi', desc: 'Error yang belum terdaftar atau kombinasi multi-error.', steps: ['Screenshot error yang muncul.', 'Catat kode error dan timestamp.', 'Hubungi LPJK atau konsultan SBU.', 'Kirimkan screenshot dan penjelasan lengkap.'] },
+  ];
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = (document.getElementById('error-code') as HTMLSelectElement)?.value;
+    const err = errorData.find((x) => x.code === code);
+    if (!err) return;
+
+    resultCode.textContent = err.code;
+    resultName.textContent = err.name;
+    resultDesc.textContent = err.desc;
+    resultSteps.innerHTML = err.steps.map((s) => `<li>${s}</li>`).join('');
+
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

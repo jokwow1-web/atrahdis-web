@@ -3,6 +3,7 @@ title: "Upgrade SBU Kecil ke Menengah: Syarat, Biaya, dan Timeline 2026"
 description: "Upgrade SBU Kecil ke Menengah butuh pembuktian modal, SKK J5-J6, dan dokumen detail. Cek syarat lengkap, estimasi biaya, dan timeline proses upgrade."
 channel: blog
 product: SBU-M
+image: /blog/upgrade-sbu-kecil-ke-menengah.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Bisa upgrade SBU Kecil ke Menengah?"

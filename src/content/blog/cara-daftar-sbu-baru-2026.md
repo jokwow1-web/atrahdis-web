@@ -3,6 +3,7 @@ title: "Cara Daftar SBU Baru 2026: Step-by-Step Lengkap"
 description: "Panduan lengkap daftar SBU konstruksi baru 2026 mulai dari NIB, KBLI, SKK, sampai submit LPJK. Cek tahapan, biaya, dan titik rawan di setiap langkah."
 channel: blog
 product: SBU-K
+image: /blog/cara-daftar-sbu-baru-2026.webp
 publishedAt: 2026-04-26
 faqSchema:
   - q: "Bagaimana cara daftar SBU konstruksi baru?"

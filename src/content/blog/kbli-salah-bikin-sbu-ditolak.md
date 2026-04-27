@@ -3,6 +3,7 @@ title: "Kenapa KBLI Salah Bisa Bikin SBU Ditolak LPJK"
 description: "KBLI yang tidak cocok bisa membuat SBU tertahan sejak awal. Cek pola salah paling umum dan cara menghindari submit ulang yang memakan waktu."
 channel: blog
 product: SBU-M
+image: /blog/kbli-salah-bikin-sbu-ditolak.webp
 voice_mode: corporate
 publishedAt: 2026-04-22
 dateModified: 2026-04-26
