@@ -12,7 +12,7 @@ const serviceSchema = {
     url: 'https://atrahdis.id',
   },
   areaServed: { '@type': 'Country', name: 'Indonesia' },
-  description: 'Jasa pengurusan SBU Besar (B) konstruksi Indonesia — mulai Rp 50 juta, proses 21-30 hari kerja jika dokumen lengkap.',
+  description: 'Jasa pengurusan SBU Besar (B) konstruksi Indonesia — estimasi setelah audit dokumen, proses 21-30 hari kerja jika dokumen lengkap.',
   offers: {
     '@type': 'Offer',
     price: '50000000',
@@ -31,7 +31,7 @@ const faqSchema = {
       name: 'Berapa biaya SBU Besar 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SBU Besar mulai Rp 50 juta. Angka final bergantung pada sub-bidang, kompleksitas dokumen, jumlah tenaga ahli, dan volume koordinasi. Nicx dari Atrahdis mengaudit semua dokumen sebelum memberikan quote.',
+        text: 'SBU Besar — harga final ditentukan setelah audit dokumen. Nicx dari Atrahdis mengaudit semua dokumen sebelum memberikan quote.',
       },
     },
     {
@@ -106,8 +106,8 @@ const breadcrumbSchema = {
 const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
 ---
 <Base
-  title="SBU Besar (B) — Mulai Rp 50 Juta, 21-30 Hari Kerja"
-  description="Jasa pengurusan SBU Besar konstruksi — mulai Rp 50 juta, proses 21-30 hari kerja. Verifikasi LPJK paling ketat. Nicx audit sejak 2016."
+  title="SBU Besar (B) — Estimasi Setelah Audit, 21-30 Hari Kerja"
+  description="Jasa pengurusan SBU Besar konstruksi — estimasi setelah audit dokumen, proses 21-30 hari kerja. Verifikasi LPJK paling ketat. Nicx audit sejak 2016."
   canonical="https://atrahdis.id/layanan/sbu-besar"
 >
   <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
@@ -126,7 +126,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
   <!-- HERO -->
   <section class="mx-auto max-w-4xl px-4 py-12">
     <h1 class="text-4xl font-bold tracking-tight">
-      SBU Besar (B) — Mulai Rp 50 Juta
+      SBU Besar (B) — Estimasi Setelah Audit
     </h1>
     <p class="mt-3 text-2xl font-bold text-blue-600">
       Proses 21-30 hari kerja jika dokumen lengkap
@@ -152,7 +152,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <h2 class="sr-only">Ringkasan</h2>
       <p class="text-lg">
         SBU Besar (B) adalah sertifikat badan usaha untuk kontraktor konstruksi modal
-        di atas Rp 25 miliar — kualifikasi tertinggi. Biaya mulai Rp 50 juta, proses
+        di atas Rp 25 miliar — kualifikasi tertinggi. Biaya ditentukan setelah audit dokumen, proses
         21-30 hari kerja jika dokumen lengkap. LPJK melakukan cross-check paling ketat
         pada konsistensi data, laporan keuangan KAP, dan kualifikasi tenaga ahli.
         Inkonsistensi satu data bisa menahan seluruh proses. Nicx dari Atrahdis mengaudit
@@ -273,7 +273,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <h2 class="text-2xl font-bold">Biaya SBU Besar 2026</h2>
 
     <div class="mt-8 rounded-xl bg-gray-50 p-6">
-      <p class="text-3xl font-bold text-blue-600">Mulai Rp 50 juta</p>
+      <p class="text-3xl font-bold text-blue-600">Harga final setelah audit</p>
       <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
     </div>
 
@@ -327,9 +327,9 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-medium text-gray-900">Biaya mulai</td>
-            <td class="py-3 pr-4">Rp 4,5 jt</td>
-            <td class="py-3 pr-4">Rp 18 jt</td>
-            <td class="py-3">Rp 50 jt</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
+            <td class="py-3">Estimasi setelah audit</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-medium text-gray-900">Nilai tender</td>
@@ -356,8 +356,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <div>
         <h3 class="font-semibold">Berapa biaya SBU Besar 2026?</h3>
         <p class="mt-2 text-gray-600">
-          SBU Besar mulai Rp 50 juta. Angka final bergantung pada sub-bidang,
-          kompleksitas dokumen, jumlah tenaga ahli, dan volume koordinasi.
+          SBU Besar — harga final ditentukan setelah audit dokumen.
           Nicx dari Atrahdis mengaudit semua dokumen sebelum memberikan quote.
         </p>
       </div>
@@ -434,11 +433,11 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Kecil (K)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — 3 hari kerja</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — 3 hari kerja</p>
       </a>
       <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Menengah (M)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — 14-21 hari</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — 14-21 hari</p>
       </a>
       <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SKK J5-J8</h3>

@@ -22,6 +22,8 @@ SBU berlaku **3 tahun**. Mulai perpanjangan **minimal 60-90 hari sebelum expired
 
 ## Berapa Lama SBU Berlaku?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-perpanjangan-sbu-sebelum-expired.jpg)
+
 SBU konstruksi yang diterbitkan LPJK berlaku selama **3 (tiga) tahun** terhitung sejak tanggal terbit yang tercantum di sertifikat.
 
 Setelah 3 tahun, SBU otomatis tidak aktif kalau tidak diperpanjang. Tidak ada masa tenggang atau grace period — tanggal expired adalah tanggal terakhir SBU dianggap valid.

@@ -22,6 +22,8 @@ Tender tanpa SBU bukan hanya gugur di kualifikasi — bisa berujung **denda Rp 5
 
 ## Kenapa Ada Kontraktor yang Tetap Mencoba Tender Tanpa SBU?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-tender-tanpa-sbu-risikonya.jpg)
+
 Ada beberapa alasan yang sering Nicx dengar dari kontraktor yang terlambat mengurus SBU:
 
 - "SBU baru expired bulan depan, masih bisa masuk kan?"
@@ -104,8 +106,8 @@ Perbandingan sederhana:
 
 | Item | Biaya |
 |------|-------|
-| SBU Kecil (jasa Atrahdis) | Mulai Rp 4,5 juta |
-| SBU Menengah (jasa Atrahdis) | Mulai Rp 18 juta |
+| SBU Kecil (jasa Atrahdis) | Estimasi setelah audit |
+| SBU Menengah (jasa Atrahdis) | Estimasi setelah audit |
 | Denda UUJK (per pelanggaran) | Hingga Rp 50 juta |
 | Kerugian blacklist 2 tahun | Bergantung nilai pipeline proyek |
 | Kerugian pembatalan kontrak | Bergantung nilai proyek |

@@ -22,6 +22,8 @@ Checklist dokumen SBU berbeda per kualifikasi. **SBU Kecil** butuh minimal 8 jen
 
 ## Kenapa Dokumen yang Tidak Lengkap Lebih Mahal dari yang Terlihat?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-dokumen-sbu-konstruksi-checklist.jpg)
+
 Banyak perusahaan berpikir dokumen yang kurang bisa dilengkapi sambil jalan. Di praktik LPJK, itu tidak bekerja seperti itu.
 
 Saat submit tidak lengkap, Perusahaan Anda bukan sekadar diminta tambah file. Prosesnya berhenti, kembali ke antrian, dan mulai ulang dari titik masuk. Artinya waktu yang sudah terpakai tidak ikut terhitung.

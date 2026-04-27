@@ -26,6 +26,8 @@ SBU konstruksi adalah sertifikat wajib LPJK untuk perusahaan konstruksi di Indon
 
 ## Apa Itu SBU Konstruksi Secara Resmi?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-apa-itu-sbu-konstruksi.jpg)
+
 SBU (Sertifikat Badan Usaha) adalah dokumen yang dikeluarkan oleh **LPJK (Lembaga Pengembangan Jasa Konstruksi)** sebagai bukti bahwa perusahaan Anda memenuhi standar kompetensi untuk menjalankan pekerjaan konstruksi di Indonesia.
 
 Bukan sekadar izin. SBU adalah **sertifikasi** yang membuktikan perusahaan Anda punya kemampuan teknis, keuangan, dan legal sesuai kualifikasi yang diajukan. Tanpa SBU, perusahaan Anda secara hukum tidak bisa mengikuti tender resmi — baik tender pemerintah maupun swasta yang mensyaratkan SBU.

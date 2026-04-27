@@ -9,7 +9,7 @@ publishedAt: 2026-04-22
 dateModified: 2026-04-26
 faqSchema:
   - q: "Berapa biaya SBU konstruksi untuk kualifikasi K?"
-    a: "Mulai sekitar Rp 4,5 juta, tetapi angka final bergantung pada kesiapan dokumen, SKK, dan sub-bidang yang Anda butuhkan. Berdasarkan 280+ kasus yang Nicx proses sejak 2016, biaya koreksi dokumen sering menambah 20-40% dari estimasi awal."
+    a: "Harga SBU Kecil ditentukan setelah audit dokumen — konsultasi gratis untuk estimasi. Berdasarkan 280+ kasus yang Nicx proses sejak 2016, biaya koreksi dokumen sering menambah signifikan dari estimasi awal."
   - q: "Kenapa biaya SBU Menengah lebih tinggi?"
     a: "Karena volume verifikasi, risiko koreksi dokumen, kebutuhan tenaga ahli, dan koordinasi data biasanya lebih kompleks dibanding kualifikasi K. LPJK memerlukan pemeriksaan lebih mendalam untuk SBU M dan B."
   - q: "Apa biaya terbesar yang sering tidak dihitung sejak awal?"
@@ -18,9 +18,11 @@ faqSchema:
 
 ## TL;DR
 
-Biaya SBU konstruksi 2026 mulai **Rp 4,5 juta** untuk K, **Rp 18 juta** untuk M, dan **Rp 50 juta** untuk B. Angka final bergantung kesiapan dokumen. Berdasarkan **280+ kasus** yang Nicx proses sejak 2016, koreksi dokumen sering menambah biaya tak terduga.
+Biaya SBU konstruksi 2026 ditentukan setelah audit dokumen per kualifikasi. Estimasi final bergantung pada kesiapan dokumen, sub-bidang, dan kompleksitas verifikasi. Berdasarkan **280+ kasus** yang Nicx proses sejak 2016, koreksi dokumen sering menambah biaya tak terduga.
 
 ## Berapa Biaya SBU Konstruksi 2026 Sebenarnya?
+
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-biaya-sbu-konstruksi-2026.jpg)
 
 Kalau Perusahaan Anda sedang menyiapkan tender, pertanyaan pertama biasanya sederhana: berapa biaya SBU konstruksi sekarang?
 
@@ -28,9 +30,9 @@ Jawaban jujurnya: biaya SBU tidak aman dihitung dari satu angka promosi. Anda pe
 
 Untuk gambaran awal, pola biaya di lapangan biasanya seperti ini:
 
-- **SBU K**: mulai sekitar Rp 4,5 juta
-- **SBU M**: mulai sekitar Rp 18 juta
-- **SBU B**: mulai sekitar Rp 50 juta
+- **SBU K**: estimasi setelah audit dokumen
+- **SBU M**: estimasi setelah audit dokumen
+- **SBU B**: estimasi setelah audit dokumen
 
 Angka awal itu baru berguna kalau berkas Perusahaan Anda memang siap submit. Kalau belum siap, budget yang kelihatan murah di depan bisa berubah jadi mahal karena ada perbaikan yang tidak dihitung sejak awal.
 
@@ -65,9 +67,9 @@ Untuk kualifikasi besar, biaya naik bukan sekadar karena labelnya lebih tinggi. 
 
 | Kualifikasi | Biaya Mulai | Durasi Proses | Sumber |
 |-------------|-------------|---------------|--------|
-| SBU Kecil (K) | Rp 4,5 juta | 3-7 hari kerja | LPJK 2026, data Nicx |
-| SBU Menengah (M) | Rp 18 juta | 14-21 hari kerja | LPJK 2026, data Nicx |
-| SBU Besar (B) | Rp 50 juta | 30-60 hari kerja | LPJK 2026, data Nicx |
+| SBU Kecil (K) | Estimasi setelah audit | 3-7 hari kerja | LPJK 2026, data Nicx |
+| SBU Menengah (M) | Estimasi setelah audit | 14-21 hari kerja | LPJK 2026, data Nicx |
+| SBU Besar (B) | Estimasi setelah audit | 30-60 hari kerja | LPJK 2026, data Nicx |
 
 ## Biaya Tambahan Apa yang Paling Sering Muncul?
 

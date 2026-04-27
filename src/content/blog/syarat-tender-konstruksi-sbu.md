@@ -22,6 +22,8 @@ Setiap paket tender konstruksi pemerintah mensyaratkan SBU aktif yang sesuai sub
 
 ## Kenapa SBU Menjadi Pintu Masuk Tender?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-syarat-tender-konstruksi-sbu.jpg)
+
 SBU bukan hanya formalitas administrasi. Dalam sistem pengadaan konstruksi Indonesia, SBU adalah bukti bahwa badan usaha Anda telah diverifikasi LPJK dan memenuhi standar teknis, legal, dan keuangan yang disyaratkan.
 
 Tanpa SBU, Anda tidak bisa mendaftar di LPSE, tidak bisa unggah dokumen penawaran, dan tidak bisa masuk tahap evaluasi. Sistem secara otomatis menyaring peserta berdasarkan status SBU sebelum panitia melihat penawaran Anda.

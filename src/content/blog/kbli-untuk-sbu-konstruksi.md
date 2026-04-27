@@ -22,6 +22,8 @@ KBLI yang salah adalah penyebab **30% penolakan SBU** dari 280+ kasus Atrahdis. 
 
 ## Kenapa Memilih KBLI Bukan Hal yang Bisa Diaproksimasi?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-kbli-untuk-sbu-konstruksi.jpg)
+
 Banyak perusahaan memilih KBLI berdasarkan nama yang paling mirip, bukan berdasarkan definisi resminya. Hasilnya: KBLI aktif di NIB tidak sejalan dengan sub-bidang SBU yang diajukan.
 
 LPJK membaca kecocokan ini secara sistemik. Kalau tidak cocok, submit tidak diteruskan ke tahap verifikasi dokumen lain.

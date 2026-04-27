@@ -22,6 +22,8 @@ KSWP tidak clear bisa menghentikan proses SBU sebelum masuk tahap verifikasi. Be
 
 ## Kenapa SBU Bisa Berhenti Sebelum Masuk Tahap Berat?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-kswp-sbu-ditolak.jpg)
+
 Perusahaan Anda mungkin sudah menyiapkan akta, NIB, dan SKK. Tapi kalau status KSWP tidak clear, proses bisa mandek lebih cepat dari yang Anda kira.
 
 Masalahnya bukan cuma soal pajak. Masalah utamanya adalah **sistem membaca Perusahaan Anda belum bersih untuk lanjut**.

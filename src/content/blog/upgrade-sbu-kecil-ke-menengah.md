@@ -11,7 +11,7 @@ faqSchema:
   - q: "Apa syarat upgrade SBU Kecil ke Menengah?"
     a: "Syarat utama: modal usaha tercatat di atas Rp 5 miliar di OSS, SKK tenaga ahli level J5-J6 minimal 3-5 orang, laporan keuangan lebih detail (audit KAP direkomendasikan), NIB dan KBLI masih aktif, serta tidak ada sanksi atau catatan buruk dari SBU sebelumnya."
   - q: "Berapa biaya upgrade SBU Kecil ke Menengah?"
-    a: "Biaya upgrade SBU Menengah mulai Rp 18 juta. Ini lebih mahal dari perpanjangan SBU Kecil (Rp 3,5-4 juta) karena prosesnya setara pengajuan baru dengan verifikasi lebih mendalam. Biaya final tergantung kondisi dokumen dan apakah perlu perbaikan KBLI, OSS, atau SKK."
+    a: "Biaya upgrade SBU Menengah ditentukan setelah audit dokumen. Prosesnya setara pengajuan baru dengan verifikasi lebih mendalam. Biaya final tergantung kondisi dokumen dan apakah perlu perbaikan KBLI, OSS, atau SKK."
   - q: "Berapa lama proses upgrade SBU Kecil ke Menengah?"
     a: "Timeline upgrade sama dengan pengajuan SBU Menengah baru: 14-21 hari kerja kalau dokumen lengkap. Tidak lebih cepat hanya karena sudah punya SBU Kecil. LPJK tetap melakukan verifikasi lengkap untuk kualifikasi baru."
   - q: "Apakah SBU Kecil harus dicabut dulu sebelum upgrade ke Menengah?"
@@ -22,9 +22,11 @@ faqSchema:
 
 ## TL;DR
 
-Upgrade SBU Kecil ke Menengah **bisa**, tapi tidak otomatis. Butuh bukti modal **di atas Rp 5 miliar**, **SKK J5-J6**, dan dokumen lebih detail. Timeline **14-21 hari kerja**, biaya mulai **Rp 18 juta**. Berdasarkan **280+ kasus** Nicx, upgrade tanpa audit dokumen sering gagal di verifikasi pertama.
+Upgrade SBU Kecil ke Menengah **bisa**, tapi tidak otomatis. Butuh bukti modal **di atas Rp 5 miliar**, **SKK J5-J6**, dan dokumen lebih detail. Timeline **14-21 hari kerja**, biaya ditentukan setelah audit dokumen. Berdasarkan **280+ kasus** Nicx, upgrade tanpa audit dokumen sering gagal di verifikasi pertama.
 
 ## Upgrade SBU Kecil ke Menengah: Bisa atau Tidak?
+
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-upgrade-sbu-kecil-ke-menengah.jpg)
 
 Bisa. Tapi banyak yang salah paham: upgrade bukan berarti SBU Kecil "dinaikkan levelnya" oleh LPJK. Upgrade artinya Anda **mengajukan SBU Menengah baru** dengan menggunakan riwayat SBU Kecil sebagai referensi.
 
@@ -75,9 +77,9 @@ Banyak yang kaget: biaya upgrade jauh lebih mahal dari perpanjangan SBU Kecil.
 
 | Jenis Biaya | SBU Kecil | Upgrade ke M | SBU Menengah Baru |
 |-------------|-----------|--------------|-------------------|
-| Perpanjangan K | Rp 3,5-4 juta | — | — |
-| Upgrade K→M | — | Rp 18 juta | — |
-| Pengajuan M baru | — | — | Rp 18 juta |
+| Perpanjangan K | Estimasi setelah audit | — | — |
+| Upgrade K→M | — | Estimasi setelah audit | — |
+| Pengajuan M baru | — | — | Estimasi setelah audit |
 
 Upgrade memang setara biaya pengajuan baru, karena prosesnya juga setara.
 

@@ -22,6 +22,8 @@ SBU Kecil, Menengah, dan Besar berbeda di **skala usaha**, **kompleksitas dokume
 
 ## Kenapa Salah Pilih Kualifikasi Bisa Mengganggu Rencana Tender?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-perbedaan-sbu-kecil-menengah-besar-2026.jpg)
+
 Banyak perusahaan bertanya, "Lebih bagus ambil SBU K, M, atau B?"
 
 Pertanyaannya kelihatan sederhana, tapi efeknya besar. Kalau Perusahaan Anda salah pilih kualifikasi, masalahnya bukan cuma di biaya. Masalahnya bisa menjalar ke timeline, strategi tender, sampai beban koreksi dokumen.

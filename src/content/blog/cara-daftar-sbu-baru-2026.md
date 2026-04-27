@@ -26,6 +26,8 @@ Daftar SBU baru 2026 butuh **7 langkah**: cek NIB, KBLI, akta, NPWP, SKK, submit
 
 ## Cara Daftar SBU Baru: Gambaran Besar
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-cara-daftar-sbu-baru-2026.jpg)
+
 Proses daftar SBU baru tidak serumit yang dibayangkan, tapi butuh ketelitian. Satu dokumen salah format atau data tidak sinkron, LPJK akan kembalikan.
 
 Nicx akan jelaskan step-by-step. Bukan teori — ini SOP yang dipakai untuk 280+ kasus Atrahdis.

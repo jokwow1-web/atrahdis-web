@@ -12,7 +12,7 @@ const serviceSchema = {
     url: 'https://atrahdis.id',
   },
   areaServed: { '@type': 'Country', name: 'Indonesia' },
-  description: 'Jasa pengurusan SBU Kecil (K) konstruksi Indonesia — mulai Rp 4,5 juta, proses 3-7 hari kerja jika dokumen lengkap.',
+  description: 'Jasa pengurusan SBU Kecil (K) konstruksi Indonesia — estimasi setelah audit dokumen, proses 3-7 hari kerja jika dokumen lengkap.',
   offers: {
     '@type': 'Offer',
     price: '4500000',
@@ -31,7 +31,7 @@ const faqSchema = {
       name: 'Berapa biaya SBU Kecil 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SBU Kecil mulai Rp 4,5 juta. Angka final bergantung pada sub-bidang, jumlah klasifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.',
+        text: 'SBU Kecil — harga final ditentukan setelah audit dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.',
       },
     },
     {
@@ -106,8 +106,8 @@ const breadcrumbSchema = {
 const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
 ---
 <Base
-  title="SBU Kecil (K) — Mulai Rp 4,5 Juta, 3 Hari Kerja"
-  description="Jasa pengurusan SBU Kecil konstruksi — mulai Rp 4,5 juta, proses 3-7 hari kerja jika dokumen lengkap. Nicx audit sejak 2016, 280+ sertifikat."
+  title="SBU Kecil (K) — Estimasi Setelah Audit, 3 Hari Kerja"
+  description="Jasa pengurusan SBU Kecil konstruksi — estimasi setelah audit dokumen, proses 3-7 hari kerja jika dokumen lengkap. Nicx audit sejak 2016, 280+ sertifikat."
   canonical="https://atrahdis.id/layanan/sbu-kecil"
 >
   <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
@@ -126,7 +126,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
   <!-- HERO -->
   <section class="mx-auto max-w-4xl px-4 py-12">
     <h1 class="text-4xl font-bold tracking-tight">
-      SBU Kecil (K) — Mulai Rp 4,5 Juta, 3 Hari Kerja
+      SBU Kecil (K) — Estimasi Setelah Audit, 3 Hari Kerja
     </h1>
     <p class="mt-3 text-2xl font-bold text-blue-600">
       Proses 3 hari kerja jika dokumen lengkap
@@ -152,7 +152,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <h2 class="sr-only">Ringkasan</h2>
       <p class="text-lg">
         SBU Kecil (K) adalah sertifikat badan usaha untuk kontraktor konstruksi modal sampai
-        Rp 5 miliar. Biaya mulai Rp 4,5 juta, proses tercepat 3 hari kerja jika dokumen
+        Rp 5 miliar. Biaya ditentukan setelah audit dokumen, proses tercepat 3 hari kerja jika dokumen
         lengkap (NIB benar, KBLI cocok, SKK aktif). Tanpa SBU, kontraktor tidak bisa ikut
         tender resmi — denda pelanggaran UUJK Pasal 44 mencapai Rp 50 juta. Nicx dari
         Atrahdis mengaudit dokumen Anda gratis sebelum quote keluar.
@@ -277,7 +277,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     </p>
 
     <div class="mt-8 rounded-xl bg-gray-50 p-6">
-      <p class="text-3xl font-bold text-blue-600">Mulai Rp 4,5 juta</p>
+      <p class="text-3xl font-bold text-blue-600">Harga final setelah audit</p>
       <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
     </div>
 
@@ -382,9 +382,8 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <div>
         <h3 class="font-semibold">Berapa biaya SBU Kecil 2026?</h3>
         <p class="mt-2 text-gray-600">
-          SBU Kecil mulai Rp 4,5 juta. Angka final bergantung pada sub-bidang, jumlah
-          klasifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen
-          Perusahaan Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.
+          SBU Kecil — harga final ditentukan setelah audit dokumen. Nicx dari Atrahdis
+          mengaudit dokumen Perusahaan Anda sebelum memberikan quote — jadi tidak ada biaya tersembunyi.
         </p>
       </div>
 
@@ -478,7 +477,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Menengah (M)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — untuk kontraktor menengah</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — untuk kontraktor menengah</p>
       </a>
       <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SKK J5/J6/J7</h3>

@@ -15,8 +15,15 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 const canonical = new URL(`/blog/${post.id}`, Astro.site ?? Astro.url).toString();
+
+const showToc = headings.filter((h) => h.depth === 2).length >= 4;
+
+const allPosts = await getCollection('blog');
+const related = allPosts
+  .filter((p) => p.id !== post.id && p.data.product === post.data.product)
+  .slice(0, 3);
 
 const faqSchema = post.data.faqSchema?.length
   ? {
@@ -60,9 +67,58 @@ const faqSchema = post.data.faqSchema?.length
       />
     )}
 
+    {showToc && (
+      <nav class="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-5">
+        <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">Daftar Isi</p>
+        <ol class="mt-3 space-y-1 text-sm">
+          {headings.filter((h) => h.depth === 2).map((h) => (
+            <li>
+              <a href={`#${h.slug}`} class="text-gray-600 hover:text-gold-500">{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
     <div class="prose prose-gray mt-10 max-w-none prose-a:text-gold-500 prose-headings:tracking-tight">
       <Content />
     </div>
+
+    {post.data.faqSchema?.length > 0 && (
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Pertanyaan Umum</h2>
+        <div class="mt-6 space-y-3">
+          {post.data.faqSchema.map((item) => (
+            <details class="rounded-lg border border-gray-200 bg-white">
+              <summary class="cursor-pointer p-4 font-semibold text-gray-800 hover:text-gold-500">
+                {item.q}
+              </summary>
+              <p class="px-4 pb-4 text-gray-600">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="author-box mt-10 border-t border-gray-200 pt-6">
+      <p class="font-bold text-gray-900">Nicx — SBU Specialist sejak 2016</p>
+      <p class="mt-1 text-gray-600">280+ SBU diproses. Mitra resmi LPJK dan asosiasi konstruksi.</p>
+      <a href="/tentang" class="mt-2 inline-block text-gold-500 hover:text-gold-600">Profil lengkap →</a>
+    </div>
+
+    {related.length > 0 && (
+      <section class="mt-10">
+        <h2 class="text-lg font-semibold text-gray-900">Bacaan terkait</h2>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((p) => (
+            <a href={`/blog/${p.id}`} class="rounded-lg border border-gray-200 p-4 hover:border-gold-500/50 transition">
+              <p class="text-xs font-semibold uppercase tracking-wide text-gold-400">{p.data.product}</p>
+              <p class="mt-1 text-sm font-medium text-gray-900">{p.data.title}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="mt-12 rounded-2xl bg-navy-900 border border-gold-500/20 p-8">
       <h2 class="text-2xl font-bold tracking-tight">Perlu audit dokumen sebelum submit?</h2>

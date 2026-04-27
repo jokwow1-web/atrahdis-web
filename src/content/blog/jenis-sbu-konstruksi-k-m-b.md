@@ -26,6 +26,8 @@ SBU Konstruksi ada **3 jenis**: Kecil (K) modal < Rp 5 miliar, Menengah (M) Rp 5
 
 ## Jenis SBU Konstruksi yang Tersedia
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-jenis-sbu-konstruksi-k-m-b.jpg)
+
 LPJK mengklasifikasikan SBU ke dalam tiga kualifikasi utama. Bukan untuk mempersulit, tapi untuk menyesuaikan verifikasi dengan skala risiko proyek.
 
 Perusahaan kecil dengan proyek ringan tidak perlu verifikasi seberat perusahaan besar dengan proyek miliaran. Sebaliknya, perusahaan besar tidak bisa lolos dengan dokumen yang terlalu sederhana.

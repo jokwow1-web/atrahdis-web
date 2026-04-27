@@ -22,6 +22,8 @@ Submit SBU ke LPJK dilakukan via portal SIKI di siki.lpjk.net. Proses online pen
 
 ## Submit SBU Dilakukan di Mana?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-submit-sbu-lpjk-2026.jpg)
+
 Sejak digitalisasi LPJK, seluruh proses pengajuan SBU dilakukan melalui portal SIKI LPJK (Sistem Informasi Konstruksi Indonesia) di **siki.lpjk.net**.
 
 Tidak ada submit fisik ke kantor LPJK pusat atau daerah. Semua dokumen diunggah secara digital, verifikasi dilakukan online, dan SBU terbit dalam format digital yang bisa diunduh.

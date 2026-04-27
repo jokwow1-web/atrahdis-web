@@ -64,7 +64,7 @@ export const ORG_SCHEMA = {
   },
   telephone: '+628131092903',
   url: 'https://atrahdis.id',
-  priceRange: 'Rp 4.500.000 - Rp 50.000.000',
+  priceRange: 'Tergantung kualifikasi & sub-bidang',
   numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 10 },
   areaServed: { '@type': 'Country', name: 'Indonesia' },
 };

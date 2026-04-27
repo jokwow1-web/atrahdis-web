@@ -22,6 +22,8 @@ Timeline SBU K **3-7 hari kerja**, SBU M **14-21 hari**, dan SBU B **30-60 hari*
 
 ## Kenapa Timeline Aman Lebih Penting daripada yang Terdengar Cepat?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-timeline-urus-sbu-2026.jpg)
+
 Kalau Perusahaan Anda sedang mengejar tender, wajar kalau fokus pertama jatuh ke satu pertanyaan: berapa lama urus SBU?
 
 Masalahnya, banyak orang mencari jawaban yang menenangkan, bukan jawaban yang akurat. Padahal yang Perusahaan Anda butuhkan justru timeline yang bisa dipakai untuk ambil keputusan.

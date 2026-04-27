@@ -26,6 +26,8 @@ faqSchema:
 
 ## Kenapa SBU Saya Ditolak LPJK?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-ditolak-lpjk-solusi.jpg)
+
 Pertanyaan pertama yang Nicx dengar saat klien baru datang: "Kenapa SBU saya ditolak padahal sudah lengkap?"
 
 Jawabannya hampir selalu: "Lengkap dari sisi perusahaan, tapi belum **sinkron** dari sisi LPJK."

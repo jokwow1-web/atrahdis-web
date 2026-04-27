@@ -1,0 +1,39 @@
+---
+import '../../styles/global.css';
+
+const error = Astro.url.searchParams.get('error');
+const message = Astro.url.searchParams.get('message');
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <title>Login — Atrahdis</title>
+  </head>
+  <body class="flex min-h-screen items-center justify-center bg-navy-900 font-sans text-gray-100 antialiased">
+    <div class="w-full max-w-sm px-6">
+      <div class="mb-8 text-center">
+        <a href="/" class="text-2xl font-bold tracking-tight text-white">Atrahdis</a>
+        <p class="mt-2 text-sm text-gray-400">Login ke dashboard Atrahdis</p>
+      </div>
+
+      {error && (
+        <div class="mb-4 rounded-lg border border-red-700 bg-red-900/30 px-4 py-3 text-sm text-red-300">
+          {error}
+        </div>
+      )}
+
+      {message && (
+        <div class="mb-4 rounded-lg border border-emerald-700 bg-emerald-900/30 px-4 py-3 text-sm text-emerald-300">
+          {message}
+        </div>
+      )}
+
+      <p class="text-center text-sm text-gray-400">Area internal sedang dalam maintenance. Hubungi tim Atrahdis untuk mendapatkan akses.</p>
+
+      <a href="/" class="mt-6 block text-center text-sm text-gold-400 hover:text-gold-500">← Kembali ke Beranda</a>
+    </div>
+  </body>
+</html>

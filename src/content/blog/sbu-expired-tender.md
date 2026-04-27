@@ -26,6 +26,8 @@ SBU expired **tidak bisa** ikut tender — LPSE otomatis reject. Selain gugur ku
 
 ## SBU Expired Bisa Ikut Tender?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-expired-tender.jpg)
+
 Jawaban singkat: **tidak bisa.**
 
 Sistem LPSE (Layanan Pengadaan Secara Elektronik) dan e-Procurement otomatis mengecek status SBU saat prakualifikasi. Kalau SBU Anda expired — bahkan sehari sebelumnya — sistem otomatis menandai perusahaan Anda tidak memenuhi syarat.
@@ -97,9 +99,9 @@ Tidak perlu pemeriksaan lengkap dari nol. Biaya perpanjangan juga biasanya lebih
 
 | Kualifikasi | Estimasi Biaya Perpanjangan | Biaya Pengajuan Baru | Hemat |
 |-------------|---------------------------|---------------------|-------|
-| SBU Kecil (K) | Rp 3,5-4 juta | Rp 4,5 juta | ~22% |
-| SBU Menengah (M) | Rp 14-16 juta | Rp 18 juta | ~17% |
-| SBU Besar (B) | Rp 40-45 juta | Rp 50 juta | ~15% |
+| SBU Kecil (K) | Estimasi setelah audit | Estimasi setelah audit | Signifikan |
+| SBU Menengah (M) | Estimasi setelah audit | Estimasi setelah audit | Signifikan |
+| SBU Besar (B) | Estimasi setelah audit | Estimasi setelah audit | Signifikan |
 
 *Estimasi berdasarkan data internal Atrahdis 2026*
 

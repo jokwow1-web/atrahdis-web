@@ -12,7 +12,7 @@ const serviceSchema = {
     url: 'https://atrahdis.id',
   },
   areaServed: { '@type': 'Country', name: 'Indonesia' },
-  description: 'Jasa pengurusan SKK J5-J9 konstruksi — Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Mulai Rp 5,97 juta.',
+  description: 'Jasa pengurusan SKK J5-J9 konstruksi — Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Estimasi setelah audit dokumen.',
   offers: [
     {
       '@type': 'Offer',
@@ -55,7 +55,7 @@ const faqSchema = {
       name: 'Berapa biaya SKK J5/J6 konstruksi 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SKK J5/J6 mulai Rp 5,97 juta. SKK J7 mulai Rp 7,47 juta. SKK J8 mulai Rp 8,97 juta. Angka final bergantung pada sub-bidang dan kualifikasi. Nicx dari Atrahdis bisa menentukan level SKK yang tepat untuk kebutuhan SBU Perusahaan Anda.',
+        text: 'Harga SKK ditentukan setelah audit kebutuhan SBU Anda — konsultasi gratis untuk estimasi.',
       },
     },
     {
@@ -114,8 +114,8 @@ const breadcrumbSchema = {
 const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
 ---
 <Base
-  title="SKK Konstruksi J5-J9 — Sertifikat Kompetensi Kerja, Mulai Rp 5,97 Juta"
-  description="Jasa pengurusan SKK J5-J9 konstruksi — mulai Rp 5,97 juta. Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Nicx audit kebutuhan SKK sejak 2016."
+  title="SKK Konstruksi J5-J9 — Sertifikat Kompetensi Kerka, Estimasi Setelah Audit"
+  description="Jasa pengurusan SKK J5-J9 konstruksi — estimasi setelah audit dokumen. Sertifikat Kompetensi Kerja wajib untuk pengajuan SBU. Nicx audit kebutuhan SKK sejak 2016."
   canonical="https://atrahdis.id/layanan/skk"
 >
   <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
@@ -137,7 +137,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       SKK Konstruksi J5-J9 — Sertifikat Kompetensi Kerja
     </h1>
     <p class="mt-3 text-2xl font-bold text-blue-600">
-      Mulai Rp 5,97 juta — wajib untuk SBU
+      Estimasi Setelah Audit — wajib untuk SBU
     </p>
     <p class="mt-4 max-w-2xl text-lg text-gray-600">
       SKK (Sertifikat Kompetensi Kerja) wajib dimiliki tenaga ahli sebelum
@@ -160,7 +160,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <h2 class="sr-only">Ringkasan</h2>
       <p class="text-lg">
         SKK (Sertifikat Kompetensi Kerja) wajib untuk tenaga ahli konstruksi
-        yang didaftarkan dalam pengajuan SBU. Biaya mulai Rp 5,97 juta (J5/J6),
+        yang didaftarkan dalam pengajuan SBU. Biaya ditentukan setelah audit kebutuhan SKK Anda (J5/J6),
         proses 7-14 hari kerja. Level SKK harus sesuai kualifikasi SBU yang dituju:
         J5/J6 untuk Kecil, J7 untuk Menengah, J8-J9 untuk Besar. Nicx dari Atrahdis
         mengaudit kebutuhan SKK spesifik sebelum Perusahaan Anda mengeluarkan biaya.
@@ -190,19 +190,19 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
         <tbody class="text-gray-600">
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-semibold">J5 / J6</td>
-            <td class="py-3 pr-4">Rp 5,97 juta</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
             <td class="py-3 pr-4">SBU Kecil, sebagian Menengah</td>
             <td class="py-3">Tenaga ahli tingkat menengah</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-semibold">J7</td>
-            <td class="py-3 pr-4">Rp 7,47 juta</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
             <td class="py-3 pr-4">SBU Menengah, sebagian Besar</td>
             <td class="py-3">Tenaga ahli tingkat tinggi</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-semibold">J8</td>
-            <td class="py-3 pr-4">Rp 8,97 juta</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
             <td class="py-3 pr-4">SBU Besar</td>
             <td class="py-3">Tenaga ahli level tertinggi</td>
           </tr>
@@ -324,8 +324,8 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <div>
         <h3 class="font-semibold">Berapa biaya SKK J5/J6?</h3>
         <p class="mt-2 text-gray-600">
-          SKK J5/J6 mulai Rp 5,97 juta. Angka final bergantung pada sub-bidang
-          dan kualifikasi. Nicx dari Atrahdis bisa menentukan level SKK yang
+          Harga SKK ditentukan setelah audit kebutuhan SBU Anda.
+          Nicx dari Atrahdis bisa menentukan level SKK yang
           tepat untuk kebutuhan SBU Perusahaan Anda.
         </p>
       </div>
@@ -402,15 +402,15 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Kecil (K)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — butuh SKK J5/J6</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — butuh SKK J5/J6</p>
       </a>
       <a href="/layanan/sbu-menengah" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Menengah (M)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 18 juta — butuh SKK J7</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — butuh SKK J7</p>
       </a>
       <a href="/layanan/sbu-besar" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Besar (B)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 50 juta — butuh SKK J8</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — butuh SKK J8</p>
       </a>
       <a href="/blog/sbu-k-3-hari-kerja" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU K 3 Hari Kerja</h3>

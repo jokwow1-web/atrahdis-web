@@ -22,6 +22,8 @@ Proyek pemerintah via LPSE memverifikasi SBU secara otomatis — bukan manual. S
 
 ## E-procurement Pemerintah Tidak Bisa Dinegosiasi
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-untuk-proyek-pemerintah.jpg)
+
 Berbeda dari proyek swasta yang masih bisa ada diskusi informal soal persyaratan, e-procurement pemerintah berjalan di sistem yang rigid.
 
 LPSE (Layanan Pengadaan Secara Elektronik) adalah platform yang dipakai semua instansi pemerintah pusat dan daerah untuk pengadaan. Integrasi LPSE dengan database LPJK membuat verifikasi SBU terjadi secara otomatis, real-time, dan tidak bisa diintervensi.

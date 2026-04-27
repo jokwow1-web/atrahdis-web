@@ -26,6 +26,8 @@ Sanksi SBU berdasarkan **UUJK Pasal 44** mencapai **Rp 50 juta** untuk badan usa
 
 ## SBU Kena Sanksi Berapa?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-kena-sanksi.jpg)
+
 Pertanyaan ini muncul setiap kali ada perusahaan yang tiba-tiba sadar SBU-nya expired saat proyek sedang berjalan atau tender sudah di depan mata.
 
 Jawaban resminya: **Rp 50 juta** — denda maksimal berdasarkan UUJK Pasal 44.

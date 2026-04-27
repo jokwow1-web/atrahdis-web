@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import react from '@astrojs/react';
 import partytown from '@astrojs/partytown';
 
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
     },
   },
   integrations: [
+    react(),
     sitemap({
       filter: (page) => !page.includes('/sbu'),
       i18n: { defaultLocale: 'id', locales: { id: 'id-ID' } },

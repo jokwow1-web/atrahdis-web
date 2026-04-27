@@ -26,6 +26,8 @@ faqSchema:
 
 ## SBU vs SIUJK: Kenapa Banyak yang Masih Bingung?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-konstruksi-vs-siujk.jpg)
+
 Setiap bulan ada 2-3 klien baru yang bertanya, "Pakai SIUJK masih bisa tender kan?" atau "SBU itu bedanya apa sama SIUJK?"
 
 Jawabannya: **SIUJK sudah mati 9 tahun yang lalu.** Tapi nama itu masih sering muncul karena generasi lama kontraktor masih terbiasa dengannya.

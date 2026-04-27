@@ -22,6 +22,8 @@ SBU Kecil bisa terbit **3 hari kerja** jika berkas lengkap dan tidak ada koreksi
 
 ## Berapa Lama SBU Kecil Bisa Terbit?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sbu-k-3-hari-kerja.jpg)
+
 Perusahaan Anda butuh SBU Kecil cepat karena tender prakualifikasi tinggal 2 minggu? Itu situasi yang Nicx tangani setiap minggu sejak 2016.
 
 Tapi penting untuk dijujukan: **3 hari kerja itu achievable, tapi hanya jika berkas Anda lengkap.** Kalau masih ada NIB merah, SKK expired, atau KBLI tidak sinkron — itu bukan masalah timeline, itu masalah dokumen yang harus diperbaiki dulu.

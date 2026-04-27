@@ -22,6 +22,8 @@ KBLI yang tidak cocok bisa membuat SBU **ditolak LPJK**. Berdasarkan **280+ kasu
 
 ## Kenapa Banyak Penolakan SBU Berawal dari Detail Kecil?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-kbli-salah-bikin-sbu-ditolak.jpg)
+
 Perusahaan Anda mungkin merasa KBLI hanya formalitas. Di praktik lapangan, justru titik ini sering menjadi alasan kenapa SBU tidak bisa lanjut mulus.
 
 Masalahnya sederhana: sub-bidang yang Anda ajukan harus didukung oleh data usaha yang memang cocok. Kalau tidak cocok, sistem membaca ada ketidaksesuaian.

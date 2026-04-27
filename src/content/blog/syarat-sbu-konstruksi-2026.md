@@ -26,6 +26,8 @@ Syarat SBU konstruksi 2026: **NIB aktif**, **KBLI cocok**, **KSWP clear**, **SKK
 
 ## Apa Saja Syarat Utama SBU Konstruksi?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-syarat-sbu-konstruksi-2026.jpg)
+
 Banyak perusahaan yang bertanya, "Syarat SBU itu apa saja sih?" — tapi yang lebih penting adalah memahami **kenapa dokumen itu dibutuhkan** dan **bagaimana LPJK memverifikasinya**.
 
 LPJK tidak hanya minta dokumen untuk merepotkan. Setiap dokumen adalah bukti bahwa perusahaan Anda memenuhi standar legal, keuangan, dan teknis untuk kualifikasi yang diajukan.

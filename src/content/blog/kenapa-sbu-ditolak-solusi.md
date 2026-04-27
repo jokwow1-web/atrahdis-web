@@ -22,6 +22,8 @@ Lebih dari **80% penolakan SBU bisa dicegah**. Dari 280+ kasus Atrahdis, penyeba
 
 ## Penolakan SBU Hampir Selalu Bisa Diprediksi
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-kenapa-sbu-ditolak-solusi.jpg)
+
 Banyak perusahaan bereaksi setelah SBU ditolak, padahal hampir semua alasan penolakan bisa diidentifikasi sebelum submit.
 
 Dari pengalaman menangani 280+ kasus SBU, Nicx melihat pola yang berulang. Penolakan jarang karena alasan baru — hampir selalu karena satu dari delapan masalah yang sama.

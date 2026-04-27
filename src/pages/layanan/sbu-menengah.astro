@@ -12,7 +12,7 @@ const serviceSchema = {
     url: 'https://atrahdis.id',
   },
   areaServed: { '@type': 'Country', name: 'Indonesia' },
-  description: 'Jasa pengurusan SBU Menengah (M) konstruksi Indonesia — mulai Rp 18 juta, proses 14-21 hari kerja jika dokumen lengkap.',
+  description: 'Jasa pengurusan SBU Menengah (M) konstruksi Indonesia — estimasi setelah audit dokumen, proses 14-21 hari kerja jika dokumen lengkap.',
   offers: {
     '@type': 'Offer',
     price: '18000000',
@@ -31,7 +31,7 @@ const faqSchema = {
       name: 'Berapa biaya SBU Menengah 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SBU Menengah mulai Rp 18 juta. Angka final bergantung pada sub-bidang, jumlah klasifikasi, volume verifikasi, dan kesiapan dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote.',
+        text: 'SBU Menengah — harga final ditentukan setelah audit dokumen. Nicx dari Atrahdis mengaudit dokumen Anda sebelum memberikan quote.',
       },
     },
     {
@@ -106,8 +106,8 @@ const breadcrumbSchema = {
 const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
 ---
 <Base
-  title="SBU Menengah (M) — Mulai Rp 18 Juta, 14-21 Hari Kerja"
-  description="Jasa pengurusan SBU Menengah konstruksi — mulai Rp 18 juta, proses 14-21 hari kerja. Verifikasi LPJK lebih ketat. Nicx audit sejak 2016."
+  title="SBU Menengah (M) — Estimasi Setelah Audit, 14-21 Hari Kerja"
+  description="Jasa pengurusan SBU Menengah konstruksi — estimasi setelah audit dokumen, proses 14-21 hari kerja. Verifikasi LPJK lebih ketat. Nicx audit sejak 2016."
   canonical="https://atrahdis.id/layanan/sbu-menengah"
 >
   <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
@@ -126,7 +126,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
   <!-- HERO -->
   <section class="mx-auto max-w-4xl px-4 py-12">
     <h1 class="text-4xl font-bold tracking-tight">
-      SBU Menengah (M) — Mulai Rp 18 Juta, 14-21 Hari
+      SBU Menengah (M) — Estimasi Setelah Audit, 14-21 Hari
     </h1>
     <p class="mt-3 text-2xl font-bold text-blue-600">
       Proses 14-21 hari kerja jika dokumen lengkap
@@ -152,7 +152,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <h2 class="sr-only">Ringkasan</h2>
       <p class="text-lg">
         SBU Menengah (M) adalah sertifikat badan usaha untuk kontraktor konstruksi modal
-        Rp 5-25 miliar. Biaya mulai Rp 18 juta, proses 14-21 hari kerja jika dokumen lengkap.
+        Rp 5-25 miliar. Biaya estimasi setelah audit dokumen, proses 14-21 hari kerja jika dokumen lengkap.
         Perbedaan utama dari Kecil: laporan keuangan wajib diaudit KAP, verifikasi konsistensi
         data lebih ketat, dan risiko koreksi dokumen lebih tinggi. Nicx dari Atrahdis mengaudit
         semua dokumen sebelum quote keluar — 280+ sertifikat diproses sejak 2016.
@@ -264,7 +264,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <h2 class="text-2xl font-bold">Biaya SBU Menengah 2026</h2>
 
     <div class="mt-8 rounded-xl bg-gray-50 p-6">
-      <p class="text-3xl font-bold text-blue-600">Mulai Rp 18 juta</p>
+      <p class="text-3xl font-bold text-blue-600">Harga final setelah audit</p>
       <p class="mt-2 text-gray-600">Satu harga final setelah audit. Tidak ada biaya tersembunyi.</p>
     </div>
 
@@ -314,8 +314,8 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-medium text-gray-900">Biaya mulai</td>
-            <td class="py-3 pr-4">Rp 4,5 juta</td>
-            <td class="py-3">Rp 18 juta</td>
+            <td class="py-3 pr-4">Estimasi setelah audit</td>
+            <td class="py-3">Estimasi setelah audit</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-4 font-medium text-gray-900">Risiko koreksi</td>
@@ -344,8 +344,7 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
       <div>
         <h3 class="font-semibold">Berapa biaya SBU Menengah 2026?</h3>
         <p class="mt-2 text-gray-600">
-          SBU Menengah mulai Rp 18 juta. Angka final bergantung pada sub-bidang, jumlah
-          klasifikasi, volume verifikasi, dan kesiapan dokumen. Nicx dari Atrahdis
+          SBU Menengah — harga final ditentukan setelah audit dokumen. Nicx dari Atrahdis
           mengaudit dokumen Perusahaan Anda sebelum memberikan quote.
         </p>
       </div>
@@ -421,11 +420,11 @@ const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       <a href="/layanan/sbu-kecil" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Kecil (K)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 4,5 juta — 3 hari kerja</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — 3 hari kerja</p>
       </a>
       <a href="/layanan/sbu-besar" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SBU Besar (B)</h3>
-        <p class="mt-1 text-sm text-gray-600">Mulai Rp 50 juta — untuk kontraktor besar</p>
+        <p class="mt-1 text-sm text-gray-600">Estimasi setelah audit — untuk kontraktor besar</p>
       </a>
       <a href="/layanan/skk" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
         <h3 class="font-semibold">SKK J5/J6/J7</h3>

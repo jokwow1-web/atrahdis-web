@@ -26,6 +26,8 @@ SBU Menengah (M) bisa terbit **14-21 hari kerja** kalau dokumen lengkap. Berdasa
 
 ## Berapa Lama Proses SBU Menengah Sebenarnya?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-berapa-lama-proses-sbu-menengah.jpg)
+
 Kalau Anda tanya vendor dan jawabannya "7 hari pasti keluar" — hati-hati. SBU Menengah bukan SBU Kecil. Verifikasinya lebih kompleks dan LPJK punya standar lebih tinggi.
 
 Timeline realistis:

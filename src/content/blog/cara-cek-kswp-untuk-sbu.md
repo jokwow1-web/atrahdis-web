@@ -22,6 +22,8 @@ KSWP adalah konfirmasi kepatuhan pajak yang wajib clear sebelum SBU bisa diprose
 
 ## Apa Itu KSWP dan Kenapa LPJK Mensyaratkannya?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-cara-cek-kswp-untuk-sbu.jpg)
+
 KSWP (Konfirmasi Status Wajib Pajak) adalah dokumen konfirmasi dari Direktorat Jenderal Pajak yang menyatakan bahwa perusahaan Anda sudah memenuhi kewajiban perpajakan dasar.
 
 LPJK membutuhkan ini sebagai bagian dari verifikasi kelayakan badan usaha. Logikanya sederhana: perusahaan yang tidak patuh pajak dianggap belum memenuhi standar operasional minimal untuk mengerjakan proyek konstruksi — terutama proyek pemerintah.

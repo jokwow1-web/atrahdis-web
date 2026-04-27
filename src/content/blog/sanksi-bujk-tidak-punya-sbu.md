@@ -22,6 +22,8 @@ Mengerjakan proyek konstruksi tanpa SBU valid bisa berujung **denda hingga Rp 50
 
 ## Kenapa Sanksi untuk BUJK Tanpa SBU Sangat Berat?
 
+![Contoh SBU yang berhasil diterbitkan Atrahdis](/blog/cert-sanksi-bujk-tidak-punya-sbu.jpg)
+
 SBU bukan sekedar administrasi. SBU adalah bukti bahwa badan usaha Anda telah memenuhi standar teknis, keuangan, dan legal yang ditetapkan negara untuk mengerjakan proyek konstruksi.
 
 Konstruksi berdampak langsung pada keselamatan publik. Gedung yang roboh, jembatan yang retak, atau instalasi listrik yang terbakar adalah akibat dari kontraktor yang tidak memenuhi standar. Karena itu, regulasi sanksinya serius.
