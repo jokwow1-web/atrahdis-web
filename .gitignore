@@ -23,3 +23,13 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vercel
+
+# local env & secrets
+.env.local
+
+# dev tools
+.vscode/
+docs/
+supabase/
+scripts/
+

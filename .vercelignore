@@ -1,0 +1,12 @@
+# T10: Exclude app portal and non-marketing files from Vercel build
+src/pages/app/
+src/pages/api/
+src/components/app/
+src/layouts/AppLayout.astro
+src/lib/orchestrator.ts
+src/types/
+supabase/
+docs/
+scripts/
+.vscode/
+*.log
