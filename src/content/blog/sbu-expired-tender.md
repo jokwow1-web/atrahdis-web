@@ -19,10 +19,13 @@ faqSchema:
   - q: "Apa bedanya perpanjangan SBU vs pengajuan baru?"
     a: "Perpanjangan lebih cepat karena LPJK hanya verifikasi perubahan data dan status perusahaan. Pengajuan baru memerlukan pemeriksaan lengkap dari awal. Biaya perpanjangan biasanya lebih rendah 20-30% dibanding pengajuan baru."
 ---
-
 ## TL;DR
 
 SBU expired **tidak bisa** ikut tender — LPSE otomatis reject. Selain gugur kualifikasi, UUJK Pasal 44 mengancam denda **Rp 50 juta** untuk perusahaan yang beroperasi tanpa SBU aktif. Perpanjang **30-60 hari** sebelum expired. SBU Kecil bisa diperpanjang mulai **3 hari kerja** jika dokumen siap.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Detail regulasi pengadaan bisa Anda baca di [LKPP](https://lkpp.go.id).
 
 ## SBU Expired Bisa Ikut Tender?
 
@@ -110,3 +113,10 @@ Kalau SBU Anda mendekati expired atau sudah expired, jangan tunggu tender gagal.
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+SBU expired saat tender berlangsung adalah skenario terburuk. Anda bisa gugur di tengah jalan, kehilangan uang muka, atau bahkan masuk daftar hitam. Jangan pernah mengambil risiko tender dengan SBU yang mendekati tanggal expired.
+
+Perpanjangan SBU harus jadi prioritas rutin di kalender operasional Anda. Jadwalkan reminder 6 bulan sebelum expired supaya tidak terkejar waktu.

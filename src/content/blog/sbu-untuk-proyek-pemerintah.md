@@ -15,10 +15,13 @@ faqSchema:
   - q: "Berapa lama SBU harus masih berlaku saat mendaftar tender pemerintah?"
     a: "Tidak ada ketentuan minimum hari berlaku yang seragam — setiap dokumen tender bisa berbeda. Namun praktik standar: SBU harus masih berlaku minimal hingga akhir masa kontrak proyek. Untuk tender proyek multi-tahun, ini bisa berarti SBU harus berlaku 2-3 tahun ke depan. Nicx menyarankan untuk tidak mendaftar tender jika SBU akan expired dalam 6 bulan ke depan — kecuali Anda sudah memulai proses perpanjangan secara bersamaan."
 ---
-
 ## TL;DR
 
 Proyek pemerintah via LPSE memverifikasi SBU secara otomatis — bukan manual. Sub-bidang tidak cocok, SBU expired, atau data tidak sinkron langsung bikin gugur tanpa bisa banding. **Pastikan SBU aktif minimal 6 bulan sebelum target tender** dan sub-bidang sesuai pekerjaan.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## E-procurement Pemerintah Tidak Bisa Dinegosiasi
 
@@ -103,3 +106,10 @@ Untuk memahami syarat tender secara lebih mendalam, baca [syarat tender konstruk
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+SBU adalah syarat mutlak untuk mengikuti tender pemerintah. Tanpa SBU yang valid, Anda otomatis gugur di tahap kualifikasi. Anda perlu memastikan SBU aktif, sub-bidang sesuai, dan tidak ada masalah administratif yang tersisa.
+
+Pengadaan pemerintah menggunakan sistem LPSE yang memverifikasi SBU secara otomatis. Tidak ada cara untuk mengakali atau meloloskan SBU yang tidak valid.

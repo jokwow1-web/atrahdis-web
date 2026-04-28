@@ -19,7 +19,6 @@ faqSchema:
   - q: "Apa yang harus dilakukan kalau SBU baru ditolak LPJK?"
     a: "Baca notifikasi penolakan dengan cermat — LPJK selalu menyertakan alasan. Perbaiki dokumen yang bermasalah dan ajukan kembali. Kalau ditolak lebih dari 2 kali, sebaiknya audit menyeluruh dengan konsultan untuk identifikasi masalah fundamental."
 ---
-
 ## TL;DR
 
 Daftar SBU baru 2026 butuh **7 langkah**: cek NIB, KBLI, akta, NPWP, SKK, submit LPJK Online, tunggu verifikasi. SBU Kecil **3-7 hari kerja**, M **14-21 hari**, B **30-60 hari**. Berdasarkan **280+ kasus** Nicx, **60% pengajuan mandiri** kena koreksi minimal 2 kali.
@@ -134,3 +133,10 @@ Untuk pahami syarat dokumen lebih detail, baca [syarat SBU konstruksi 2026](/blo
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Pengurusan SBU baru di 2026 mengikuti alur yang lebih terstruktur berkat integrasi dengan sistem OSS. Anda perlu memastikan NIB, KBLI, dan SKK sudah benar sebelum submit ke LPJK. Satu kesalahan di dokumen dasar bisa menghentikan seluruh proses.
+
+Anda tidak harus menjalani ini sendiri. Dengan bantuan audit dokumen awal, Anda tahu persis apakah perusahaan Anda siap submit atau masih butuh perbaikan.

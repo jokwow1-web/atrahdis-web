@@ -15,10 +15,13 @@ faqSchema:
   - q: "Berapa lama dokumen SBU berlaku setelah disiapkan?"
     a: "SBU sendiri berlaku 3 tahun sejak terbit. Namun beberapa dokumen pendukung punya masa berlaku lebih pendek: KSWP perlu diperbarui tiap tahun, surat keterangan bank biasanya 3 bulan, dan laporan keuangan audited harus tahun buku terbaru. Pastikan semua dokumen masih valid saat submit, bukan saat mulai disiapkan."
 ---
-
 ## TL;DR
 
 Checklist dokumen SBU berbeda per kualifikasi. **SBU Kecil** butuh minimal 8 jenis dokumen, **Menengah** 12 jenis, **Besar** 15+ jenis. Berdasarkan **280+ kasus Atrahdis**, dokumen yang paling sering hilang adalah SKK tenaga ahli dan KSWP. Siapkan semua sebelum submit ke LPJK.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Kenapa Dokumen yang Tidak Lengkap Lebih Mahal dari yang Terlihat?
 
@@ -119,3 +122,10 @@ Untuk cek biaya tiap kualifikasi, baca [panduan biaya SBU 2026](/blog/biaya-sbu-
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Dokumen SBU yang lengkap dan rapi adalah fondasi utama kelancaran proses pengurusan. Anda perlu menyiapkan dokumen perusahaan, tenaga ahli, dan legalitas dengan teliti. Satu dokumen yang tidak sinkron bisa menahan proses berhari-hari.
+
+Gunakan checklist ini sebagai panduan awal, tapi ingat bahwa setiap perusahaan punya kondisi unik. Audit dokumen akan membantu Anda mengidentifikasi bottleneck spesifik di berkas Anda.

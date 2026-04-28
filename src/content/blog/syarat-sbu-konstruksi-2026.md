@@ -19,10 +19,13 @@ faqSchema:
   - q: "Berapa lama SKK harus masih berlaku saat proses SBU?"
     a: "SKK harus berlaku minimal selama proses verifikasi LPJK. Praktisnya, usahakan SKK masih berlaku minimal 3 bulan dari tanggal submit. Kalau SKK expired di tengah proses, LPJK menghentikan verifikasi dan minta SKK baru."
 ---
-
 ## TL;DR
 
 Syarat SBU konstruksi 2026: **NIB aktif**, **KBLI cocok**, **KSWP clear**, **SKK valid**, dan **laporan keuangan** sesuai kualifikasi. Berdasarkan **280+ kasus** Nicx, **85% penolakan** SBU berasal dari 5 dokumen ini tidak lengkap atau tidak sinkron.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Apa Saja Syarat Utama SBU Konstruksi?
 
@@ -125,3 +128,10 @@ Kalau Anda mau menghindari penolakan, baca juga artikel [SBU ditolak LPJK: solus
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Syarat SBU konstruksi 2026 mencakup dokumen perusahaan, tenaga ahli, dan legalitas dasar. Anda perlu memastikan semua berkas sudah lengkap, aktif, dan sinkron antar-sistem sebelum submit ke LPJK. Dokumen yang expired atau tidak cocok akan menunda proses.
+
+Persiapan matang adalah kunci kelancaran pengurusan SBU. Jangan anggap remeh satu dokumen pendukung — bisa jadi itu yang menahan seluruh proses Anda.

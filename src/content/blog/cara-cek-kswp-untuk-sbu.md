@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apakah KSWP perlu dicek ulang setiap tahun untuk perpanjangan SBU?"
     a: "Ya. KSWP mencerminkan kepatuhan pajak terkini, bukan status lama. Saat perpanjangan SBU, LPJK akan memverifikasi KSWP dengan kondisi saat itu. Banyak perusahaan yang KSWP-nya sempat clear saat pertama urus SBU, tetapi tidak clear lagi saat perpanjangan karena ada kewajiban perpajakan yang terlewat di tahun berjalan. Cek KSWP setiap awal tahun dan 2 bulan sebelum SBU expired."
 ---
-
 ## TL;DR
 
 KSWP adalah konfirmasi kepatuhan pajak yang wajib clear sebelum SBU bisa diproses LPJK. Cek via DJP Online, perbaiki minimal **7 hari sebelum** rencana submit. Berdasarkan **280+ kasus Atrahdis**, **25% keterlambatan** SBU berawal dari KSWP yang baru dicek terlalu mepet.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Apa Itu KSWP dan Kenapa LPJK Mensyaratkannya?
 
@@ -97,3 +100,10 @@ Untuk panduan KBLI, baca [cara memilih KBLI yang benar untuk SBU](/blog/kbli-unt
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+KSWP yang tidak valid atau belum sinkron dengan NPWP adalah salah satu alasan paling umum SBU ditolak LPJK. Anda bisa cek status KSWP sendiri melalui DJP Online, dan sebaiknya lakukan ini sebelum submit SBU agar tidak kaget di tengah proses.
+
+Jika Anda menemukan masalah di KSWP, perbaiki dulu baru lanjut ke tahap SBU. Hal ini akan menghemat waktu dan biaya proses secara keseluruhan.

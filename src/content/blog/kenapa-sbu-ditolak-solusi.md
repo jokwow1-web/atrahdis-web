@@ -15,10 +15,13 @@ faqSchema:
   - q: "Berapa lama proses revisi setelah SBU ditolak atau diminta perbaiki?"
     a: "Setiap siklus revisi biasanya menambah 3-7 hari kerja ke timeline. Kalau ada dua siklus revisi, Anda kehilangan 6-14 hari kerja tambahan. Solusi paling efisien adalah melakukan audit dokumen sebelum submit, bukan menunggu feedback dari LPJK untuk mengetahui apa yang kurang."
 ---
-
 ## TL;DR
 
 Lebih dari **80% penolakan SBU bisa dicegah**. Dari 280+ kasus Atrahdis, penyebab utama adalah KSWP tidak clear, KBLI tidak cocok, dan SKK tidak sesuai level. Setiap siklus revisi membuang **3-7 hari kerja**. Audit dulu, submit belakangan.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Penolakan SBU Hampir Selalu Bisa Diprediksi
 
@@ -123,3 +126,10 @@ Untuk melihat checklist dokumen lengkap, baca [dokumen SBU konstruksi checklist]
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+SBU ditolak bukan akhir dari segalanya. Anda perlu memahami alasan penolakan spesifik dari LPJK, memperbaiki dokumen yang bermasalah, dan submit ulang dengan lebih rapi. Setiap penolakan adalah feedback untuk memperbaiki kelengkapan berkas Anda.
+
+Jika Anda sudah ditolak berkali-kali, mungkin saatnya mendapatkan pandangan kedua. Audit dokumen oleh spesialis bisa mengidentifikasi titik buta yang Anda lewatkan.

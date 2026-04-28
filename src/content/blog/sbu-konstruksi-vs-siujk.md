@@ -19,10 +19,13 @@ faqSchema:
   - q: "Apa keuntungan SBU dibanding SIUJK?"
     a: "SBU berlaku nasional (bukan per daerah), terintegrasi dengan OSS-RBA, bisa diverifikasi online real-time, masa berlaku jelas 3 tahun, dan diakui oleh semua sistem tender pemerintah dan swasta. SIUJK terbatas per daerah dan tidak terintegrasi."
 ---
-
 ## TL;DR
 
 **SIUJK sudah tidak berlaku** sejak 2017. SBU dari LPJK adalah satu-satunya dokumen sah untuk konstruksi Indonesia saat ini. SBU **berlaku nasional**, terintegrasi **OSS-RBA**, dan diakui semua sistem tender. Perusahaan dengan SIUJK lama **wajib beralih ke SBU**.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## SBU vs SIUJK: Kenapa Banyak yang Masih Bingung?
 
@@ -120,3 +123,10 @@ Kalau Anda baru mulai urus SBU dan ingin pahami dasarnya, baca [apa itu SBU kons
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+SBU dan SIUJK adalah dua sistem izin berbeda yang perlu Anda pahami. SBU adalah izin usaha jasa konstruksi yang wajib dimiliki semua BUJK. SIUJK adalah izin khusus untuk penyelenggaraan bangunan gedung. Keduanya tidak saling menggantikan.
+
+Pastikan perusahaan Anda memiliki izin yang sesuai dengan jenis pekerjaan yang akan dilakukan. Keliru memahami perbedaan ini bisa berakibat fatal di tengah proyek.

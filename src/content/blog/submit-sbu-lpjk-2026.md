@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa yang terjadi kalau dokumen submit SBU ditolak LPJK?"
     a: "Kalau LPJK meminta revisi atau menemukan ketidaksesuaian, pengajuan akan dikembalikan dengan catatan perbaikan. Perusahaan Anda harus memperbaiki dokumen sesuai catatan, lalu mengunggah ulang. Setiap siklus revisi rata-rata menambah 3-7 hari kerja ke timeline. Untuk menghindari ini, pastikan checklist dokumen sudah selesai 100% sebelum submit, dan KSWP serta KBLI sudah beres lebih dulu."
 ---
-
 ## TL;DR
 
 Submit SBU ke LPJK dilakukan via portal SIKI di siki.lpjk.net. Proses online penuh — tidak perlu ke kantor LPJK. Dari submit hingga terbit: **3-7 hari kerja** (SBU K), **14-21 hari** (SBU M), **21-30 hari** (SBU B). Dokumen tidak lengkap = proses ulang dari awal.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Submit SBU Dilakukan di Mana?
 
@@ -112,3 +115,10 @@ Untuk checklist dokumen lengkap per kualifikasi, baca [artikel dokumen SBU konst
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Submit SBU ke LPJK di 2026 mengikuti alur yang lebih terintegrasi dengan OSS. Anda perlu memastikan semua dokumen dasar sudah benar sebelum submit, karena sistem akan memverifikasi data Anda secara otomatis. Satu ketidaksesuaian bisa menghentikan proses.
+
+Jangan terburu-buru submit tanpa audit dokumen terlebih dahulu. Waktu yang Anda habiskan untuk pengecekan awal akan menghemat waktu berminggu-minggu di kemudian hari.

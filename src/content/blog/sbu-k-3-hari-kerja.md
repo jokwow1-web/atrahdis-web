@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa yang bikin SBU Kecil ditolak LPJK?"
     a: "NIB merah di OSS, KBLI tidak cocok dengan sub-klasifikasi, atau SKK expired. Nicx audit semua ini sebelum Anda bayar. Berdasarkan data internal, 85% penolakan SBU K berawal dari tiga masalah ini."
 ---
-
 ## TL;DR
 
 SBU Kecil bisa terbit **3 hari kerja** jika berkas lengkap dan tidak ada koreksi. Berdasarkan **280+ kasus yang Nicx proses** sejak 2016, **70% SBU K** terbit dalam 3-7 hari kerja. Audit dokumen sebelum bayar untuk menghindari keterlambatan.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Berapa Lama SBU Kecil Bisa Terbit?
 
@@ -80,3 +83,10 @@ Kalau Anda ingin membandingkan dengan kualifikasi lain, baca juga [perbedaan SBU
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+SBU Kecil bisa diproses dalam 3–7 hari kerja jika dokumen Anda sudah rapi dari awal. Anda perlu memastikan NIB, KBLI, dan SKK aktif sebelum submit. Dokumen yang tidak lengkap akan menambah waktu secara signifikan.
+
+Jika Anda mengejar deadline tender, jangan tunda audit dokumen. Satu kesalahan kecil di berkas bisa membuat Anda kehilangan kesempatan proyek.

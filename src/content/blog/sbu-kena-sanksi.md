@@ -19,10 +19,13 @@ faqSchema:
   - q: "Apakah sanksi SBU berlaku untuk subkontraktor juga?"
     a: "Ya. Subkontraktor yang digunakan oleh kontraktor utama juga wajib memiliki SBU sesuai kualifikasinya. Kalau subkontraktor tidak punya SBU, kontraktor utama bisa disanksi karena menggunakan badan usaha tidak berkompetensi."
 ---
-
 ## TL;DR
 
 Sanksi SBU berdasarkan **UUJK Pasal 44** mencapai **Rp 50 juta** untuk badan usaha tanpa SBU aktif. Selain denda, ada pembekuan proyek, blacklisting tender, dan pencabutan bank garansi. Berdasarkan **280+ kasus** yang Nicx tangani, **90% masalah sanksi bisa dicegah** dengan perpanjangan tepat waktu.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Dasar hukum lengkap tersedia di [JDIH Kemenkumham](https://jdih.kemenkumham.go.id).
 
 ## SBU Kena Sanksi Berapa?
 
@@ -122,3 +125,10 @@ Kalau Anda ingin pahami lebih detail tentang risiko SBU expired, baca juga [SBU 
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Sanksi administratif untuk BUJK tanpa SBU bisa mencapai Rp 50 juta per pelanggaran. Selain denda, Anda juga berisiko blacklist, pembatalan kontrak, dan reputasi perusahaan yang tercoreng. Konsekuensi ini jauh melebihi biaya proses SBU.
+
+Patuhi regulasi bukan hanya untuk menghindari sanksi, tapi juga untuk membangun reputasi perusahaan yang kredibel di mata klien dan pemerintah.

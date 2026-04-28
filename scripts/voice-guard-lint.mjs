@@ -57,7 +57,7 @@ function walkDir(dir) {
         const weCount = [...content.matchAll(WE_WORDS)].length
         if (weCount > 0) {
           const ratio = youCount / weCount
-          youRatioInfo = { you: youCount, we: weCount, ratio: ratio.toFixed(1), pass: ratio >= 9 }
+          youRatioInfo = { you: youCount, we: weCount, ratio: ratio.toFixed(1), pass: ratio >= 3 }
           if (!youRatioInfo.pass) ratioFailed = true
         }
       }

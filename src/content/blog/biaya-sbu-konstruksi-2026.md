@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa biaya terbesar yang sering tidak dihitung sejak awal?"
     a: "Biaya koreksi dokumen pendukung seperti update OSS, perbaikan KBLI, atau pembaruan SKK yang expired. Koreksi ini bisa menambah waktu 1-2 minggu dan biaya tambahan yang tidak masuk dalam penawaran awal."
 ---
-
 ## TL;DR
 
 Biaya SBU konstruksi 2026 ditentukan setelah audit dokumen per kualifikasi. Estimasi final bergantung pada kesiapan dokumen, sub-bidang, dan kompleksitas verifikasi. Berdasarkan **280+ kasus** yang Nicx proses sejak 2016, koreksi dokumen sering menambah biaya tak terduga.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Berapa Biaya SBU Konstruksi 2026 Sebenarnya?
 
@@ -122,3 +125,10 @@ Kalau Anda ingin mempercepat keputusan, baca juga [timeline urus SBU per kualifi
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Biaya SBU konstruksi 2026 tidak bisa ditentukan dari satu angka promosi. Anda perlu melihat kualifikasi, kondisi dokumen, dan risiko perbaikan data sebelum memutuskan budget. Koreksi dokumen yang tidak dihitung sejak awal sering jadi biaya tersembunyi terbesar.
+
+Investasi mengurus SBU yang benar jauh lebih kecil dari risiko tender gagal atau sanksi administratif. Untuk estimasi sesuai kondisi perusahaan Anda, konsultasi gratis tersedia kapan saja.

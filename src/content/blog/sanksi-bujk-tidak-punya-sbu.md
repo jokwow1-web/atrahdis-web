@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa yang dimaksud sanksi berlapis untuk BUJK tanpa SBU?"
     a: "Sanksi berlapis artinya satu pelanggaran bisa menghasilkan beberapa sanksi sekaligus. Contoh: BUJK mengerjakan proyek tanpa SBU bisa mendapat (1) denda administratif Rp 50 juta, (2) pembatalan kontrak oleh pemberi kerja, (3) kewajiban mengembalikan uang muka, dan (4) dimasukkan daftar hitam. Ke-empat sanksi ini bisa berjalan bersamaan — bukan salah satu."
 ---
-
 ## TL;DR
 
 Mengerjakan proyek konstruksi tanpa SBU valid bisa berujung **denda hingga Rp 50 juta** (UUJK Pasal 44), **blacklist 2 tahun** dari semua pengadaan pemerintah, dan **pencabutan izin usaha**. Sanksi bisa berlapis — bukan pilih salah satu. Biaya SBU jauh lebih kecil dari konsekuensinya.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Dasar hukum lengkap tersedia di [JDIH Kemenkumham](https://jdih.kemenkumham.go.id).
 
 ## Kenapa Sanksi untuk BUJK Tanpa SBU Sangat Berat?
 
@@ -104,3 +107,10 @@ Untuk memahami konsekuensi ikut tender tanpa SBU, baca [tender konstruksi tanpa 
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Tidak memiliki SBU bukan hanya berarti tidak bisa tender. Anda berisiko denda administratif hingga Rp 50 juta, blacklist pengadaan, dan pembatalan kontrak. Risiko ini jauh lebih besar dari biaya mengurus SBU yang benar.
+
+Jika perusahaan Anda belum punya SBU, mulailah prosesnya sekarang. Semakin cepat Anda mengurus, semakin cepat Anda bisa mengakses proyek-proyek konstruksi yang sebelumnya tidak bisa Anda bidik.

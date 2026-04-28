@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa perbedaan risiko SBU expired vs tidak punya SBU sama sekali?"
     a: "Secara hukum, keduanya sama-sama melanggar UUJK. Namun dari sisi konsekuensi praktis, tidak punya SBU sama sekali lebih berat karena menunjukkan ketidakpatuhan sistemik. SBU expired menunjukkan pelanggaran administrasi yang bisa dianggap kelalaian. Keduanya berisiko denda, blacklist, dan pembatalan kontrak. Sanksi blacklist bisa berlangsung 2 tahun dan mencakup semua pengadaan pemerintah di seluruh Indonesia."
 ---
-
 ## TL;DR
 
 Tender tanpa SBU bukan hanya gugur di kualifikasi — bisa berujung **denda Rp 50 juta** (UUJK Pasal 44), **pembatalan kontrak**, dan **blacklist 2 tahun** dari semua pengadaan pemerintah. Risiko jauh lebih besar dari biaya mengurus SBU yang benar.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Detail regulasi pengadaan bisa Anda baca di [LKPP](https://lkpp.go.id).
 
 ## Kenapa Ada Kontraktor yang Tetap Mencoba Tender Tanpa SBU?
 
@@ -119,3 +122,10 @@ Untuk mengurus SBU agar tidak berisiko di tender berikutnya, cek layanan [SBU Ke
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Tender tanpa SBU bukan hanya berisiko gugur — Anda bisa kena denda, blacklist, dan pembatalan kontrak. Risiko hukumnya jauh lebih besar dari biaya mengurus SBU yang benar. Anda perlu memastikan SBU valid sebelum ikut tender apa pun.
+
+Jika SBU Anda baru expired atau sedang dalam proses perpanjangan, tunggu sampai statusnya aktif kembali. Jangan ambil risiko mengikuti tender dengan SBU yang tidak valid.

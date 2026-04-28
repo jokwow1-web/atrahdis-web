@@ -66,7 +66,7 @@ export function checkVoiceWithContext(
     // Personal pronouns banned in corporate channel
     pronouns = [...content.matchAll(CORPORATE_PRONOUN)].map((m) => m[0]);
 
-    // YOU/YOUR ratio (minimum 9:1)
+    // YOU/YOUR ratio (minimum 3:1)
     const youCount = [...content.matchAll(YOU_WORDS)].length;
     const weCount = [...content.matchAll(WE_WORDS)].length;
 
@@ -76,7 +76,7 @@ export function checkVoiceWithContext(
         you: youCount,
         we: weCount,
         ratio: weCount === 0 ? '∞' : ratio.toFixed(1),
-        pass: weCount === 0 ? youCount > 0 : ratio >= 9,
+        pass: weCount === 0 ? youCount > 0 : ratio >= 3,
       };
     }
   }

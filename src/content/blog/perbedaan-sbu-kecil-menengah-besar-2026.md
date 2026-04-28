@@ -15,10 +15,13 @@ faqSchema:
   - q: "Kenapa salah pilih kualifikasi berbahaya?"
     a: "Karena Anda bisa membuang waktu, biaya, dan kesempatan tender jika jalur yang dipilih tidak sesuai kesiapan perusahaan. Dalam 280+ kasus yang Nicx proses, salah pilih kualifikasi menambah timeline rata-rata 14-30 hari kerja."
 ---
-
 ## TL;DR
 
 SBU Kecil, Menengah, dan Besar berbeda di **skala usaha**, **kompleksitas dokumen**, dan **timeline**. Berdasarkan **280+ kasus yang Nicx proses**, SBU K terbit 3 hari kerja, SBU M 14-21 hari, dan SBU B 30-60 hari. Pilih yang sesuai kesiapan dokumen, bukan gengsi.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Kenapa Salah Pilih Kualifikasi Bisa Mengganggu Rencana Tender?
 
@@ -115,3 +118,10 @@ Kalau Perusahaan Anda ingin keputusan yang lebih presisi, lanjutkan ke [panduan 
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+SBU Kecil, Menengah, dan Besar bukan sekadar label. Masing-masing membuka akses ke kategori proyek yang berbeda. Anda perlu memilih berdasarkan kapasitas keuangan, tenaga ahli, dan target proyek perusahaan Anda.
+
+Upgrade dari K ke M atau M ke B memerlukan persiapan matang. Jangan terburu-buru — pastikan fondasi perusahaan Anda kuat sebelum naik kualifikasi.

@@ -19,10 +19,13 @@ faqSchema:
   - q: "Bisa urus SBU konstruksi sendiri tanpa bantuan?"
     a: "Bisa, tapi prosesnya memerlukan pemahaman mendalam tentang KBLI, OSS, SKK, dan verifikasi LPJK. Berdasarkan data internal Atrahdis, 60% pengajuan mandiri mengalami koreksi minimal 2 kali karena dokumen tidak lengkap."
 ---
-
 ## TL;DR
 
 SBU konstruksi adalah sertifikat wajib LPJK untuk perusahaan konstruksi di Indonesia. Tanpa SBU, tender pemerintah tidak bisa diikuti dan sanksi UUJK Pasal 44 mencapai **Rp 50 juta**. Berdasarkan **280+ kasus** yang Nicx proses sejak 2016, SBU Kecil bisa terbit mulai **3 hari kerja** jika dokumen lengkap.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Apa Itu SBU Konstruksi Secara Resmi?
 
@@ -101,3 +104,10 @@ Untuk pahami perbedaan detail antar kualifikasi, baca [perbedaan SBU K, M, dan B
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+SBU konstruksi adalah izin usaha wajib bagi setiap badan usaha jasa konstruksi yang ingin beroperasi di Indonesia. Tanpa SBU yang valid, Anda tidak bisa mengikuti tender pemerintah, tidak bisa menandatangani kontrak konstruksi, dan berisiko kena sanksi administratif.
+
+Jika Anda masih mempertanyakan apakah perusahaan Anda sudah memenuhi syarat SBU, langkah paling aman adalah audit dokumen terlebih dahulu. Dengan audit, Anda tahu titik lemahnya di mana sebelum keluar biaya proses.

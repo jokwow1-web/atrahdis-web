@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apakah SBU sub-bidang harus persis sama dengan pekerjaan yang ditenderkan?"
     a: "Ya, ini salah satu syarat kualifikasi yang paling ketat. Sub-bidang SBU Anda harus sesuai dengan lingkup pekerjaan utama yang tercantum di dokumen tender. Kalau tender untuk konstruksi jalan, SBU Anda harus sub-bidang jalan — bukan sub-bidang gedung atau mekanikal. Berdasarkan 280+ kasus Atrahdis, banyak perusahaan gugur kualifikasi karena sub-bidang SBU tidak tepat, meski dokumen lain lengkap."
 ---
-
 ## TL;DR
 
 Setiap paket tender konstruksi pemerintah mensyaratkan SBU aktif yang sesuai sub-bidang dan kualifikasi. **Tanpa SBU yang tepat, penawaran Anda gugur otomatis** di tahap evaluasi kualifikasi. Berdasarkan data Atrahdis, sub-bidang yang tidak cocok adalah penyebab gugur kualifikasi paling umum, bukan nilai modal.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Detail regulasi pengadaan bisa Anda baca di [LKPP](https://lkpp.go.id).
 
 ## Kenapa SBU Menjadi Pintu Masuk Tender?
 
@@ -93,3 +96,10 @@ Untuk memahami lebih dalam kenapa tender tanpa SBU berbahaya, baca [tender tanpa
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Tender konstruksi memerlukan persiapan dokumen yang ketat. Anda perlu memastikan SBU aktif, sub-bidang cocok dengan lingkup pekerjaan, dan semua dokumen kualifikasi sudah lengkap. Ketiadaan satu dokumen bisa membuat penawaran Anda ditolak sistem.
+
+Persiapkan dokumen tender jauh-jauh hari sebelum deadline. Jangan biarkan SBU yang hampir expired atau dokumen yang belum sinkron merusak kesempatan Anda.

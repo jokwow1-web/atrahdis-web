@@ -15,10 +15,13 @@ faqSchema:
   - q: "Kenapa masalah KSWP sering telat diketahui?"
     a: "Karena banyak perusahaan baru cek saat mau submit, padahal kendala pajak dan sinkronisasi data bisa butuh waktu untuk dibereskan. Berdasarkan 280+ kasus yang Nicx proses, 25% keterlambatan timeline berawal dari masalah KSWP."
 ---
-
 ## TL;DR
 
 KSWP tidak clear bisa menghentikan proses SBU sebelum masuk tahap verifikasi. Berdasarkan **280+ kasus Atrahdis**, **25% keterlambatan** berawal dari masalah KSWP. Audit pajak sebelum submit untuk menghindari revisi tak terduga.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Kenapa SBU Bisa Berhenti Sebelum Masuk Tahap Berat?
 
@@ -124,3 +127,10 @@ Kalau Anda ingin melihat titik rawan lain sebelum submit, lanjutkan ke [artikel 
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+KSWP yang bermasalah sering jadi penyebab SBU ditolak yang tidak disadari. Anda perlu memastikan status KSWP aktif, data NPWP sinkron, dan tidak ada masalah pajak yang tersisa. Cek ini sebelum submit SBU agar proses lancar.
+
+Perbaikan KSWP terkadang membutuhkan koordinasi dengan kantor pajak. Mulai dari sekarang supaya tidak menahan timeline SBU Anda.

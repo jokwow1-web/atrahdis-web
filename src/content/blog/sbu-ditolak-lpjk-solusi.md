@@ -19,7 +19,6 @@ faqSchema:
   - q: "Apa bedanya SBU ditolak vs dikembalikan?"
     a: "Ditolak berarti LPJK menolak pengajuan karena tidak memenuhi syarat. Dikembalikan berarti LPJK mengembalikan berkas untuk perbaikan tanpa penolakan formal — biasanya karena dokumen tidak lengkap atau perlu klarifikasi. Dikembalikan lebih ringan dan lebih cepat diperbaiki."
 ---
-
 ## TL;DR
 
 **85% SBU ditolak** karena 5 masalah: NIB merah (32%), KBLI salah (28%), SKK expired (18%), data tidak sinkron (15%), KSWP tidak clear (7%). Berdasarkan **280+ kasus** Nicx, submit dengan audit dulu bisa **menghindari 90% penolakan**. Tiap koreksi tambah **3-7 hari**.
@@ -146,3 +145,10 @@ Kalau SBU Anda pernah ditolak atau sedang dalam proses koreksi, baca juga [cara 
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Penolakan SBU oleh LPJK selalu punya alasan teknis. Anda perlu membaca feedback penolakan dengan cermat, memperbaiki titik yang disebutkan, dan submit ulang. Jangan asal submit tanpa memahami alasan penolakan sebelumnya.
+
+Jika Anda merasa sudah memperbaiki tapi tetap ditolak, mungkin ada masalah struktural di dokumen dasar yang tidak terlihat. Audit dokumen bisa membantu menemukan akar masalahnya.

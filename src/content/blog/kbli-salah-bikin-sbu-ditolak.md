@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa akibat bisnis dari KBLI yang tidak cocok?"
     a: "Akibatnya bisa berupa revisi, penundaan tender, biaya koordinasi tambahan, dan pergeseran target proyek. Dalam 280+ kasus yang Nicx tangani, sekitar 30% penolakan berawal dari masalah KBLI yang terlambat diketahui."
 ---
-
 ## TL;DR
 
 KBLI yang tidak cocok bisa membuat SBU **ditolak LPJK**. Berdasarkan **280+ kasus** yang Nicx proses, sekitar **30% penolakan SBU** berawal dari masalah KBLI. Cek sebelum submit, bukan sesudah.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Kenapa Banyak Penolakan SBU Berawal dari Detail Kecil?
 
@@ -117,3 +120,10 @@ Kalau Anda sedang mapping risiko dokumen, baca juga [artikel KSWP yang sering bi
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+KBLI yang tidak cocok dengan sub-bidang SBU adalah alasan penolakan yang bisa dihindari dengan cek sederhana sebelum submit. Anda perlu memastikan kode KBLI di OSS sesuai dengan klasifikasi LPJK yang Anda targetkan.
+
+Jangan anggap KBLI sebagai detail teknis kecil. Salah di sini berarti SBU Anda bisa ditolak meski dokumen lainnya sudah sempurna.

@@ -19,10 +19,13 @@ faqSchema:
   - q: "Berapa lama masa berlaku SBU Menengah setelah terbit?"
     a: "SBU Menengah berlaku 3 tahun sejak tanggal terbit. Perpanjangan sebaiknya diajukan 30-60 hari sebelum expired. Perpanjangan lebih cepat (14-21 hari) karena verifikasi tidak seberat pengajuan baru."
 ---
-
 ## TL;DR
 
 SBU Menengah (M) bisa terbit **14-21 hari kerja** kalau dokumen lengkap. Berdasarkan **280+ kasus** Nicx, **65% SBU M** selesai dalam 14-18 hari. Verifikasi lebih mendalam dari SBU Kecil karena melibatkan cross-check data antar sistem dan evaluasi keuangan lebih detail.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Berapa Lama Proses SBU Menengah Sebenarnya?
 
@@ -112,3 +115,10 @@ Kalau tender Anda dalam 3-4 minggu dan dokumen belum diaudit, mulai sekarang. Ba
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Durasi pengurusan SBU Menengah bergantung pada kesiapan dokumen Anda. Jika semua berkas sudah rapi dan tidak ada koreksi dari LPJK, proses bisa selesai dalam 14–21 hari kerja. Namun, satu dokumen yang tidak sinkron bisa menambah waktu secara signifikan.
+
+Anda tidak perlu menebak-nebak timeline. Konsultasi gratis dengan audit dokumen akan memberi Anda gambaran realistis sebelum submit.

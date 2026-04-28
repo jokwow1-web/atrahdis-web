@@ -15,10 +15,13 @@ faqSchema:
   - q: "Apa yang terjadi kalau SBU sudah expired sebelum diperpanjang?"
     a: "Kalau SBU sudah melewati tanggal expired tanpa perpanjangan, statusnya menjadi tidak aktif di database LPJK. Anda tidak bisa mengikuti tender pemerintah, tidak bisa mendaftar sebagai subkontraktor yang mensyaratkan SBU, dan berisiko terkena sanksi kalau masih mengerjakan proyek. Untuk mengaktifkan kembali, prosesnya sama seperti pengajuan baru — bukan sekadar perpanjangan. Ini memakan waktu lebih lama dan biaya bisa lebih besar."
 ---
-
 ## TL;DR
 
 SBU berlaku **3 tahun**. Mulai perpanjangan **minimal 60-90 hari sebelum expired** agar ada buffer kalau ada kendala dokumen. SBU yang sudah expired harus diurus seperti pengajuan baru — bukan perpanjangan. Berdasarkan data Atrahdis, lapse SBU yang tidak disengaja rata-rata terjadi karena pemilik lupa cek tanggal expired.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Berapa Lama SBU Berlaku?
 
@@ -105,3 +108,10 @@ Untuk panduan proses di LPJK lebih detail, baca [proses submit SBU LPJK 2026](/b
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Perpanjangan SBU jauh lebih mudah dan cepat dibanding pengajuan baru. Anda perlu memulai proses sebelum SBU expired untuk menghindari gap izin yang bisa membuat Anda gugur tender. Idealnya, mulai urus 3–6 bulan sebelum tanggal expired.
+
+Jangan tunggu sampai terakhir menit. SBU expired di tengah proyek berisiko pembatalan kontrak dan blacklist.

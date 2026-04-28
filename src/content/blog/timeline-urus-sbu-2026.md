@@ -15,10 +15,13 @@ faqSchema:
   - q: "Kenapa SBU Besar bisa jauh lebih lama?"
     a: "Karena beban verifikasi dan potensi koreksi biasanya lebih besar, sehingga timeline realistisnya sekitar 30 sampai 60 hari kerja. LPJK melakukan pemeriksaan multi-layer untuk SBU B yang mencakup audit dokumen legal, keuangan, dan tenaga ahli."
 ---
-
 ## TL;DR
 
 Timeline SBU K **3-7 hari kerja**, SBU M **14-21 hari**, dan SBU B **30-60 hari**. Berdasarkan **280+ kasus yang Nicx proses**, **60% keterlambatan** disebabkan audit dokumen terlambat. Audit sebelum submit untuk timeline yang akurat.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Kenapa Timeline Aman Lebih Penting daripada yang Terdengar Cepat?
 
@@ -115,3 +118,10 @@ Kalau Anda ingin memperjelas jalur sebelum submit, baca juga [panduan biaya SBU 
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+Timeline pengurusan SBU 2026 bervariasi berdasarkan kualifikasi dan kesiapan dokumen Anda. SBU Kecil bisa selesai dalam 3–7 hari, Menengah 14–21 hari, dan Besar 30–60 hari kerja. Dokumen yang tidak rapi bisa menambah waktu secara signifikan.
+
+Jangan mematok deadline tender terlalu dekat dengan estimasi proses SBU. Selalu sisihkan waktu buffer untuk koreksi dokumen yang mungkin muncul di tengah jalan.

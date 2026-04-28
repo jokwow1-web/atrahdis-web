@@ -19,10 +19,13 @@ faqSchema:
   - q: "Kapan waktu yang tepat untuk upgrade SBU?"
     a: "Waktu terbaik upgrade adalah saat modal perusahaan sudah stabil di atas Rp 5 miliar, target proyek mulai masuk ke kisaran menengah, dan SKK tenaga ahli sudah siap level J5-J6. Jangan upgrade hanya karena gengsi — pastikan dokumen dan kesiapan operasional memang sudah mendukung."
 ---
-
 ## TL;DR
 
 Upgrade SBU Kecil ke Menengah **bisa**, tapi tidak otomatis. Butuh bukti modal **di atas Rp 5 miliar**, **SKK J5-J6**, dan dokumen lebih detail. Timeline **14-21 hari kerja**, biaya ditentukan setelah audit dokumen. Berdasarkan **280+ kasus** Nicx, upgrade tanpa audit dokumen sering gagal di verifikasi pertama.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Upgrade SBU Kecil ke Menengah: Bisa atau Tidak?
 
@@ -127,3 +130,10 @@ Kalau Anda masih mempertimbangkan upgrade, baca dulu [perbedaan SBU K, M, dan B]
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Upgrade SBU dari Kecil ke Menengah membuka akses ke proyek yang lebih besar. Anda perlu memenuhi syarat modal, tenaga ahli, dan pengalaman proyek yang lebih tinggi. Prosesnya lebih kompleks dibanding pengajuan baru, tapi hasilnya sepadan.
+
+Persiapkan upgrade ini dengan matang. Jangan terburu-buru naik kualifikasi kalau fondasi perusahaan Anda belum cukup kuat. Audit kebutuhan akan membantu Anda menentukan timing yang tepat.

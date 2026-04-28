@@ -15,7 +15,6 @@ faqSchema:
   - q: "Apa bedanya KBLI 4100, 4200, 4290 untuk SBU konstruksi?"
     a: "KBLI 4100 mencakup konstruksi gedung (bangunan hunian, komersial). KBLI 4200 mencakup konstruksi bangunan sipil (jalan, jembatan, rel, utilitas). KBLI 4290 mencakup konstruksi bangunan sipil lainnya yang tidak termasuk 4200. Untuk SBU, pilih KBLI yang paling spesifik menggambarkan sub-bidang Anda. Salah pilih antara 4100 dan 4200 adalah pola kesalahan yang paling sering Nicx temui."
 ---
-
 ## TL;DR
 
 KBLI yang salah adalah penyebab **30% penolakan SBU** dari 280+ kasus Atrahdis. Pilih KBLI berdasarkan sub-bidang target, bukan berdasarkan nama yang terdengar paling umum. Cek kecocokan di OSS sebelum submit ke LPJK.
@@ -99,3 +98,10 @@ Untuk melihat dampak KBLI salah secara lebih detail, baca [artikel kenapa KBLI s
 ---
 
 *Ditulis oleh **Nicx** — SBU Specialist, PT Atrahdis (sejak 2016, 280+ sertifikat)*
+
+
+## Kesimpulan
+
+KBLI adalah jembatan antara legalitas perusahaan Anda dan kualifikasi SBU yang ingin Anda dapatkan. Tanpa KBLI yang tepat, proses SBU tidak bisa berjalan. Anda perlu memahami kode KBLI yang relevan untuk bidang konstruksi Anda.
+
+Jika Anda bingung memilih KBLI yang cocok, jangan tebak-tebakkan. Kesalahan KBLI bisa menunda proses berminggu-minggu.

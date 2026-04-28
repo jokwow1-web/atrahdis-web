@@ -19,10 +19,13 @@ faqSchema:
   - q: "Apakah satu perusahaan bisa punya lebih dari satu jenis SBU?"
     a: "Tidak. Satu perusahaan hanya bisa memiliki satu SBU aktif dengan satu kualifikasi. Tapi SBU bisa mencakup beberapa sub-bidang dalam satu kualifikasi. Kalau butuh cakupan lebih luas, upgrade kualifikasi adalah jalurnya."
 ---
-
 ## TL;DR
 
 SBU Konstruksi ada **3 jenis**: Kecil (K) modal < Rp 5 miliar, Menengah (M) Rp 5-25 miliar, Besar (B) > Rp 25 miliar. Berdasarkan **280+ kasus** Nicx, timeline SBU K **3-7 hari**, M **14-21 hari**, B **30-60 hari**. Pilih berdasarkan kesiapan dokumen, bukan gengsi.
+
+Untuk verifikasi status terbaru, Anda bisa langsung cek [LPJK Online](https://lpjk.pu.go.id).
+
+Pastikan data perusahaan Anda sinkron di [OSS RBA](https://oss.go.id) sebelum submit.
 
 ## Jenis SBU Konstruksi yang Tersedia
 
@@ -113,3 +116,10 @@ Kalau Anda masih bingung mana yang cocok, baca dulu [apa itu SBU konstruksi](/bl
 ---
 
 *Terakhir diperbarui: 26 April 2026 oleh **Nicx**, SBU Specialist sejak 2016 (280+ sertifikat diproses).*
+
+
+## Kesimpulan
+
+Memahami perbedaan SBU Kecil, Menengah, dan Besar adalah langkah pertama sebelum Anda memutuskan kualifikasi mana yang akan diurus. Pilihan yang salah bisa berarti Anda tidak bisa mengikuti tender yang seharusnya cocok, atau sebaliknya mengurus SBU yang terlalu besar untuk kapasitas perusahaan Anda.
+
+Pilih kualifikasi berdasarkan target proyek Anda, bukan sekadar ambisi. Konsultasi gratis bisa membantu Anda menentukan pilihan yang paling masuk akal.
