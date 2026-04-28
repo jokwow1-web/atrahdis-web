@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_CTA_URL } from '../../lib/constants';
+
+const tools = [
+  {
+    slug: 'kalkulator-sbu',
+    title: 'Kalkulator Biaya SBU',
+    desc: 'Estimasi biaya SBU Kecil, Menengah, Besar + SKK dalam 30 detik. Dari modal dan jenis entitas.',
+    icon: '🧮',
+  },
+  {
+    slug: 'nib-audit',
+    title: 'NIB Readiness Audit',
+    desc: 'Cek kesiapan NIB 13 digit untuk proses SBU konstruksi. Validasi otomatis.',
+    icon: '📋',
+  },
+  {
+    slug: 'oss-error',
+    title: 'OSS Error Decoder',
+    desc: 'Solusi kode error OSS LPJK E001–E020. Langkah perbaikan praktis.',
+    icon: '🔧',
+  },
+  {
+    slug: 'skk-selector',
+    title: 'SKK Level Selector',
+    desc: 'Pilih bidang konstruksi → temukan level SKK J5–J8 yang sesuai.',
+    icon: '📊',
+  },
+  {
+    slug: 'bujka-playbook',
+    title: 'BUJKA Playbook',
+    desc: 'Checklist 4 tahap pengurusan SBU. Dari audit dokumen sampai sertifikat keluar.',
+    icon: '📘',
+  },
+];
+---
+
+<Base
+  title="Tools SBU Konstruksi — Gratis & Praktis"
+  description="5 tools gratis untuk bantu estimasi biaya, audit NIB, decode error OSS, pilih SKK, dan checklist SBU."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-gold-400">Tools</p>
+        <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          Tools SBU Konstruksi
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          5 tools gratis untuk estimasi biaya, audit NIB, decode error OSS, pilih level SKK, dan checklist pengurusan SBU.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map((t) => (
+        <a
+          href={`/tools/${t.slug}`}
+          class="group flex flex-col rounded-xl border border-navy-700/50 bg-navy-800 p-6 transition hover:border-gold-500/30 hover:shadow-lg hover:shadow-gold-500/5"
+        >
+          <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gold-500/10 text-2xl text-gold-400">
+            {t.icon}
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-white group-hover:text-gold-400 transition">
+            {t.title}
+          </h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-gray-400">
+            {t.desc}
+          </p>
+          <span class="mt-4 inline-flex items-center text-sm font-semibold text-gold-400 group-hover:text-gold-300">
+            Buka Tool →
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Butuh bantuan setelah pakai tools?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">
+        Hasil tool hanya estimasi. Untuk estimasi final dan audit dokumen, konsultasi gratis tersedia kapan saja.
+      </p>
+      <div class="mt-8">
+        <a
+          href={WA_CTA_URL}
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Konsultasi Gratis via WhatsApp →
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
