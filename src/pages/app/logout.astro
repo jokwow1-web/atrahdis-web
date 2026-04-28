@@ -7,4 +7,3 @@ if (Astro.request.method !== 'POST') {
 Astro.cookies.delete('sb-session', { path: '/' });
 return Astro.redirect('/app/login');
 ---
-export const prerender = false;
