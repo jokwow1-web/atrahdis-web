@@ -1,34 +1,186 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { IDENTITY } from '../../lib/constants';
+import { IDENTITY, WA_CTA_URL } from '../../lib/constants';
 ---
-<Base title="Tentang Atrahdis" description="PT Atrahdis Idea Nusantara — jasa SBU konstruksi sejak 2016. NIB 9120006530734, berdomisili di Jakarta Selatan.">
-  <section class="mx-auto max-w-4xl px-4 py-16">
-    <h1 class="text-3xl font-bold">Tentang Atrahdis</h1>
 
-    <div class="mt-8 space-y-6 text-gray-700 leading-relaxed">
-      <p>
-        {IDENTITY.legalName} berdiri sekitar tahun 2017.
-        {IDENTITY.founder} personally mengurus SBU konstruksi sejak {IDENTITY.operatingSince} — lebih dari 9 tahun pengalaman.
-      </p>
-      <p>
-        Kualifikasi SBU kami mencakup <strong>K, M, B</strong> (Kecil, Menengah, Besar).
-        Bukan K1/K2/M1/M2/B1/B2 — klasifikasi tersebut sudah deprecated.
-      </p>
-
-      <div class="rounded-xl bg-gray-50 p-6">
-        <h2 class="font-semibold">Data Legal</h2>
-        <table class="mt-4 text-sm">
-          <tr><td class="pr-4 py-1 font-medium">Nama Legal</td><td>{IDENTITY.legalName}</td></tr>
-          <tr><td class="pr-4 py-1 font-medium">NIB</td><td>{IDENTITY.nib}</td></tr>
-          <tr><td class="pr-4 py-1 font-medium">Founder</td><td>{IDENTITY.founder}</td></tr>
-          <tr><td class="pr-4 py-1 font-medium">Alamat</td><td>{IDENTITY.address}</td></tr>
-        </table>
+<Base
+  title="Tentang Atrahdis — PT Atrahdis Idea Nusantara"
+  description="Jasa SBU konstruksi sejak 2016. 280+ sertifikat diproses. NIB 9120006530734. Mitra resmi LPJK dan asosiasi konstruksi Indonesia."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-gold-400">Tentang Kami</p>
+        <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          {IDENTITY.legalName}
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          Jasa pengurusan SBU dan sertifikasi konstruksi sejak {IDENTITY.operatingSince}.
+          {IDENTITY.certificates} sertifikat diproses. Satu tim, satu fokus: mempercepat compliance kontraktor Indonesia.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="mt-12">
-      <a href="/tentang/tim" class="text-blue-600 hover:underline">Lihat tim kami →</a>
+  <!-- Story -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="grid gap-12 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Cerita Kami</h2>
+        <div class="mt-6 space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            Atrahdis berdiri dari kebutuhan nyata: kontraktor Indonesia butuh bantuan mengurus SBU
+            yang prosesnya kompleks, regulasinya berubah, dan waktunya selalu mepet.
+          </p>
+          <p>
+            {IDENTITY.founder} memulai pengurusan SBU secara personal pada {IDENTITY.operatingSince}.
+            Dari situ, Atrahdis tumbuh menjadi tim yang menangani ratusan sertifikasi per tahun —
+            tanpa kehilangan pendekatan personal untuk setiap klien.
+          </p>
+          <p>
+            Kami bukan broker yang cuma kirim berkas. Kami audit dokumen dulu,
+            identifikasi bottleneck, baru proses. Hasilnya: approval rate lebih tinggi,
+            timeline lebih prediktabil, dan klien tidak kaget dengan koreksi mendadak.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-xl bg-gray-50 p-8">
+        <h3 class="text-lg font-semibold text-gray-900">Data Legal</h3>
+        <div class="mt-6 space-y-4 text-sm">
+          <div class="flex justify-between border-b border-gray-200 pb-3">
+            <span class="font-medium text-gray-600">Nama Legal</span>
+            <span class="text-gray-900">{IDENTITY.legalName}</span>
+          </div>
+          <div class="flex justify-between border-b border-gray-200 pb-3">
+            <span class="font-medium text-gray-600">NIB</span>
+            <span class="text-gray-900">{IDENTITY.nib}</span>
+          </div>
+          <div class="flex justify-between border-b border-gray-200 pb-3">
+            <span class="font-medium text-gray-600">Founder</span>
+            <span class="text-gray-900">{IDENTITY.founder}</span>
+          </div>
+          <div class="flex justify-between border-b border-gray-200 pb-3">
+            <span class="font-medium text-gray-600">Operasional Sejak</span>
+            <span class="text-gray-900">{IDENTITY.operatingSince}</span>
+          </div>
+          <div class="flex justify-between border-b border-gray-200 pb-3">
+            <span class="font-medium text-gray-600">Sertifikat Diproses</span>
+            <span class="text-gray-900">{IDENTITY.certificates}+</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Alamat</span>
+            <span class="max-w-xs text-right text-gray-900">{IDENTITY.address}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones -->
+  <section class="bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Perjalanan</h2>
+      <div class="mt-8 space-y-8">
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 font-bold text-white">2016</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">Mulai Personal</h3>
+            <p class="mt-1 text-gray-600">Nicx memulai pengurusan SBU secara personal untuk klien pertama. Proses manual, satu per satu, dengan pendekatan konsultatif.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 font-bold text-white">2019</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">Pembentukan Tim</h3>
+            <p class="mt-1 text-gray-600">Volume meningkat, tim pertama direkrut. Spesialisasi mulai terbentuk: audit dokumen, koordinasi LPJK, dan handling koreksi.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 font-bold text-white">2022</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">100+ Sertifikat</h3>
+            <p class="mt-1 text-gray-600">Milestone 100 sertifikat tercapai. Sistem audit internal dikembangkan untuk memastikan kualitas tetap tinggi meski volume bertambah.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500 font-bold text-white">2024</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">AI & Automation</h3>
+            <p class="mt-1 text-gray-600">Implementasi AI untuk screening lead, monitoring SBU, dan automation workflow. Tim tumbuh menjadi 6 spesialis dengan coverage nasional.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500 font-bold text-white">2026</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">280+ Sertifikat</h3>
+            <p class="mt-1 text-gray-600">Hari ini, Atrahdis telah memproses lebih dari 280 sertifikasi dengan fokus pada SBU konstruksi K, M, B dan SKK semua jenjang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Layanan Kami</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SBU Konstruksi</h3>
+        <p class="mt-2 text-sm text-gray-600">Pengurusan baru, perpanjangan, perubahan data, dan tambah subklasifikasi untuk kualifikasi Kecil, Menengah, dan Besar.</p>
+        <a href="/layanan/sbu-kecil" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Lihat Detail →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SKK & Serkom</h3>
+        <p class="mt-2 text-sm text-gray-600">Sertifikat Kompetensi Kerja J5–J9 dan Serkom untuk SBU Kelistrikan. Audit kebutuhan SKK gratis.</p>
+        <a href="/layanan/skk" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Lihat Detail →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">Dokumen Pendukung</h3>
+        <p class="mt-2 text-sm text-gray-600">KAP, ISO, NIB, KBLI, KSWP, dan sinkronisasi OSS. Semua dokumen yang sering jadi stumbling block.</p>
+        <a href="/layanan" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Lihat Detail →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Asosiasi & Kemitraan</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
+          <p class="text-sm font-semibold text-gray-900">LPJK</p>
+          <p class="mt-1 text-xs text-gray-600">Mitra resmi Lembaga Pengembangan Jasa Konstruksi</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
+          <p class="text-sm font-semibold text-gray-900">Asosiasi Konstruksi</p>
+          <p class="mt-1 text-xs text-gray-600">Terdaftar di asosiasi profesi konstruksi nasional</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
+          <p class="text-sm font-semibold text-gray-900">OSS RBA</p>
+          <p class="mt-1 text-xs text-gray-600">Integrasi data dengan Online Single Submission</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
+          <p class="text-sm font-semibold text-gray-900">Kemenaker</p>
+          <p class="mt-1 text-xs text-gray-600">Sertifikasi SMK3 dan keselamatan kerja</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Mau kenal lebih dekat?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">Konsultasi gratis — tanpa biaya, tanpa komitmen. Kami akan bantu identifikasi kebutuhan compliance perusahaan Anda.</p>
+      <div class="mt-8">
+        <a
+          href={WA_CTA_URL}
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Konsultasi Gratis via WhatsApp →
+        </a>
+      </div>
     </div>
   </section>
 </Base>

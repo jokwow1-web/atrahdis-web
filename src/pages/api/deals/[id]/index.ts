@@ -1,3 +1,4 @@
+export const prerender = false;
 import type { APIContext } from 'astro';
 
 function getToken(context: APIContext): string | null {

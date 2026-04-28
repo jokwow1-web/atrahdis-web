@@ -1,0 +1,99 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_CTA_URL } from '../../lib/constants';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sbuPosts = allPosts.filter((p) =>
+  p.id.includes('sbu') || p.id.includes('skk') || p.id.includes('sertifikasi')
+).slice(0, 6);
+---
+
+<Base
+  title="Sertifikasi Utama — SBU & SKK Konstruksi"
+  description="Panduan lengkap sertifikasi SBU dan SKK untuk kontraktor. Dari pengertian dasar sampai pengurusan per kualifikasi."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-gold-400">Layanan Cluster</p>
+        <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          Sertifikasi Utama
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          SBU, SKK, Serkom, KTA — semua kualifikasi Kecil, Menengah, dan Besar. Audit dokumen gratis sebelum submit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Layanan Sertifikasi</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SBU Kecil (K)</h3>
+        <p class="mt-2 text-sm text-gray-600">Untuk proyek di bawah Rp 2,5 miliar. Proses 3–7 hari kerja.</p>
+        <a href="/layanan/sbu-kecil" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Detail & Estimasi →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SBU Menengah (M)</h3>
+        <p class="mt-2 text-sm text-gray-600">Untuk proyek Rp 2,5–25 miliar. Proses 14–21 hari kerja.</p>
+        <a href="/layanan/sbu-menengah" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Detail & Estimasi →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SBU Besar (B)</h3>
+        <p class="mt-2 text-sm text-gray-600">Untuk proyek di atas Rp 25 miliar. Proses 30–60 hari kerja.</p>
+        <a href="/layanan/sbu-besar" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Detail & Estimasi →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SKK J5/J6</h3>
+        <p class="mt-2 text-sm text-gray-600">Sertifikat Kompetensi Kerja jenjang dasar. Estimasi setelah audit.</p>
+        <a href="/layanan/skk" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Detail & Estimasi →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SKK J7/J8</h3>
+        <p class="mt-2 text-sm text-gray-600">Sertifikat Kompetensi Kerja jenjang menengah. Estimasi setelah audit.</p>
+        <a href="/layanan/skk" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Detail & Estimasi →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">Perpanjangan SBU</h3>
+        <p class="mt-2 text-sm text-gray-600">Jangan sampai expired. Perpanjangan lebih cepat dari pengajuan baru.</p>
+        <a href="/blog/perpanjangan-sbu-sebelum-expired" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Baca Panduan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Artikel Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {sbuPosts.map((post) => (
+        <a
+          href={`/blog/${post.id}`}
+          class="rounded-lg border border-gray-200 p-4 hover:border-gold-500/50 transition"
+        >
+          <p class="text-xs font-semibold uppercase tracking-wide text-gold-400">{post.data.product}</p>
+          <p class="mt-1 text-sm font-medium text-gray-900">{post.data.title}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Butuh audit dokumen sebelum submit?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">Nicx cek bottleneck berkas Anda dulu — tanpa biaya, tanpa komitmen.</p>
+      <div class="mt-8">
+        <a
+          href={`${WA_CTA_URL}?text=Halo%20Nicx%2C%20saya%20ingin%20konsultasi%20sertifikasi%20SBU`}
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Konsultasi Gratis via WhatsApp →
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

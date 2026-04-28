@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://atrahdis.id',
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],

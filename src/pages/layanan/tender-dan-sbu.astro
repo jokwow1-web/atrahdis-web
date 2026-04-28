@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_CTA_URL } from '../../lib/constants';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const tenderPosts = allPosts.filter((p) =>
+  p.id.includes('tender') || p.id.includes('pengadaan') || p.id.includes('pemerintah')
+).slice(0, 6);
+---
+
+<Base
+  title="Tender & SBU — Syarat dan Strategi"
+  description="Panduan lengkap syarat tender konstruksi dan peran SBU. Hindari blacklist dan gugur kualifikasi dengan persiapan yang tepat."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-gold-400">Layanan Cluster</p>
+        <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          Tender & SBU
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          Syarat tender konstruksi, risiko SBU tidak valid, dan strategi memenangkan pengadaan pemerintah.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Points -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Yang Harus Anda Ketahui</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">SBU Wajib Aktif</h3>
+        <p class="mt-2 text-sm text-gray-600">Sistem LPSE otomatis memverifikasi SBU. Tidak aktif = gugur di kualifikasi.</p>
+        <a href="/blog/syarat-tender-konstruksi-sbu" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Baca Selengkapnya →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">Sub-Bidang Harus Cocok</h3>
+        <p class="mt-2 text-sm text-gray-600">SBU yang Anda miliki harus sesuai dengan lingkup pekerjaan tender.</p>
+        <a href="/blog/jenis-sbu-konstruksi-k-m-b" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Cek Sub-Bidang →</a>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">Risiko Blacklist</h3>
+        <p class="mt-2 text-sm text-gray-600">Tender dengan SBU tidak valid bisa berujung blacklist 2 tahun.</p>
+        <a href="/blog/tender-tanpa-sbu-risikonya" class="mt-4 inline-block text-sm font-semibold text-gold-500 hover:text-gold-600">Pahami Risiko →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Threshold Table -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Threshold Tender per Kualifikasi</h2>
+    <div class="mt-6 overflow-hidden rounded-xl border border-gray-200">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 font-semibold text-gray-900">Kualifikasi</th>
+            <th class="px-6 py-3 font-semibold text-gray-900">Nilai Proyek</th>
+            <th class="px-6 py-3 font-semibold text-gray-900">SBU Minimum</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="bg-white">
+            <td class="px-6 py-4 font-medium text-gray-900">Kecil</td>
+            <td class="px-6 py-4 text-gray-600">< Rp 2,5 miliar</td>
+            <td class="px-6 py-4 text-gray-600">SBU Kecil aktif</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="px-6 py-4 font-medium text-gray-900">Menengah</td>
+            <td class="px-6 py-4 text-gray-600">Rp 2,5 – 25 miliar</td>
+            <td class="px-6 py-4 text-gray-600">SBU Menengah aktif</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="px-6 py-4 font-medium text-gray-900">Besar</td>
+            <td class="px-6 py-4 text-gray-600">> Rp 25 miliar</td>
+            <td class="px-6 py-4 text-gray-600">SBU Besar aktif</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Artikel Tender & SBU</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {tenderPosts.map((post) => (
+        <a
+          href={`/blog/${post.id}`}
+          class="rounded-lg border border-gray-200 p-4 hover:border-gold-500/50 transition"
+        >
+          <p class="text-xs font-semibold uppercase tracking-wide text-gold-400">{post.data.product}</p>
+          <p class="mt-1 text-sm font-medium text-gray-900">{post.data.title}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">Persiapkan tender berikutnya dengan SBU yang valid</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">Audit SBU Anda sekarang — pastikan sub-bidang, masa berlaku, dan status aktif sudah sesuai.</p>
+      <div class="mt-8">
+        <a
+          href={`${WA_CTA_URL}?text=Halo%20Nicx%2C%20saya%20butuh%20SBU%20untuk%20tender`}
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Konsultasi Gratis via WhatsApp →
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
