@@ -1,0 +1,463 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Maintenance Compliance Konstruksi',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Layanan maintenance compliance: LKPM, surveilans LSBU, SBU monitoring, OSS compliance maintenance. Retainer periodik agar kepatuhan tetap aman.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Apa itu maintenance compliance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Maintenance compliance adalah layanan periodik untuk menjaga kepatuhan perusahaan setelah SBU/NIB terbit. Termasuk LKPM, surveilans LSBU, monitoring SBU, dan OSS compliance maintenance. Ini produk retainer, bukan produk panik.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa itu LKPM dan kapan harus lapor?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LKPM (Laporan Kegiatan Penanaman Modal) adalah pelaporan berkala ke OSS. Per 2026, LKPM Triwulan I dilaporkan 1-15 April. Keterlambatan menyebabkan teguran administratif hingga freeze proses OSS.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa kali lapor LKPM per tahun?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LKPM dilaporkan per triwulan (4 kali per tahun). Perusahaan dengan NIB aktif wajib lapor meskipun tidak ada transaksi signifikan — ini kesalahan umum yang berakibat sanksi.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa konsekuensi tidak lapor LKPM?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tidak lapor LKPM menyebabkan teguran administratif, freeze proses OSS, dan eskalasi sanksi bila berulang. Due diligence investor juga bisa gagal karena status kepatuhan bermasalah.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa itu surveilans LSBU?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Surveilans LSBU adalah monitoring berkala oleh Lembaga Sertifikasi Badan Usaha untuk memastikan SBU masih memenuhi syarat. Bisa berupa audit dokumen atau kunjungan lapangan.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'Maintenance Compliance', item: 'https://atrahdis.id/layanan/maintenance-compliance' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="Maintenance Compliance — LKPM, Surveilans, OSS Monitoring, Retainer Periodik"
+  description="Layanan maintenance compliance konstruksi: LKPM, surveilans LSBU, SBU monitoring, OSS compliance. Retainer periodik agar kepatuhan tetap aman. 280+ sertifikat sejak 2016."
+  canonical="https://atrahdis.id/layanan/maintenance-compliance"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-6xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">Maintenance Compliance</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      Maintenance Compliance
+    </h1>
+    <p class="mt-4 max-w-3xl text-xl text-gray-600">
+      LKPM, Surveilans LSBU, SBU Monitoring, OSS Compliance Maintenance — layanan periodik
+      untuk menjaga kepatuhan perusahaan setelah SBU/NIB terbit. <span class="font-semibold text-blue-600">Ini produk retainer, bukan produk panik.</span>
+      Nicx dari Atrahdis menjaga compliance Anda tetap aman.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.general} class="rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Chat WhatsApp — Retainer
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        SBU terbit bukan berarti selesai. Ada 4 layanan maintenance yang harus dijalankan
+        secara periodik: <strong>LKPM</strong> (laporan triwulan ke OSS), <strong>Surveilans LSBU</strong> (monitoring berkala),
+        <strong>SBU Monitoring</strong> (perubahan data), dan <strong>OSS Compliance Maintenance</strong>.
+        Keterlambatan menyebabkan teguran administratif, freeze proses OSS, hingga eskalasi sanksi.
+        Nicx menawarkan retainer untuk menjaga disiplin pelaporan.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">4 Layanan Maintenance Compliance</h2>
+    <p class="mt-4 text-gray-600">
+      Semua layanan ini bersifat periodik dan wajib dijalankan untuk menjaga status compliance
+      perusahaan. Jangan tunggu ada masalah baru urus — pencegahan lebih murah daripada cleanup.
+    </p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+
+      <!-- LKPM -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">LKPM (Laporan Kegiatan Penanaman Modal)</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Pelaporan berkala ke OSS untuk menjaga kepatuhan perusahaan setelah NIB aktif.
+          Dilaporkan per triwulan, wajib meskipun tidak ada transaksi signifikan.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Reminder menjelang periode</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Pengumpulan data realisasi</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Submit dan arsip bukti</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">Frekuensi:</span> <span class="text-gray-300">4x per tahun (triwulan)</span>
+        </div>
+        <div class="mt-2 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">1-3 hari kerja setelah data lengkap</span>
+        </div>
+      </div>
+
+      <!-- Surveilans -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">Surveilans / Monitoring LSBU</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Monitoring berkala oleh LSBU untuk memastikan SBU masih memenuhi syarat.
+          Bisa berupa audit dokumen atau kunjungan lapangan tanpa pemberitahuan.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Pre-audit dokumentasi</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Koordinasi dengan LSBU</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Follow-up temuan</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">Frekuensi:</span> <span class="text-gray-300">1-2x per tahun</span>
+        </div>
+      </div>
+
+      <!-- SBU Monitoring -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">SBU Monitoring & Perubahan Data</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Update data SBU ketika ada perubahan: direksi, alamat, sub-bidang, atau
+          kualifikasi perusahaan. Data mismatch dengan OSS = auto-reject.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Update data perusahaan</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Perubahan direksi/pemilik</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Tambah sub-bidang</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">3-7 hari kerja</span>
+        </div>
+      </div>
+
+      <!-- OSS Compliance -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">OSS Compliance Maintenance</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Retainer OSS untuk menjaga kepatuhan NIB dan KBLI. Termasuk sinkronisasi data,
+          update KBLI, dan penanganan freeze atau teguran administratif.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Monitoring status NIB</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Sinkronisasi KBLI</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Penanganan teguran</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">Frekuensi:</span> <span class="text-gray-300">Retainer bulanan/tahunan</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DETAIL LKPM -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">LKPM — Laporan Kegiatan Penanaman Modal</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Fungsi utama</h3>
+        <p class="mt-2 text-gray-600">
+          LKPM menjaga NIB tetap sehat dan mencegah masalah kepatuhan yang sering diabaikan.
+          Perusahaan dengan NIB aktif wajib lapor meskipun tidak ada transaksi signifikan —
+          ini pola gagal paling umum.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Periode pelaporan 2026</h3>
+        <p class="mt-2 text-gray-600">
+          LKPM dilaporkan per triwulan:
+          <br/>• Triwulan I: 1-15 April
+          <br/>• Triwulan II: 1-15 Juli
+          <br/>• Triwulan III: 1-15 Oktober
+          <br/>• Triwulan IV: 1-15 Januari (tahun berikutnya)
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Data yang dilaporkan</h3>
+        <p class="mt-2 text-gray-600">
+          Realisasi modal tetap/modal kerja, data tenaga kerja (TKA dan TKL), status kegiatan usaha,
+          hambatan usaha, dan progres fisik (jika ada). Data harus konsisten dengan pembukuan internal.
+        </p>
+      </div>
+
+      <div class="rounded-xl border-l-4 border-red-600 bg-red-50 p-5">
+        <p class="font-semibold">Jangan tunggu ada masalah baru lapor.</p>
+        <p class="mt-2 text-gray-600">
+          Keterlambatan LKPM menyebabkan teguran administratif, freeze proses OSS, dan eskalasi
+          sanksi bila berulang. Due diligence investor juga bisa gagal karena status kepatuhan bermasalah.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Mengapa retainer?</h3>
+        <p class="mt-2 text-gray-600">
+          LKPM adalah produk retainer, bukan produk panik. Nilai produk ada pada disiplin berkala,
+          bukan tombol submit. Dengan retainer, Nicx akan reminder sebelum periode, kumpulkan data,
+          review konsistensi, submit, dan arsip bukti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL SURVEILANS -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Surveilans / Monitoring LSBU</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Apa itu surveilans?</h3>
+        <p class="mt-2 text-gray-600">
+          Surveilans adalah monitoring berkala oleh LSBU (Lembaga Sertifikasi Badan Usaha) untuk
+          memastikan SBU masih memenuhi syarat. Bisa berupa audit dokumen atau kunjungan lapangan
+          tanpa pemberitahuan sebelumnya.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Apa yang diperiksa?</h3>
+        <p class="mt-2 text-gray-600">
+          Legalitas perusahaan masih aktif, SKK tenaga ahli masih berlaku, peralatan teknis masih
+          tersedia, dan kegiatan usaha masih berjalan. Ketidaksesuaian bisa menyebabkan SBU dibekukan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Apa yang Nicx handle?</h3>
+        <p class="mt-2 text-gray-600">
+          Pre-audit dokumentasi, koordinasi dengan LSBU, pendampingan saat kunjungan lapangan,
+          dan follow-up temuan hingga ditutup.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL SBU MONITORING -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">SBU Monitoring & Perubahan Data</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Kapan perlu update?</h3>
+        <p class="mt-2 text-gray-600">
+          Ketika ada perubahan direksi/pemilik, alamat perusahaan, sub-bidang usaha, atau
+          kualifikasi (K → M → B). Data SBU harus selalu sinkron dengan OSS — mismatch = auto-reject.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Risiko data mismatch</h3>
+        <p class="mt-2 text-gray-600">
+          Data SBU tidak sinkron dengan OSS menyebabkan penolakan otomatis saat ada pengajuan
+          tender atau perpanjangan. Lebih parah, bisa menyebabkan SBU dibekukan hingga data diperbaiki.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Timeline update</h3>
+        <p class="mt-2 text-gray-600">
+          Perubahan data SBU biasanya 3-7 hari kerja jika dokumen lengkap. Perubahan yang melibatkan
+          kualifikasi (upgrade K → M) membutuhkan proses seperti pengajuan baru.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="rounded-xl bg-navy-900 border border-gold-500/20 p-8 text-center">
+      <p class="text-xl font-bold">Jangan tunggu ada masalah compliance.</p>
+      <p class="mt-2 text-gray-600">
+        Nicx tawarkan retainer untuk menjaga disiplin pelaporan — reminder, review, submit, arsip.
+        Satu paket untuk semua compliance periodik Anda.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.general} class="rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+          Chat WhatsApp — Retainer
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum Maintenance Compliance</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Apa itu maintenance compliance?</h3>
+        <p class="mt-2 text-gray-600">
+          Maintenance compliance adalah layanan periodik untuk menjaga kepatuhan perusahaan setelah
+          SBU/NIB terbit. Termasuk LKPM, surveilans LSBU, monitoring SBU, dan OSS compliance maintenance.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa itu LKPM dan kapan harus lapor?</h3>
+        <p class="mt-2 text-gray-600">
+          LKPM (Laporan Kegiatan Penanaman Modal) adalah pelaporan berkala ke OSS. Per 2026,
+          LKPM Triwulan I dilaporkan 1-15 April. Keterlambatan menyebabkan teguran administratif
+          hingga freeze proses OSS.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa kali lapor LKPM per tahun?</h3>
+        <p class="mt-2 text-gray-600">
+          LKPM dilaporkan per triwulan (4 kali per tahun). Perusahaan dengan NIB aktif wajib lapor
+          meskipun tidak ada transaksi signifikan — ini kesalahan umum yang berakibat sanksi.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa konsekuensi tidak lapor LKPM?</h3>
+        <p class="mt-2 text-gray-600">
+          Tidak lapor LKPM menyebabkan teguran administratif, freeze proses OSS, dan eskalasi sanksi
+          bila berulang. Due diligence investor juga bisa gagal karena status kepatuhan bermasalah.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa itu surveilans LSBU?</h3>
+        <p class="mt-2 text-gray-600">
+          Surveilans LSBU adalah monitoring berkala oleh Lembaga Sertifikasi Badan Usaha untuk
+          memastikan SBU masih memenuhi syarat. Bisa berupa audit dokumen atau kunjungan lapangan.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Mengapa retainer lebih baik?</h3>
+        <p class="mt-2 text-gray-600">
+          Retainer memastikan disiplin pelaporan — Nicx reminder sebelum periode, kumpulkan data,
+          review konsistensi, submit, dan arsip bukti. Lebih murah daripada cleanup setelah ada masalah.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <a href="/layanan/sertifikasi-utama" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Sertifikasi Utama</h3>
+        <p class="mt-1 text-sm text-gray-600">SBU, SKK, Serkom, KTA</p>
+      </a>
+      <a href="/layanan/pendukung-sbu" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Pendukung SBU</h3>
+        <p class="mt-1 text-sm text-gray-600">KAP, ISO 37001, Peralatan</p>
+      </a>
+      <a href="/layanan/tender-dan-sbu" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Tender & Compliance</h3>
+        <p class="mt-1 text-sm text-gray-600">SMK3, ISO, BPJS</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-6xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 29 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

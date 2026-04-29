@@ -1,0 +1,467 @@
+---
+import Base from '../../layouts/Base.astro';
+import { WA_LINKS, IDENTITY } from '../../lib/constants';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Pendukung Pemenuhan SBU',
+  provider: {
+    '@type': 'Organization',
+    name: IDENTITY.legalName,
+    url: 'https://atrahdis.id',
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  description: 'Layanan pendukung pemenuhan SBU: KTA, Laporan Keuangan KAP, ISO 37001, Peralatan Teknis, Dokumen Pengalaman. Audit kebutuhan sebelum bayar.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Apa saja layanan pendukung SBU?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Layanan pendukung SBU meliputi: KTA (Keanggotaan Asosiasi), Laporan Keuangan KAP, ISO 37001 (SMAP), Peralatan Teknis, dan Dokumen Pengalaman/Kontrak Referensi. Semua layanan ini sering menjadi stumbling block dalam pengajuan SBU.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apakah KTA masih wajib untuk SBU?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tergantung jalur pengajuan. KTA masih diperlukan untuk pengajuan melalui asosiasi/LSBU tertentu atau sebagai legitimasi administratif. Nicx akan audit apakah jalur Anda benar-benar membutuhkan KTA.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa biaya Laporan Keuangan KAP?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Biaya KAP ditentukan setelah audit kebutuhan SBU Anda. Untuk SBU Kecil, laporan keuangan sederhana biasanya cukup. Untuk Menengah dan Besar, audit KAP wajib. Nicx dari Atrahdis akan menentukan scope yang tepat.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Berapa lama proses ISO 37001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 37001 (SMAP) dengan akreditasi KAN membutuhkan 2-6 bulan, tergantung kesiapan dokumen dan sistem perusahaan. Nicx akan audit gap analisis sebelum memulai proses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apa itu persyaratan Peralatan Teknis?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Peralatan Teknis adalah syarat kepemilikan atau ketersediaan alat kerja yang mendukung sub-bidang SBU. Tanpa bukti peralatan teknis yang memadai, SBU bisa ditolak meskipun dokumen lain lengkap.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://atrahdis.id' },
+    { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://atrahdis.id/layanan' },
+    { '@type': 'ListItem', position: 3, name: 'Pendukung SBU', item: 'https://atrahdis.id/layanan/pendukung-sbu' },
+  ],
+};
+
+const allSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Base
+  title="Pendukung Pemenuhan SBU — KTA, KAP, ISO 37001, Peralatan Teknis"
+  description="Layanan pendukung SBU: KTA, Laporan Keuangan KAP, ISO 37001, Peralatan Teknis, Dokumen Pengalaman. Audit kebutuhan sebelum bayar. 280+ sertifikat sejak 2016."
+  canonical="https://atrahdis.id/layanan/pendukung-sbu"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />
+
+  <!-- BREADCRUMB -->
+  <nav class="mx-auto max-w-6xl px-4 pt-8">
+    <ol class="flex gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-blue-600">Home</a></li>
+      <li>/</li>
+      <li><a href="/layanan" class="hover:text-blue-600">Layanan</a></li>
+      <li>/</li>
+      <li class="text-gray-900">Pendukung SBU</li>
+    </ol>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-bold tracking-tight">
+      Pendukung Pemenuhan SBU
+    </h1>
+    <p class="mt-4 max-w-3xl text-xl text-gray-600">
+      KTA, Laporan Keuangan KAP, ISO 37001, Peralatan Teknis, Dokumen Pengalaman —
+      semua layanan pendukung yang sering jadi <span class="font-semibold text-blue-600">stumbling block</span> dalam pengajuan SBU.
+      Nicx audit kebutuhan sebelum Anda bayar.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href={WA_LINKS.general} class="rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+        Chat WhatsApp — Audit Gratis
+      </a>
+      <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+        Screening via Ara (AI)
+      </a>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-6">
+      <h2 class="sr-only">Ringkasan</h2>
+      <p class="text-lg">
+        Pengajuan SBU tidak hanya tentang NIB dan SKK. Ada 5 layanan pendukung yang sering
+        jadi penghambat: <strong>KTA</strong> (keanggotaan asosiasi), <strong>Laporan Keuangan KAP</strong>,
+        <strong>ISO 37001</strong> (SMAP), <strong>Peralatan Teknis</strong>, dan
+        <strong>Dokumen Pengalaman</strong>. Semuanya bisa jadi auto-reject jika tidak disiapkan dengan benar.
+        Nicx dari Atrahdis mengaudit kebutuhan spesifik sebelum Anda mengeluarkan biaya.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">5 Layanan Pendukung SBU</h2>
+    <p class="mt-4 text-gray-600">
+      Klik setiap layanan untuk detail lengkap. Semua layanan ini sering muncul sebagai
+      syarat tambahan dalam pengajuan SBU — jangan tunggu LPJK menolak baru urus.
+    </p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+
+      <!-- KTA -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">KTA (Keanggotaan Asosiasi)</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Keanggotaan asosiasi profesi untuk jalur pengajuan tertentu. Masih diperlukan untuk
+          pengajuan melalui asosiasi/LSBU tertentu atau sebagai legitimasi administratif.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Pendaftaran awal asosiasi</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Pembaruan iuran tahunan</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Perubahan direksi/nama perusahaan</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">3-10 hari kerja</span>
+        </div>
+      </div>
+
+      <!-- KAP -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">Laporan Keuangan KAP</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Laporan keuangan yang diaudit Kantor Akuntan Publik. Wajib untuk SBU Menengah dan Besar,
+          sementara SBU Kecil cukup laporan keuangan sederhana.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Audit kebutuhan scope KAP</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Koordinasi dengan akuntan publik</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Review sebelum submit</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">3-6 minggu</span>
+        </div>
+      </div>
+
+      <!-- ISO 37001 -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">ISO 37001 (SMAP)</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Sistem Manajemen Anti Penyuapan (SMAP) dengan akreditasi KAN. Semakin sering diminta
+          untuk tender pemerintah dan korporasi besar.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Gap analysis awal</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Dokumentasi sistem</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Pendampingan audit</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">2-6 bulan</span>
+        </div>
+      </div>
+
+      <!-- Peralatan Teknis -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+        <h3 class="font-heading text-lg font-semibold text-white">Peralatan Teknis</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Bukti kepemilikan atau ketersediaan alat kerja yang mendukung sub-bidang SBU.
+          Tanpa bukti peralatan teknis yang memadai, SBU bisa ditolak.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Audit kebutuhan per sub-bidang</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Review dokumen kepemilikan</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Alternatif sewa/kemitraan</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">1-2 minggu</span>
+        </div>
+      </div>
+
+      <!-- Dokumen Pengalaman -->
+      <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6 md:col-span-2">
+        <h3 class="font-heading text-lg font-semibold text-white">Dokumen Pengalaman / Kontrak Referensi</h3>
+        <p class="mt-2 text-sm text-gray-400">
+          Bukti pengalaman proyek sebelumnya sebagai syarat peningkatan kualifikasi atau
+          pengajuan SBU level tertentu. Kontrak referensi harus memenuhi kriteria LPJK.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Review kontrak yang memenuhi kriteria</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>Verifikasi nilai dan lingkup pekerjaan</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-0.5 text-gold-400">✓</span>
+            <span>BAST dan dokumen pendukung lainnya</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-lg bg-navy-900 p-3 text-sm">
+          <span class="font-semibold text-gold-400">SLA:</span> <span class="text-gray-300">2-4 minggu</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DETAIL KTA -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">KTA — Keanggotaan Asosiasi Profesi</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Fungsi utama</h3>
+        <p class="mt-2 text-gray-600">
+          KTA (Kartu Tanda Anggota) asosiasi profesi berfungsi sebagai legitimasi administratif
+          dan jalur pengajuan melalui asosiasi/LSBU tertentu. Tidak semua jalur SBU membutuhkan KTA,
+          tapi untuk yang memerlukan, ini wajib.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Trigger butuh KTA</h3>
+        <p class="mt-2 text-gray-600">
+          Pendaftaran awal asosiasi, iuran mati yang perlu dihidupkan kembali, perubahan direksi
+          atau nama perusahaan, atau permintaan kelengkapan administratif dari LSBU.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Syarat pengajuan</h3>
+        <p class="mt-2 text-gray-600">
+          Akta pendirian dan perubahan, SK Kemenkumham, NIB, NPWP, KTP pengurus. Data yang sering
+          mismatch: nama perusahaan, susunan direksi, alamat, email PIC, dan status pembayaran iuran.
+        </p>
+      </div>
+
+      <div class="rounded-xl border-l-4 border-yellow-500 bg-yellow-50 p-5">
+        <p class="font-semibold">Jangan asumsikan KTA selalu wajib.</p>
+        <p class="mt-2 text-gray-600">
+          Tim sales mungkin menjual KTA sebagai syarat absolut tanpa cek jalur. Nicx akan audit
+          apakah jalur pengajuan Anda benar-benar mensyaratkan keanggotaan asosiasi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL KAP -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Laporan Keuangan KAP</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Kapan wajib KAP?</h3>
+        <p class="mt-2 text-gray-600">
+          SBU Menengah dan Besar wajib menyertakan laporan keuangan yang diaudit KAP.
+          SBU Kecil cukup laporan keuangan sederhana. Nicx akan audit kebutuhan spesifik
+          berdasarkan kualifikasi SBU Anda.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Timeline</h3>
+        <p class="mt-2 text-gray-600">
+          Proses audit KAP biasanya 3-6 minggu, tergantung kompleksitas dan kesiapan dokumen.
+          Mulai lebih awal — jangan tunggu deadline pengajuan SBU.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Apa yang Nicx handle?</h3>
+        <p class="mt-2 text-gray-600">
+          Audit kebutuhan scope KAP, koordinasi dengan akuntan publik partner, review laporan
+          sebelum submit ke LPJK. Pastikan tidak ada mismatch dengan data SBU.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL ISO 37001 -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">ISO 37001 — Sistem Manajemen Anti Penyuapan (SMAP)</h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Mengapa ISO 37001?</h3>
+        <p class="mt-2 text-gray-600">
+          ISO 37001 (SMAP) semakin sering diminta sebagai syarat tender pemerintah dan korporasi besar.
+          Ini bukan lagi optional untuk kontraktor yang ingin bersaing di level menengah-atas.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Proses sertifikasi</h3>
+        <p class="mt-2 text-gray-600">
+          Gap analysis awal → dokumentasi sistem → implementasi → internal audit → sertifikasi KAN.
+          Total 2-6 bulan tergantung kesiapan perusahaan.
+        </p>
+      </div>
+
+      <div class="rounded-xl border p-5">
+        <h3 class="font-semibold">Apa yang Nicx handle?</h3>
+        <p class="mt-2 text-gray-600">
+          Gap analysis, pendampingan dokumentasi, koordinasi dengan lembaga sertifikasi,
+          dan follow-up hingga sertifikat terbit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="rounded-xl bg-navy-900 border border-gold-500/20 p-8 text-center">
+      <p class="text-xl font-bold">Butuh audit layanan pendukung yang tepat?</p>
+      <p class="mt-2 text-gray-600">
+        Nicx akan audit kebutuhan spesifik berdasarkan kualifikasi SBU dan sub-bidang Perusahaan Anda.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a href={WA_LINKS.general} class="rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
+          Chat WhatsApp — Audit Gratis
+        </a>
+        <a href={WA_LINKS.ara} class="rounded-lg border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-50">
+          Screening via Ara (AI)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Pertanyaan Umum Pendukung SBU</h2>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h3 class="font-semibold">Apakah KTA masih wajib untuk SBU?</h3>
+        <p class="mt-2 text-gray-600">
+          Tergantung jalur pengajuan. KTA masih diperlukan untuk pengajuan melalui asosiasi/LSBU
+          tertentu atau sebagai legitimasi administratif. Nicx akan audit apakah jalur Anda
+          benar-benar membutuhkan KTA.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa biaya Laporan Keuangan KAP?</h3>
+        <p class="mt-2 text-gray-600">
+          Biaya KAP ditentukan setelah audit kebutuhan SBU Anda. Untuk SBU Kecil, laporan keuangan
+          sederhana biasanya cukup. Untuk Menengah dan Besar, audit KAP wajib.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Berapa lama proses ISO 37001?</h3>
+        <p class="mt-2 text-gray-600">
+          ISO 37001 (SMAP) dengan akreditasi KAN membutuhkan 2-6 bulan, tergantung kesiapan
+          dokumen dan sistem perusahaan. Nicx akan audit gap analisis sebelum memulai proses.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Apa itu persyaratan Peralatan Teknis?</h3>
+        <p class="mt-2 text-gray-600">
+          Peralatan Teknis adalah syarat kepemilikan atau ketersediaan alat kerja yang mendukung
+          sub-bidang SBU. Tanpa bukti peralatan teknis yang memadai, SBU bisa ditolak meskipun
+          dokumen lain lengkap.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Dokumen Pengalaman seperti apa yang diterima?</h3>
+        <p class="mt-2 text-gray-600">
+          Kontrak referensi harus memenuhi kriteria LPJK: nilai pekerjaan sesuai kualifikasi,
+          lingkup pekerjaan relevan dengan sub-bidang, dilengkapi BAST dan dokumen pendukung
+          lainnya. Nicx bisa review kontrak Anda sebelum submit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-2xl font-bold">Layanan Terkait</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <a href="/layanan/sertifikasi-utama" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Sertifikasi Utama</h3>
+        <p class="mt-1 text-sm text-gray-600">SBU, SKK, Serkom, KTA</p>
+      </a>
+      <a href="/layanan/maintenance-compliance" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Maintenance Compliance</h3>
+        <p class="mt-1 text-sm text-gray-600">LKPM, surveilans, OSS</p>
+      </a>
+      <a href="/layanan/tender-dan-sbu" class="rounded-xl border p-5 hover:border-blue-300 hover:shadow">
+        <h3 class="font-semibold">Tender & Compliance</h3>
+        <p class="mt-1 text-sm text-gray-600">SMK3, ISO, BPJS</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- BYLINE -->
+  <footer class="mx-auto max-w-6xl border-t border-gray-100 px-4 py-8 text-sm text-gray-500">
+    <p>Terakhir diperbarui: 29 April 2026 oleh Nicx (Nicky Valiant), SBU Specialist sejak 2016.</p>
+    <p class="mt-1">PT Atrahdis Idea Nusantara · NIB 9120006530734</p>
+  </footer>
+</Base>

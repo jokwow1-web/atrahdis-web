@@ -1,31 +1,199 @@
 ---
 import Base from '../layouts/Base.astro';
-import { PRICING } from '../lib/pricing';
-import { WA_CTA_URL } from '../lib/constants';
+import { WA_LINKS } from '../lib/constants';
 
-const products = Object.entries(PRICING);
+const sbuProducts = [
+  {
+    slug: 'SBU-K',
+    label: 'SBU Kecil (K)',
+    price: 'dari Rp 4.500.000',
+    note: 'Base 1 subklasifikasi. Multi-sub: estimasi setelah audit.',
+    waLink: WA_LINKS.sbuK,
+  },
+  {
+    slug: 'SBU-M',
+    label: 'SBU Menengah (M)',
+    price: 'dari Rp 18.000.000',
+    note: 'Termasuk KAP & ISO 37001. Detail tergantung subklasifikasi.',
+    waLink: WA_LINKS.sbuM,
+  },
+  {
+    slug: 'SBU-B',
+    label: 'SBU Besar (B)',
+    price: 'dari Rp 50.000.000',
+    note: 'Kompleks — include ISO, KAP Besar, pengalaman perusahaan.',
+    waLink: WA_LINKS.sbuB,
+  },
+  {
+    slug: 'SKK-J5J6',
+    label: 'SKK Jenjang 5 / 6',
+    price: 'Rp 5.970.000 / berkas',
+    note: 'Per orang, per jenjang, per sub-bidang.',
+    waLink: WA_LINKS.skk,
+  },
+  {
+    slug: 'SKK-J7',
+    label: 'SKK Jenjang 7',
+    price: 'Rp 7.470.000 / berkas',
+    note: 'Per orang, per jenjang, per sub-bidang.',
+    waLink: WA_LINKS.skk,
+  },
+  {
+    slug: 'SKK-J8',
+    label: 'SKK Jenjang 8',
+    price: 'Rp 8.970.000 / berkas',
+    note: 'Per orang, per jenjang, per sub-bidang.',
+    waLink: WA_LINKS.skk,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Kenapa harganya pakai range "dari Rp …"?',
+    a: 'Biaya SBU tergantung jumlah subklasifikasi, kualifikasi, dan kelengkapan dokumen awal. Audit dokumen gratis membantu kami kasih angka pasti sebelum Anda komit apapun.',
+  },
+  {
+    q: 'Kalau saya butuh 3 subklasifikasi, berapa totalnya?',
+    a: 'Multi-sub dihitung per tambahan. Hubungi kami — kami beri estimasi detail dalam 1x24 jam setelah audit dokumen singkat via WhatsApp.',
+  },
+  {
+    q: 'Ada biaya tersembunyi?',
+    a: 'Tidak ada. Biaya yang disepakati di awal adalah total biaya. Tidak ada biaya revisi, biaya konsultasi tambahan, atau biaya "percepatan" mendadak.',
+  },
+  {
+    q: 'SKK bisa diurus bersamaan dengan SBU?',
+    a: 'Bisa dan disarankan. SKK adalah syarat wajib SBU — mengurusnya bersamaan mempersingkat timeline keseluruhan dan menghindari bottleneck di tengah proses.',
+  },
+];
 ---
-<Base title="Biaya SBU & SKK Konstruksi" description="Daftar biaya SBU dan SKK konstruksi — estimasi setelah audit dokumen. Detail per sub-bidang tersedia via konsultasi.">
-  <section class="mx-auto max-w-4xl px-4 py-16">
-    <h1 class="text-3xl font-bold">Biaya</h1>
-    <p class="mt-2 text-gray-600">Range harga publik. Detail per sub-bidang + multi-sub + bundling tersedia via konsultasi.</p>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2">
-      {products.map(([slug, data]) => (
-        <div class="rounded-xl border p-6">
-          <h2 class="font-semibold">{data.label}</h2>
-          <p class="mt-2 text-2xl font-bold text-blue-600">{data.range}</p>
-          <p class="mt-1 text-sm text-gray-500">Range publik — detail via konsultasi</p>
+<Base
+  title="Biaya SBU & SKK Konstruksi | Transparan, Tanpa Hidden Cost"
+  description="Lihat estimasi biaya SBU Kecil/Menengah/Besar dan SKK J5–J8. Harga transparan dari Rp 4.500.000. Audit dokumen gratis sebelum komitmen."
+>
+
+  <!-- ── Hero ── -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Pricing</p>
+        <h1 class="mt-3 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+          Harga transparan.<br />Tanpa biaya tersembunyi.
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300 md:text-xl">
+          Semua angka di bawah adalah harga publik minimum. Estimasi final diberikan gratis setelah audit dokumen singkat — tidak ada komitmen apapun.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing Cards ── -->
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="font-heading text-2xl font-bold text-white md:text-3xl">Daftar Harga</h2>
+    <p class="mt-2 text-gray-400">Harga per produk, base 1 subklasifikasi. Multi-sub dihitung setelah audit.</p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {sbuProducts.map((p) => (
+        <div class="flex flex-col justify-between rounded-xl border border-navy-700/50 bg-navy-800 p-8">
+          <div>
+            <h3 class="font-heading text-lg font-semibold text-white">{p.label}</h3>
+            <p class="mt-3 text-3xl font-extrabold text-gold-400">{p.price}</p>
+            <p class="mt-2 text-sm text-gray-400">{p.note}</p>
+          </div>
+          <a
+            href={p.waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-block rounded-lg border border-gold-500/40 px-5 py-2.5 text-center text-sm font-semibold text-gold-400 transition hover:bg-gold-500/10"
+          >
+            Tanya via WhatsApp →
+          </a>
         </div>
       ))}
     </div>
+  </section>
 
-    <div class="mt-12 rounded-xl bg-navy-900 border border-gold-500/20 p-8 text-center">
-      <p class="text-lg font-semibold">Butuh pricing detail per sub-bidang?</p>
-      <p class="mt-2 text-sm text-gray-600">Detail per sub-bidang, multi-sub, dan KAP/ISO/SKK bundling.</p>
-      <a href={WA_CTA_URL} class="mt-4 inline-block rounded-lg bg-gold-500 px-6 py-3 font-semibold text-white hover:bg-gold-400">
-        Konsultasi via WhatsApp
-      </a>
+  <!-- ── What's Included ── -->
+  <section class="bg-navy-800/60">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+      <h2 class="font-heading text-2xl font-bold text-white md:text-3xl">Sudah termasuk dalam biaya</h2>
+      <p class="mt-2 text-gray-400">Tidak ada tagihan tambahan di luar yang sudah disepakati.</p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { icon: '🔍', title: 'Audit Dokumen Gratis', desc: 'Cek kelengkapan dokumen sebelum proses dimulai — tidak ada biaya, tidak ada komitmen.' },
+          { icon: '📋', title: 'Pendampingan Penuh', desc: 'Kami yang urus end-to-end. Anda tidak perlu bolak-balik kantor dinas atau LSBU.' },
+          { icon: '🔄', title: 'Revisi Tanpa Batas', desc: 'Selama proses berjalan, semua revisi dokumen yang diminta ditangani tanpa biaya tambahan.' },
+          { icon: '📞', title: 'Konsultasi Langsung ke Nicx', desc: 'Nicx sendiri yang handle — bukan CS junior. Tanya apapun, kapanpun selama proses.' },
+          { icon: '⏱️', title: 'Timeline Guarantee', desc: 'SBU baru: 4–8 minggu. Perpanjangan: 3–6 minggu. Terlambat dari estimasi? Kami kasih update transparan.' },
+          { icon: '🛡️', title: 'Garansi Output', desc: '98% approval rate. Jika ada penolakan LSBU karena kelalaian kami, perbaikan ditanggung penuh.' },
+        ].map((item) => (
+          <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+            <span class="text-2xl">{item.icon}</span>
+            <h3 class="mt-3 font-heading text-base font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-400">{item.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
+
+  <!-- ── Trust Bar ── -->
+  <section class="border-y border-navy-700/50 bg-navy-900">
+    <div class="mx-auto max-w-6xl px-4 py-8">
+      <div class="flex flex-wrap items-center justify-center gap-8 text-center text-sm font-semibold text-gray-300 md:gap-16">
+        <span><span class="text-gold-400 text-xl font-extrabold">280+</span><br />sertifikat diproses</span>
+        <span class="hidden md:block text-navy-700/50">|</span>
+        <span><span class="text-gold-400 text-xl font-extrabold">0</span><br />klaim uang kembali</span>
+        <span class="hidden md:block text-navy-700/50">|</span>
+        <span><span class="text-gold-400 text-xl font-extrabold">Sejak 2016</span><br />Nicx handle langsung</span>
+        <span class="hidden md:block text-navy-700/50">|</span>
+        <span><span class="text-gold-400 text-xl font-extrabold">98%</span><br />approval rate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="mx-auto max-w-4xl px-4 py-20">
+    <h2 class="font-heading text-2xl font-bold text-white md:text-3xl">Pertanyaan tentang biaya</h2>
+    <p class="mt-2 text-gray-400">Yang sering ditanyakan sebelum klien mulai proses.</p>
+
+    <div class="mt-10 space-y-4">
+      {faqs.map((faq) => (
+        <div class="rounded-xl border border-navy-700/50 bg-navy-800 p-6">
+          <h3 class="font-heading text-base font-semibold text-white">{faq.q}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-400">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="bg-navy-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="font-heading text-3xl font-bold text-white md:text-4xl">
+        Mau tahu angka persisnya untuk perusahaan Anda?
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">
+        Audit dokumen gratis. Estimasi keluar dalam 1x24 jam. Tidak ada komitmen sebelum Anda setuju.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href={WA_LINKS.general}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block rounded-lg bg-gold-500 px-10 py-4 font-heading text-lg font-semibold text-navy-900 shadow-lg shadow-gold-500/20 transition hover:bg-gold-400"
+        >
+          Minta Estimasi Gratis →
+        </a>
+        <a
+          href="/layanan"
+          class="inline-block rounded-lg border border-white/20 px-8 py-4 font-heading text-base font-semibold text-white transition hover:border-white/50"
+        >
+          Lihat Semua Layanan
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Base>
